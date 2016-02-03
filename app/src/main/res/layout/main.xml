@@ -1,0 +1,301 @@
+<android.support.v4.widget.DrawerLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bakground3"
+    android:id="@+id/Background">
+
+    <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1.5"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/Menu">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:layout_marginBottom="20dp"
+
+        >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:layout_gravity="center"
+            android:src="@drawable/logotop"/>
+    </FrameLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.20"
+        android:id="@+id/R1"
+
+        >
+        <FrameLayout
+            android:layout_width="100dp"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            >
+
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/Menu1"
+                android:layout_gravity="center"
+                android:src="@drawable/menu1"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                 />
+        </FrameLayout>
+    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.08"
+
+
+
+
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SERVICES"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+
+                android:textIsSelectable="false"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.20"
+        android:id="@+id/R2"
+
+        >
+        <FrameLayout
+            android:layout_width="100dp"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            >
+
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/Menu2"
+                android:layout_gravity="center"
+                android:src="@drawable/menu2"
+                android:background="#00000000"
+                android:scaleType="fitCenter"/>
+        </FrameLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="75dp"
+                android:background="#80FFFFFF"
+                android:layout_alignParentBottom="true"
+                android:visibility="invisible"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.08"
+
+
+
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROFILE"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.20"
+        android:id="@+id/R3"
+
+        >
+        <FrameLayout
+            android:layout_width="100dp"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            >
+
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/Menu3"
+                android:layout_gravity="center"
+                android:src="@drawable/menu3"
+                android:background="#00000000"
+                android:scaleType="fitCenter"/>
+        </FrameLayout>
+    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.08"
+
+
+
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEAR YOU"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.20"
+        android:id="@+id/R4"
+
+        >
+        <FrameLayout
+            android:layout_width="100dp"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            >
+
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/Menu4"
+                android:layout_gravity="center"
+                android:src="@drawable/menu4"
+                android:background="#00000000"
+                android:scaleType="fitCenter" />
+        </FrameLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.08"
+            android:id="@+id/R0"
+            >
+
+        </RelativeLayout>
+    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.08"
+
+
+
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONFIG"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+</LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="500dp"
+        android:id="@+id/drawerPane"
+        android:layout_gravity="start|bottom"
+        >
+
+        <!-- Profile Box -->
+
+        <RelativeLayout
+            android:id="@+id/profileBox"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/material_blue_grey_800"
+            android:padding="8dp" >
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:layout_marginTop="15dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/avatar"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rishabh"
+                    android:textColor="#fff"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="4dp"
+                    android:text="View Profile"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/editText"
+
+            android:layout_alignParentBottom="true" />
+
+
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>
