@@ -22,6 +22,8 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import com.github.rahatarmanahmed.cpv.CircularProgressView;
+import com.github.rahatarmanahmed.cpv.CircularProgressViewAdapter;
 
 public class SplashScreenActivity extends Activity {
 
@@ -39,11 +41,14 @@ public class SplashScreenActivity extends Activity {
      * Called when the activity is first created.
      */
     @Override
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
         final RelativeLayout background = (RelativeLayout) findViewById(R.id.background);
         background.setBackgroundResource(DinamicBackground.getBackOnTime());
+        CircularProgressView progressView = (CircularProgressView) findViewById(R.id.progress_view);
+        progressView.startAnimation();
 
     }
 
@@ -60,5 +65,6 @@ public class SplashScreenActivity extends Activity {
         }, SPLASH_DISPLAY_LENGTH);
         }
 
-    }
+
+}
 

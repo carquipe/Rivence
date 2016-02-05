@@ -5,5 +5,16 @@
     tools:context=".SplashScreenActivity"
     android:id="@+id/background">
 
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/progress_view"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cpv_color="#0d9385"
+
+        app:cpv_indeterminate="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="61dp" />
 
 </RelativeLayout>
