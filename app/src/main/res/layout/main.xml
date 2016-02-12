@@ -6,239 +6,79 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@drawable/mainbackground2"
     android:id="@+id/Background">
-
-    <LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:weightSum="1.3"
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/Menu">
+    android:weightSum="1">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:gravity="center"
-                android:text="RIVENCE"
-                android:textStyle="bold"
-                android:id="@+id/titleText"
-                android:textColor="#ffffff"
-                android:textSize="120px"
-                android:background="@drawable/main_text_border"
-                android:autoText="true" />
-
-        </LinearLayout>
-
-        <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.20"
-        android:id="@+id/R1"
-            android:layout_marginTop="40dp"
-
-        >
-        <FrameLayout
-            android:layout_width="100dp"
-            android:layout_height="fill_parent"
-            android:layout_centerInParent="true"
-            >
-
-
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/Menu1"
-                android:layout_gravity="center"
-                android:src="@drawable/menu1"
-                android:background="#00000000"
-                android:scaleType="fitCenter"
-                 />
-
-        </FrameLayout>
-    </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.08"
-
-
-
-
-
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SERVICES"
-                android:textAlignment="center"
-                android:layout_centerHorizontal="true"
-
-                android:textIsSelectable="false"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.20"
-        android:id="@+id/R2"
-
-        >
-        <FrameLayout
-            android:layout_width="100dp"
-            android:layout_height="fill_parent"
-            android:layout_centerInParent="true"
-            >
-
-
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/Menu2"
-                android:layout_gravity="center"
-                android:src="@drawable/menu2"
-                android:background="#00000000"
-                android:scaleType="fitCenter"/>
-        </FrameLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingTop="75dp"
-                android:background="#80FFFFFF"
-                android:layout_alignParentBottom="true"
-                android:visibility="invisible"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-
-            </RelativeLayout>
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.08"
-
-
-
-
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PROFILE"
-                android:textAlignment="center"
-                android:layout_centerHorizontal="true"
-
-                android:textStyle="bold"
-                android:textColor="#FFFFFF" />
-
-        </RelativeLayout>
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.20"
-        android:id="@+id/R3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TOP">
 
-        >
-        <FrameLayout
-            android:layout_width="100dp"
-            android:layout_height="fill_parent"
-            android:layout_centerInParent="true"
-            >
-
-
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/Menu3"
-                android:layout_gravity="center"
-                android:src="@drawable/menu3"
-                android:background="#00000000"
-                android:scaleType="fitCenter"/>
-        </FrameLayout>
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:gravity="center"
+            android:text="RIVENCE"
+            android:textStyle="bold"
+            android:id="@+id/titletext"
+            android:textColor="#ffffff"
+            android:textSize="40sp"
+            android:background="@drawable/main_text_border"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center" />
     </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.08"
 
-
-
-
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NEAR YOU"
-                android:textAlignment="center"
-                android:layout_centerHorizontal="true"
-
-                android:textStyle="bold"
-                android:textColor="#FFFFFF" />
-
-        </RelativeLayout>
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.20"
-        android:id="@+id/R4"
-
-        >
-        <FrameLayout
-            android:layout_width="100dp"
-            android:layout_height="fill_parent"
-            android:layout_centerInParent="true"
-            >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
 
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/Menu4"
-                android:layout_gravity="center"
-                android:src="@drawable/menu4"
-                android:background="#00000000"
-                android:scaleType="fitCenter" />
-        </FrameLayout>
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.08"
-            android:id="@+id/R0"
-            >
+        android:id="@+id/content">
 
-        </RelativeLayout>
     </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.08"
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        >
+
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/DrawerToggle"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="false"
+            android:background="@drawable/toplogo"
+             />
+    </RelativeLayout>
+
+</LinearLayout>
 
 
 
 
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CONFIG"
-                android:textAlignment="center"
-                android:layout_centerHorizontal="true"
 
-                android:textStyle="bold"
-                android:textColor="#FFFFFF" />
 
-        </RelativeLayout>
 
-    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -303,5 +143,4 @@
 
 
     </RelativeLayout>
-
 </android.support.v4.widget.DrawerLayout>
