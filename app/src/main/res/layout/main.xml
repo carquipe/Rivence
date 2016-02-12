@@ -28,7 +28,7 @@
                 android:text="RIVENCE"
                 android:textStyle="bold"
                 android:id="@+id/titleText"
-                android:textColor="#dc0a6d"
+                android:textColor="#af0957"
                 android:textSize="120px" />
 
         </LinearLayout>
