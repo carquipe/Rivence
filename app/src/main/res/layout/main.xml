@@ -4,7 +4,7 @@
 
 
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/bakground3"
+    android:background="@drawable/mainbackground2"
     android:id="@+id/Background">
 
     <LinearLayout
@@ -16,26 +16,29 @@
     android:orientation="vertical"
     android:id="@+id/Menu">
 
-    <FrameLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.15"
-        android:layout_marginBottom="20dp"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
 
-        >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:gravity="center"
+                android:text="RIVENCE"
+                android:textStyle="bold"
+                android:id="@+id/titleText"
+                android:textColor="#dc0a6d"
+                android:textSize="120px" />
 
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView2"
-            android:layout_gravity="center"
-            android:src="@drawable/logotop"/>
-    </FrameLayout>
-    <RelativeLayout
+        </LinearLayout>
+
+        <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="0.20"
         android:id="@+id/R1"
+            android:layout_marginTop="40dp"
 
         >
         <FrameLayout
@@ -54,6 +57,7 @@
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                  />
+
         </FrameLayout>
     </RelativeLayout>
         <RelativeLayout
@@ -232,7 +236,7 @@
 
         </RelativeLayout>
 
-</LinearLayout>
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
