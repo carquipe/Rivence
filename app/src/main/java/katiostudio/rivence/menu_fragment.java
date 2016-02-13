@@ -1,6 +1,7 @@
 package katiostudio.rivence;
 
 import android.app.Fragment;
+import android.app.FragmentContainer;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import static katiostudio.rivence.main.Fragcontainer;
  * Created by Kevin on 12/02/2016.
  */
 public class menu_fragment extends Fragment implements View.OnClickListener  {
+
+    public static int Fragcontainer = R.id.content;
 
     public menu_fragment() {
         // Empty constructor required for fragment subclasses

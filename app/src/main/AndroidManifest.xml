@@ -17,7 +17,7 @@
         >
         <activity
             android:name=".SplashScreenActivity"
-            android:label="@string/title_activity_splash_screen"
+            android:label="Rivence"
             android:theme="@style/Theme.Transparent"
             android:noHistory="true">
             <intent-filter>
