@@ -6,6 +6,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@drawable/mainbackground2"
     android:id="@+id/Background">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -41,44 +45,29 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_alignParentBottom="true"
-        >
-
-
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:id="@+id/DrawerToggle"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="false"
-            android:background="@drawable/toplogo"
-             />
-    </RelativeLayout>
-
 </LinearLayout>
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentBottom="true">
 
 
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/DrawerToggle"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="false"
+                android:background="@drawable/chat_ic"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp" />
+        </RelativeLayout>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -143,4 +132,5 @@
 
 
     </RelativeLayout>
+
 </android.support.v4.widget.DrawerLayout>

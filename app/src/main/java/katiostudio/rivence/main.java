@@ -17,7 +17,7 @@ import android.widget.TextView;
  */
 public class main extends Activity {
 
-
+    public static int Fragcontainer = R.id.content;
     final main main = this;
 
     protected void onCreate(Bundle savedInstanceState) {

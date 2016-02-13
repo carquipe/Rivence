@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import static katiostudio.rivence.main.*;
+import static katiostudio.rivence.main.Fragcontainer;
 
 /**
  * Created by Kevin on 12/02/2016.
@@ -39,7 +39,7 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
                 Fragment fragment = new config_fragment();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(x, fragment);
+                fragmentTransaction.replace(Fragcontainer, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,
                         android.R.animator.fade_out);
