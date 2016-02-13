@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,33 +16,37 @@ import android.widget.TextView;
 /**
  * Created by Kevin on 22/01/2016.
  */
-public class main extends Activity {
+public class main extends Activity  {
 
-
+    final static public  int x = R.id.content;
     final main main = this;
+    private DrawerLayout drawerLayout;
+    private ImageView DrawerToggle;
+    private TextView titleText;
+    private RelativeLayout drawer;
+    private final  String FONTPATH = "fonts/Ailerons-Typeface.otf";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        final ImageView DrawerToggle = (ImageView) findViewById(R.id.DrawerToggle);
-        final TextView titleText = (TextView) findViewById(R.id.titletext);
-        final DrawerLayout drawerLayout = (DrawerLayout)findViewById(R.id.Background);
-        final RelativeLayout drawer = (RelativeLayout)findViewById(R.id.drawerPane);
+
+        DrawerToggle = (ImageView) findViewById(R.id.DrawerToggle);
+        titleText = (TextView) findViewById(R.id.titletext);
+        drawerLayout = (DrawerLayout) findViewById(R.id.Background);
+        drawer = (RelativeLayout) findViewById(R.id.drawerPane);
 
 
-        // Font path
-        String fontPath = "fonts/Ailerons-Typeface.otf";
-        // text view label
         // Loading Font Face
-        Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
+        Typeface tf = Typeface.createFromAsset(getAssets(), FONTPATH);
         // Applying font
         titleText.setTypeface(tf);
 
-        Fragment fragment = new menu_fragment();
+        //Creamos y mostramos el menu
+        Fragment menuFragment = new menu_fragment();
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.content, fragment)
+                .replace(R.id.content, menuFragment)
                 .commit();
 
 
@@ -52,7 +57,19 @@ public class main extends Activity {
             }
 
         });
-        }
+
+
+
+
 
 
     }
+    public void onBackPressed() {
+        if (this.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            this.drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+}
