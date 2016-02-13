@@ -1,0 +1,197 @@
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+
+        android:id="@+id/content"
+        >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:id="@+id/R1"
+
+            android:layout_marginTop="20dp">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                >
+
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/Menu1"
+                    android:layout_gravity="center"
+                    android:src="@drawable/menu1"
+                    android:background="#00000000"
+                    android:scaleType="fitCenter"
+                    />
+
+            </FrameLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="25dp"
+            android:layout_weight="0"
+
+
+            android:id="@+id/cap1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SERVICES"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+
+                android:textIsSelectable="false"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:id="@+id/R2"
+
+            >
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                >
+
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/Menu2"
+                    android:layout_gravity="center"
+                    android:src="@drawable/menu2"
+                    android:background="#00000000"
+                    android:scaleType="fitCenter"
+                    />
+
+            </FrameLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="25dp"
+            android:layout_weight="0"
+
+
+            android:id="@+id/cap2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROFILE"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+
+                android:textIsSelectable="false"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:id="@+id/R3"
+
+            >
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                >
+
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/Menu3"
+                    android:layout_gravity="center"
+                    android:src="@drawable/menu3"
+                    android:background="#00000000"
+                    android:scaleType="fitCenter"
+                    />
+
+            </FrameLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="25dp"
+            android:layout_weight="0"
+
+
+            android:id="@+id/cap3">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEAR YOU"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+
+                android:textIsSelectable="false"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:id="@+id/R4"
+
+            >
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                >
+
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/Menu4"
+                    android:layout_gravity="center"
+                    android:src="@drawable/menu4"
+                    android:background="#00000000"
+                    android:scaleType="fitCenter"
+                    />
+
+            </FrameLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="25dp"
+            android:layout_weight="0"
+
+
+            android:id="@+id/cap4">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONFIG"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+
+                android:textIsSelectable="false"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>

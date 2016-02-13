@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="385dp"
+        android:layout_height="31dp"
+        android:background="#ac444444"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123456"
+            android:textStyle="bold"
+            android:textColor="#24a4c4"
+            android:id="@+id/textView2"
+            android:textIsSelectable="false"
+            android:layout_marginLeft="37dp"
+            android:layout_marginStart="37dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_toEndOf="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Private key:"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:id="@+id/textView"
+            android:layout_weight="0.5"
+            android:textAlignment="viewEnd"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="106dp"
+            android:layout_marginStart="106dp"
+            android:layout_alignTop="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Associated City"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:id="@+id/textView3"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valencia"
+            android:textColor="#d1d1d1"
+            android:id="@+id/textView4"
+            android:layout_alignTop="@+id/textView3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="71dp"
+            android:layout_marginEnd="71dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expiration Date"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:id="@+id/textView5"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16/7/15"
+            android:textColor="#d1d1d1"
+            android:id="@+id/textView6"
+            android:layout_alignTop="@+id/textView3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="71dp"
+            android:layout_marginEnd="71dp"
+            android:layout_alignBottom="@+id/textView5" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@drawable/login_text_border">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Language"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:id="@+id/textView7"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp" />
+
+        <Spinner
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="60dp"
+            android:layout_marginEnd="60dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_centerHorizontal="true" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Money Currency"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:id="@+id/textView9"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp" />
+
+        <Spinner
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner2"
+            android:layout_marginRight="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@drawable/login_text_border" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notifications"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:id="@+id/textView11"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp" />
+
+        <ToggleButton
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/toggle_selector"
+            android:id="@+id/switch1"
+            android:layout_marginRight="78dp"
+            android:layout_marginEnd="78dp"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/textView11" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sound"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:id="@+id/textView13"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp"
+            />
+
+        <ToggleButton
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/toggle_selector"
+            android:id="@+id/switch2"
+            android:layout_marginRight="76dp"
+            android:layout_marginEnd="76dp"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/textView13" />
+
+    </RelativeLayout>
+
+</LinearLayout>
