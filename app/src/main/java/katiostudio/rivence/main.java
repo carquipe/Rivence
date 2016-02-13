@@ -31,11 +31,12 @@ public class main extends Activity {
         setContentView(R.layout.main);
 
 
+
         DrawerToggle = (ImageView) findViewById(R.id.DrawerToggle);
         titleText = (TextView) findViewById(R.id.titletext);
         drawerLayout = (DrawerLayout)findViewById(R.id.Background);
         drawer = (RelativeLayout)findViewById(R.id.drawerPane);
-
+        drawerLayout.setBackgroundResource(DinamicBackground.getBackOnTime("main"));
 
         // Font path
         String fontPath = "fonts/Ailerons-Typeface.otf";

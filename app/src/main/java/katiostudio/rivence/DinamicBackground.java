@@ -14,15 +14,20 @@ public class DinamicBackground {
     private static Date dateCompareOne;
     private static Date dateCompareTwo;
 
+    static int id;
     public static final String inputFormat = "HH:mm";
     private static String compareStringOne = "08:00";
     private static String compareStringTwo = "20:00";
     static SimpleDateFormat inputParser = new SimpleDateFormat(inputFormat, Locale.US);
 
-    public static int getBackOnTime() {
+    public static int getBackOnTime( String activity) {
 
         Calendar now = Calendar.getInstance();
-        int id= (R.drawable.nightbackground);
+        if (activity == "main"){
+         id = (R.drawable.mainbackgroundn);
+        }else{
+        id= (R.drawable.nightbackground);}
+
         int hour = now.get(Calendar.HOUR_OF_DAY);
         int minute = now.get(Calendar.MINUTE);
 
