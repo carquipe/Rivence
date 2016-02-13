@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:weightSum="1">
 
     <RelativeLayout
         android:layout_width="385dp"
@@ -9,35 +10,29 @@
         android:background="#ac444444"
         >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="123456"
-            android:textStyle="bold"
-            android:textColor="#24a4c4"
-            android:id="@+id/textView2"
-            android:textIsSelectable="false"
-            android:layout_marginLeft="37dp"
-            android:layout_marginStart="37dp"
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/imageView"
+            android:background="@drawable/ic_launcher"
+            android:layout_marginLeft="47dp"
+            android:layout_marginStart="47dp"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/textView"
-            android:layout_toEndOf="@+id/textView" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Private key:"
+            android:text="123456-123456"
             android:textStyle="bold"
-            android:textColor="#ffffff"
-            android:id="@+id/textView"
-            android:layout_weight="0.5"
-            android:textAlignment="viewEnd"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="106dp"
-            android:layout_marginStart="106dp"
-            android:layout_alignTop="@+id/textView2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:textColor="#24a4c4"
+            android:id="@+id/textView2"
+            android:textIsSelectable="false"
+            android:textAlignment="center"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -105,8 +100,42 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_marginTop="7dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Asociated Agent"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:id="@+id/textView15"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kervins"
+            android:textStyle="bold"
+            android:textColor="#FFF"
+            android:id="@+id/textView16"
+            android:layout_alignTop="@+id/textView3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="71dp"
+            android:layout_marginEnd="71dp"
+            android:layout_alignBottom="@+id/textView15" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="4dp"
-        android:background="@drawable/login_text_border">
+        android:background="@drawable/login_text_border"
+        android:layout_marginBottom="2dp">
 
     </RelativeLayout>
 
@@ -211,7 +240,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="31dp" >
+        android:layout_height="31dp"
+        android:layout_marginBottom="2dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -245,36 +275,25 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="31dp"
+    android:layout_width="match_parent"
+    android:layout_height="31dp"
+        android:layout_weight="2.56"
         android:background="#ac444444">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Asociated Agent"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
-            android:id="@+id/textView15"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="52dp"
-            android:layout_marginStart="52dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kervins"
+            android:text="Devices"
             android:textStyle="bold"
             android:textColor="#24a4c4"
-            android:id="@+id/textView16"
-            android:layout_alignTop="@+id/textView3"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="71dp"
-            android:layout_marginEnd="71dp"
-            android:layout_alignBottom="@+id/textView15" />
+            android:id="@+id/textView17"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/devicepane"></RelativeLayout>
 
 </LinearLayout>
