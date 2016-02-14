@@ -37,8 +37,11 @@ public class DinamicBackground {
 
         if (dateCompareOne.before(date) && dateCompareTwo.after(date)) {
 
-            id= (R.drawable.daybackground);
-
+            if (activity == "main") {
+                id = (R.drawable.mainbackground2);
+            }else{
+                id = (R.drawable.daybackground);
+            }
 
         }
 
