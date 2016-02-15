@@ -62,7 +62,9 @@
                 android:layout_alignTop="@+id/DrawerToggle"
                 android:layout_toRightOf="@+id/DrawerToggle"
                 android:layout_toEndOf="@+id/DrawerToggle"
-                android:id="@+id/bottom_bar">
+                android:id="@+id/bottom_bar"
+                android:gravity="center">
+
 
             </LinearLayout>
 

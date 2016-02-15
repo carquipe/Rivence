@@ -30,7 +30,6 @@ public class services_fragment extends Fragment {
         Fragment categories = new category_fragment();
 
         fragmentTransaction.replace(Catcontainer, categories);
-        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,
                 android.R.animator.fade_out);
         fragmentTransaction.commit();
