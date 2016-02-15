@@ -48,22 +48,36 @@
 </LinearLayout>
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:layout_alignParentBottom="true">
 
 
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignTop="@+id/DrawerToggle"
+                android:layout_toRightOf="@+id/DrawerToggle"
+                android:layout_toEndOf="@+id/DrawerToggle"
+                android:id="@+id/bottom_bar">
+
+            </LinearLayout>
+
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:id="@+id/DrawerToggle"
-                android:layout_alignParentTop="true"
+                android:layout_alignParentTop="false"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="false"
                 android:background="@drawable/chat_ic"
                 android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp" />
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentBottom="true" />
         </RelativeLayout>
 
 

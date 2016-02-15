@@ -40,7 +40,7 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
         switch (v.getId()) {
 
             case R.id.Menu1:
-                Fragment services = new config_fragment();
+                Fragment services = new services_fragment();
 
                 fragmentTransaction.replace(Fragcontainer, services);
                 fragmentTransaction.addToBackStack(null);

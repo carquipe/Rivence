@@ -42,14 +42,6 @@
 
 
         </activity>
-        <activity
-            android:name=".services"
-            android:label="@string/title_activity_services"
-            android:parentActivityName=".main" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="katiostudio.rivence.main" />
-        </activity>
     </application>
 
 </manifest>
