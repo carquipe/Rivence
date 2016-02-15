@@ -4,7 +4,7 @@
 
 
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/mainbackground2"
+    android:background="@drawable/mainbackgroundday"
     android:id="@+id/Background">
     <RelativeLayout
         android:layout_width="match_parent"

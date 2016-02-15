@@ -24,9 +24,9 @@ public class DinamicBackground {
 
         Calendar now = Calendar.getInstance();
         if (activity == "main"){
-         id = (R.drawable.mainbackgroundn);
+         id = (R.drawable.mainbackgroundnight);
         }else{
-        id= (R.drawable.nightbackground);}
+        id= (R.drawable.splashbackgroundnight);}
 
         int hour = now.get(Calendar.HOUR_OF_DAY);
         int minute = now.get(Calendar.MINUTE);
@@ -38,9 +38,9 @@ public class DinamicBackground {
         if (dateCompareOne.before(date) && dateCompareTwo.after(date)) {
 
             if (activity == "main") {
-                id = (R.drawable.mainbackground2);
+                id = (R.drawable.mainbackgroundday);
             }else{
-                id = (R.drawable.daybackground);
+                id = (R.drawable.splashbackgroundday);
             }
 
         }
