@@ -9,19 +9,18 @@ import android.view.ViewGroup;
 /**
  * Created by Kevin on 15/02/2016.
  */
-public class category_fragment extends Fragment {
+public class item_service_fragment extends Fragment {
 
-    public category_fragment() {
+    public  item_service_fragment() {
         // Empty constructor required for fragment subclasses
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.category_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.item_service, container, false);
 
         return rootView;
     }
 
 }
-

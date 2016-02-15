@@ -2,7 +2,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
 
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@drawable/mainbackgroundday"
     android:id="@+id/Background">
@@ -62,7 +61,10 @@
                 android:layout_alignTop="@+id/DrawerToggle"
                 android:layout_toRightOf="@+id/DrawerToggle"
                 android:layout_toEndOf="@+id/DrawerToggle"
-                android:id="@+id/bottom_bar">
+                android:id="@+id/bottom_bar"
+                android:gravity="center"
+               >
+
 
             </LinearLayout>
 

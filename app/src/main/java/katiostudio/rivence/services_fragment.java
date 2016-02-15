@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
  */
 public class services_fragment extends Fragment {
     public static int Catcontainer= R.id.bottom_bar;
+    public static int Servicescontainer= R.id.ServicesPane;
     public services_fragment() {
         // Empty constructor required for fragment subclasses
     }
@@ -28,9 +29,12 @@ public class services_fragment extends Fragment {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment categories = new category_fragment();
+        Fragment items =  new item_service_fragment();
 
+
+        fragmentTransaction.replace(Servicescontainer, items);
         fragmentTransaction.replace(Catcontainer, categories);
-        fragmentTransaction.addToBackStack(null);
+
         fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,
                 android.R.animator.fade_out);
         fragmentTransaction.commit();
