@@ -18,7 +18,7 @@ public class item_service_fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.item_service, container, false);
+        View rootView = inflater.inflate(R.layout.item_service2, container, false);
 
         return rootView;
     }
