@@ -57,7 +57,7 @@ public class main extends Activity {
         fragmentTransaction.add(R.id.content,menuFrag);
         fragmentTransaction.add(R.id.drawerPane, chatFrag);
 
-        fragmentTransaction.addToBackStack(null);
+
         fragmentTransaction.commit();
         drawerLayout.setDrawerListener(myDrawerListener);
         DrawerToggle.setOnClickListener(new View.OnClickListener() {

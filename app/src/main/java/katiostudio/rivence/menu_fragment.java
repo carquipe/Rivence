@@ -41,10 +41,13 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
             case R.id.Menu1:
                 Fragment services = new services_fragment();
                 Fragment categories = new category_fragment();
+                fragmentTransaction.setCustomAnimations(R.anim.fade_in,0,0,
+                        R.anim.fade_out);
                 fragmentTransaction.replace(Fragcontainer, services);
+                fragmentTransaction.setCustomAnimations(R.anim.enter_from_right,0,0,
+                        R.anim.exit_to_right);
                 fragmentTransaction.add(Catcontainer, categories);
-                fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,
-                        android.R.animator.fade_out);
+
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 

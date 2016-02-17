@@ -33,7 +33,7 @@ public class services_fragment extends Fragment {
 
         fragmentTransaction.replace(Servicescontainer, items);
 
-       
+
         fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,
                 android.R.animator.fade_out);
         fragmentTransaction.commit();
