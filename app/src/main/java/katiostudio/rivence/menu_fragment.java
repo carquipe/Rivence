@@ -57,10 +57,11 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
                 Fragment config = new config_fragment();
 
                 fragmentTransaction = main.fragmentManager.beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.fade_in,0,0,
+                        R.anim.fade_out);
                 fragmentTransaction.replace(Fragcontainer, config);
                 fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,
-                        android.R.animator.fade_out);
+
                 fragmentTransaction.commit();
 
                 break;
