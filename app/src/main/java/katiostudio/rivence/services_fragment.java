@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 /**
  * Created by Kevin on 13/02/2016.
@@ -23,7 +23,7 @@ public class services_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.services_fragment, container, false);
-        LinearLayout ServicesPane = (LinearLayout) rootView.findViewById(R.id.ServicesPane);
+        ScrollView ServicesPane = (ScrollView) rootView.findViewById(R.id.ServicesPane);
 
 
         FragmentManager fragmentManager = getFragmentManager();
@@ -39,23 +39,14 @@ public class services_fragment extends Fragment {
                 android.R.animator.fade_out);
         fragmentTransaction.commit();
 
-        Populate(ServicesPane);
+
 
         return rootView;
     }
 
 
-    private void Populate(LinearLayout Layout){
-
-        for (int i =0; i<4;i++){
-            
-
-
-        }
-
 
 
 
     }
 
-}
