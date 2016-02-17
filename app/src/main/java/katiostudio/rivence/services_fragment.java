@@ -1,7 +1,6 @@
 package katiostudio.rivence;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +12,7 @@ import android.widget.ScrollView;
  * Created by Kevin on 13/02/2016.
  */
 public class services_fragment extends Fragment {
-    public static int Catcontainer= R.id.bottom_bar;
+
     public static int Servicescontainer= R.id.ServicesPane;
     public services_fragment() {
         // Empty constructor required for fragment subclasses
@@ -26,15 +25,15 @@ public class services_fragment extends Fragment {
         ScrollView ServicesPane = (ScrollView) rootView.findViewById(R.id.ServicesPane);
 
 
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment categories = new category_fragment();
+
+        FragmentTransaction fragmentTransaction = main.fragmentManager.beginTransaction();
+
         Fragment items =  new item_service_fragment();
 
 
         fragmentTransaction.replace(Servicescontainer, items);
-        fragmentTransaction.replace(Catcontainer, categories);
 
+       
         fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,
                 android.R.animator.fade_out);
         fragmentTransaction.commit();

@@ -3,6 +3,7 @@ package katiostudio.rivence;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
@@ -17,8 +18,9 @@ import android.widget.TextView;
  * Created by Kevin on 22/01/2016.
  */
 public class main extends Activity {
-
+    boolean closed = true;
     public static int Fragcontainer = R.id.content;
+    public static FragmentManager fragmentManager;
     final main main = this;
 
     private RelativeLayout drawer ;
@@ -46,22 +48,23 @@ public class main extends Activity {
         // Applying font
         titleText.setTypeface(tf);
 
+
+        fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment menuFrag = new menu_fragment();
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.content, menuFrag)
-                .commit();
         Fragment chatFrag = new chat_fragment();
-        fragmentManager.beginTransaction()
-                .replace(R.id.drawerPane, chatFrag)
-                .commit();
 
+        fragmentTransaction.add(R.id.content,menuFrag);
+        fragmentTransaction.add(R.id.drawerPane, chatFrag);
 
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+        drawerLayout.setDrawerListener(myDrawerListener);
         DrawerToggle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 drawerLayout.openDrawer(drawer);
-                DrawerToggle.setVisibility(View.INVISIBLE);
+
             }
 
         });
@@ -75,4 +78,40 @@ public class main extends Activity {
             super.onBackPressed();
         }
     }
-    }
+    DrawerLayout.DrawerListener myDrawerListener = new DrawerLayout.DrawerListener(){
+
+        @Override
+        public void onDrawerClosed(View drawerView) {
+
+        }
+
+        @Override
+        public void onDrawerOpened(View drawerView) {
+
+        }
+
+        @Override
+        public void onDrawerSlide(View drawerView, float slideOffset) {
+            
+        }
+
+        @Override
+        public void onDrawerStateChanged(int newState) {
+
+
+            if (newState == DrawerLayout.STATE_SETTLING) {
+                if (closed) {
+                    DrawerToggle.setVisibility(View.INVISIBLE);
+                    closed = false;
+
+                }else{
+                    DrawerToggle.setVisibility(View.VISIBLE);
+                    closed = true;
+                }
+            }
+
+
+        }};
+
+}
+

@@ -33,7 +33,7 @@ public class chat_fragment extends Fragment implements View.OnClickListener{
         switch (v.getId()) {
             case R.id.closebtn:
                 main.drawerLayout.closeDrawer(GravityCompat.START);
-                main.DrawerToggle.setVisibility(View.VISIBLE);
+
 
                 break;
 

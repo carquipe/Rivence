@@ -1,7 +1,6 @@
 package katiostudio.rivence;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +12,7 @@ import android.widget.ImageButton;
  * Created by Kevin on 12/02/2016.
  */
 public class menu_fragment extends Fragment implements View.OnClickListener  {
-
+    public static int Catcontainer= R.id.bottom_bar;
     public static int Fragcontainer = R.id.content;
 
     public menu_fragment() {
@@ -34,26 +33,27 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
 
     @Override
     public void onClick(View v) {
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        FragmentTransaction fragmentTransaction = main.fragmentManager.beginTransaction();
 
         switch (v.getId()) {
 
             case R.id.Menu1:
                 Fragment services = new services_fragment();
-
+                Fragment categories = new category_fragment();
                 fragmentTransaction.replace(Fragcontainer, services);
-                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.add(Catcontainer, categories);
                 fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,
                         android.R.animator.fade_out);
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
                 break;
 
             case R.id.Menu4:
                 Fragment config = new config_fragment();
-                fragmentManager = getFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
+
+                fragmentTransaction = main.fragmentManager.beginTransaction();
                 fragmentTransaction.replace(Fragcontainer, config);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,

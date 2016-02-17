@@ -16,7 +16,7 @@ import java.util.InputMismatchException;
  * A drawable that draws the target view as blurred using fast blur
  * <p/>
  * <p/>
- * 
+ *
  * Created by 10uR on 24.5.2014.
  */
 public class BlurDrawable extends Drawable {
