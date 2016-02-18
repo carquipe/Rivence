@@ -17,7 +17,7 @@ public class DinamicBackground {
     static int id;
     public static final String inputFormat = "HH:mm";
     private static String compareStringOne = "08:00";
-    private static String compareStringTwo = "19:00";
+    private static String compareStringTwo = "20:00";
     static SimpleDateFormat inputParser = new SimpleDateFormat(inputFormat, Locale.US);
 
     public static int getBackOnTime( String activity) {
