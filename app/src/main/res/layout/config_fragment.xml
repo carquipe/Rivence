@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Valencia"
-            android:textColor="#848b8a"
+            android:textColor="#42046b"
             android:id="@+id/textView4"
             android:layout_alignTop="@+id/textView3"
             android:layout_alignParentRight="true"
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="16/7/15"
-            android:textColor="#848b8a"
+            android:textColor="#42046b"
             android:id="@+id/textView6"
             android:layout_alignTop="@+id/textView3"
             android:layout_alignParentRight="true"
@@ -123,7 +123,7 @@
             android:layout_height="wrap_content"
             android:text="Kervins"
             android:textStyle="bold"
-            android:textColor="#848b8a"
+            android:textColor="#42046b"
             android:id="@+id/textView16"
             android:layout_alignTop="@+id/textView3"
             android:layout_alignParentRight="true"
@@ -139,6 +139,11 @@
         android:background="#ac444444">
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#75FFFFFF" />
 
     <RelativeLayout
         android:layout_width="match_parent"

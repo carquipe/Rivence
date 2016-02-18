@@ -45,7 +45,7 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
                         R.anim.fade_out);
                 fragmentTransaction.replace(Fragcontainer, services);
                 fragmentTransaction.setCustomAnimations(R.anim.enter_from_right,0,0,
-                        R.anim.exit_to_right);
+                        0);
                 fragmentTransaction.add(Catcontainer, categories);
 
                 fragmentTransaction.addToBackStack(null);
