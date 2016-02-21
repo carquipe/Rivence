@@ -5,6 +5,11 @@
     android:weightSum="1">
 
     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#00ffffff" />
+
+    <RelativeLayout
         android:layout_width="385dp"
         android:layout_height="31dp"
         android:background="#ac444444"
@@ -26,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="123456-123456"
             android:textStyle="bold"
-            android:textColor="#24a4c4"
+            android:textColor="#2fcdf4"
             android:id="@+id/textView2"
             android:textIsSelectable="false"
             android:textAlignment="center"
@@ -37,15 +42,20 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#75FFFFFF" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="31dp"
-        android:background="#75FFFFFF">
+        android:background="#ac444444">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Associated City"
             android:textStyle="bold"
-            android:textColor="#04576b"
+            android:textColor="#ffffff"
             android:id="@+id/textView3"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -57,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Valencia"
-            android:textColor="#42046b"
+            android:textColor="#2fcdf4"
             android:id="@+id/textView4"
             android:layout_alignTop="@+id/textView3"
             android:layout_alignParentRight="true"
@@ -70,14 +80,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="31dp"
-        android:background="#75FFFFFF">
+        android:background="#ac444444">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Expiration Date"
             android:textStyle="bold"
-            android:textColor="#04576b"
+            android:textColor="#ffffff"
             android:id="@+id/textView5"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -89,7 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="16/7/15"
-            android:textColor="#42046b"
+            android:textColor="#2fcdf4"
             android:id="@+id/textView6"
             android:layout_alignTop="@+id/textView3"
             android:layout_alignParentRight="true"
@@ -103,14 +113,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="31dp"
-        android:background="#75FFFFFF">
+        android:background="#ac444444">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Asociated Agent"
             android:textStyle="bold"
-            android:textColor="#04576b"
+            android:textColor="#ffffff"
             android:id="@+id/textView15"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -121,9 +131,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kervins"
+            android:text="Carlos Quinzá"
             android:textStyle="bold"
-            android:textColor="#42046b"
+            android:textColor="#2fcdf4"
             android:id="@+id/textView16"
             android:layout_alignTop="@+id/textView3"
             android:layout_alignParentRight="true"
@@ -136,27 +146,27 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="4dp"
-        android:background="#ac444444">
+        android:background="#75FFFFFF">
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="4dp"
-        android:background="#75FFFFFF" />
+        android:background="#ac444444" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="31dp"
         android:layout_centerHorizontal="true"
-        android:background="#75FFFFFF">
+        android:background="#ac444444">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Language"
             android:textStyle="bold"
-            android:textColor="#04576b"
+            android:textColor="#ffffff"
             android:id="@+id/textView7"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -180,14 +190,14 @@
         android:layout_width="match_parent"
         android:layout_height="31dp"
         android:layout_centerHorizontal="true"
-        android:background="#75FFFFFF">
+        android:background="#ac444444">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Money Currency"
             android:textStyle="bold"
-            android:textColor="#04576b"
+            android:textColor="#ffffff"
             android:id="@+id/textView9"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -210,19 +220,19 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="4dp"
-        android:background="#ac444444" />
+        android:background="#75FFFFFF" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="31dp"
-        android:background="#75FFFFFF">
+        android:background="#ac444444">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Notifications"
             android:textStyle="bold"
-            android:textColor="#04576b"
+            android:textColor="#ffffff"
             android:id="@+id/textView11"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -250,14 +260,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="31dp"
-        android:background="#75FFFFFF">
+        android:background="#ac444444">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sound"
             android:textStyle="bold"
-            android:textColor="#04576b"
+            android:textColor="#ffffff"
             android:id="@+id/textView13"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -286,12 +296,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="4dp"
-        android:background="#75FFFFFF" />
+        android:background="#ac444444" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/devicepane"></RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#75FFFFFF" />
 
     <RelativeLayout
     android:layout_width="match_parent"
@@ -304,7 +319,7 @@
             android:layout_height="wrap_content"
             android:text="Devices"
             android:textStyle="bold"
-            android:textColor="#24a4c4"
+            android:textColor="#2fcdf4"
             android:id="@+id/textView17"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
