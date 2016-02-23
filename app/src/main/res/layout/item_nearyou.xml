@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:weightSum="1"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/service_item_border"
+    android:id="@+id/BlurBack">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:id="@+id/imageView3"
+            android:background="@drawable/nearyousixt"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mascletá en Pza. Ayuntamiento Valencia"
+            android:textStyle="bold"
+            android:id="@+id/textView23"
+            android:layout_gravity="left|top"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"
+            android:password="false"
+            android:background="#65000000"
+            android:paddingRight="3dp" />
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imageButton"
+            android:background="@drawable/moreinfo_ic"
+            android:layout_gravity="right|bottom"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hoy a las 13:00"
+            android:textStyle="bold"
+            android:id="@+id/textView25"
+            android:layout_gravity="left|bottom"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:paddingLeft="10dp"
+            android:password="false"
+            android:background="#65000000"
+            android:paddingRight="3dp"
+            android:layout_marginBottom="5dp" />
+
+    </FrameLayout>
+
+</LinearLayout>

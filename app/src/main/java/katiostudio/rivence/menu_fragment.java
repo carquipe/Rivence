@@ -24,9 +24,11 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.menu_fragment, container, false);
         final ImageButton menu4 = (ImageButton) rootView.findViewById(R.id.Menu4);
+        final ImageButton menu3 = (ImageButton) rootView.findViewById(R.id.Menu3);
         final ImageButton menu1 = (ImageButton) rootView.findViewById(R.id.Menu1);
 
         menu4.setOnClickListener(this);
+        menu3.setOnClickListener(this);
         menu1.setOnClickListener(this);
         return rootView;
     }
@@ -49,6 +51,19 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
                 fragmentTransaction.add(Catcontainer, categories);
 
                 fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+                break;
+
+            case R.id.Menu3:
+                Fragment nearyou = new nearyou_fragment();
+
+                fragmentTransaction = main.fragmentManager.beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0,
+                        R.anim.fade_out);
+                fragmentTransaction.replace(Fragcontainer, nearyou);
+                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
 
                 break;
