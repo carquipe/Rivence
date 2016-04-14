@@ -11,31 +11,31 @@ import android.widget.ScrollView;
 /**
  * Created by Kevin on 13/02/2016.
  */
-public class services_fragment extends Fragment {
+public class paylog_fragment extends Fragment {
 
-    public static int Servicescontainer= R.id.ServicesPane;
-    public services_fragment() {
+    public static int paylog_container= R.id.Paylog_Pane;
+    public paylog_fragment() {
         // Empty constructor required for fragment subclasses
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.services_fragment, container, false);
-        ScrollView ServicesPane = (ScrollView) rootView.findViewById(R.id.ServicesPane);
+        View rootView = inflater.inflate(R.layout.paylog_fragment, container, false);
+        ScrollView Paylog_Pane = (ScrollView) rootView.findViewById(R.id.Paylog_Pane);
 
 
 
         FragmentTransaction fragmentTransaction = main.fragmentManager.beginTransaction();
 
-        Fragment items =  new item_service_fragment();
+        Fragment fitems =  new item_paylog_fragment();
 
 
-        fragmentTransaction.replace(Servicescontainer, items);
+        fragmentTransaction.replace(paylog_container, fitems);
 
 
-        /*fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,
-                android.R.animator.fade_out);*/
+/*        fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,
+                android.R.animator.fade_out); */
         fragmentTransaction.commit();
 
 

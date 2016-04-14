@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:weightSum="1"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/service_item_border"
+    android:id="@+id/BlurBack">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="7dp"
+        android:layout_height="match_parent"
+        android:background="#15a305"
+        android:layout_gravity="center"></LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1.00">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hotel las Arenas 5*"
+            android:id="@+id/textView20"
+            android:gravity="center|left"
+            android:textIsSelectable="false"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="#0d9385"
+            android:layout_weight="0.5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="99999€"
+            android:id="@+id/textView21"
+            android:gravity="center"
+            android:textColor="#848b8a"
+            android:textSize="12sp"
+
+            android:layout_weight="0.5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="top|left|center_horizontal"
+        android:gravity="center"
+        android:layout_marginRight="5dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imageView4"
+            android:background="@drawable/back_ic_left"
+            android:layout_alignParentBottom="false"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+    </LinearLayout>
+
+</LinearLayout>
