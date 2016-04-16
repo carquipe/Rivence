@@ -12,7 +12,7 @@
         android:orientation="horizontal"
         android:layout_width="7dp"
         android:layout_height="match_parent"
-        android:background="#15a305"
+        android:background="#138107"
         android:layout_gravity="center"></LinearLayout>
 
     <LinearLayout
@@ -32,7 +32,7 @@
             android:layout_marginLeft="10dp"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:textColor="#0d9385"
+            android:textColor="#f1f1f1"
             android:layout_weight="0.5" />
 
         <TextView
@@ -41,7 +41,7 @@
             android:text="99999€"
             android:id="@+id/textView21"
             android:gravity="center"
-            android:textColor="#848b8a"
+            android:textColor="#b9baba"
             android:textSize="12sp"
 
             android:layout_weight="0.5" />

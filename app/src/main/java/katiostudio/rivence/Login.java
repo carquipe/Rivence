@@ -56,8 +56,11 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-                ProcessLogin();
+                /*Sin Checkeo de password*/
+                Intent intent = new Intent(Login.this,main.class);
+                startActivity(intent);
+               /*Con Checkeo de password*/
+               //ProcessLogin();
             }
 
         });

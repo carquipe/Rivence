@@ -6,9 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Kevin on 15/02/2016.
- */
+
 public class category_fragment extends Fragment {
 
     public category_fragment() {
