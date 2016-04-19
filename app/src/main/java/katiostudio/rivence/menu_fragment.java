@@ -8,9 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-/**
- * Created by Kevin on 12/02/2016.
- */
+
 public class menu_fragment extends Fragment implements View.OnClickListener  {
     public static int Catcontainer= R.id.bottom_bar;
     public static int Fragcontainer = R.id.content;

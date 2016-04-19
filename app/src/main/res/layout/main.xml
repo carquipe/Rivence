@@ -58,9 +58,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_alignTop="@+id/DrawerToggle"
-                android:layout_toRightOf="@+id/DrawerToggle"
-                android:layout_toEndOf="@+id/DrawerToggle"
+                android:layout_alignTop="@+id/chaticon"
+                android:layout_toRightOf="@+id/chaticon"
+                android:layout_toEndOf="@+id/chaticon"
                 android:id="@+id/bottom_bar"
                 android:gravity="center"
                >
@@ -71,7 +71,7 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:id="@+id/DrawerToggle"
+                android:id="@+id/chaticon"
                 android:layout_alignParentTop="false"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="false"

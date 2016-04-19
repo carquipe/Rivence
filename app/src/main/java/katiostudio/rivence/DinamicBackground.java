@@ -16,33 +16,41 @@ public class DinamicBackground {
 
     static int id;
     public static final String inputFormat = "HH:mm";
-    private static String compareStringOne = "08:00";
-    private static String compareStringTwo = "20:00";
-    static SimpleDateFormat inputParser = new SimpleDateFormat(inputFormat, Locale.US);
+    private static String compareStringMorning = "08:00";  //Hora de cambio background noche a dia
+    private static String compareStringNight = "20:00";    //Hora de cambio backgorund dia a noche
+    static SimpleDateFormat inputParser = new SimpleDateFormat(inputFormat, Locale.US); //Formato de fecha recibida
 
     public static int getBackOnTime( String activity) {
 
-        Calendar now = Calendar.getInstance();
-        if (activity == "main"){
-         id = (R.drawable.mainbackgroundnight);
-        }else{
-        id= (R.drawable.splashbackgroundnight);}
 
+        //Obtener hora y minutos actuales
+        Calendar now = Calendar.getInstance();
         int hour = now.get(Calendar.HOUR_OF_DAY);
         int minute = now.get(Calendar.MINUTE);
 
+        //Rellenado de variables de tipo Date
         date = parseDate(hour + ":" + minute);
-        dateCompareOne = parseDate(compareStringOne);
-        dateCompareTwo = parseDate(compareStringTwo);
+        dateCompareOne = parseDate(compareStringMorning);
+        dateCompareTwo = parseDate(compareStringNight);
 
-        if (dateCompareOne.before(date) && dateCompareTwo.after(date)) {
 
-            if (activity == "main") {
+
+        if (dateCompareOne.before(date) && dateCompareTwo.after(date)) {   //Es de dia
+            // Seleccion de background utilizado segun la actividad usandose
+            if (activity == "main") { // En el menu y sus hijos
                 id = (R.drawable.mainbackgroundday);
-            }else{
+
+            }else{                    // En la pantalla de carga y login
                 id = (R.drawable.splashbackgroundday);
             }
 
+        } else {                                                          //Es de noche
+            // Seleccion de background utilizado segun la actividad usandose
+            if (activity == "main"){ // En el menu y sus hijos
+                id = (R.drawable.mainbackgroundnight);
+
+            }else{                   // En la pantalla de carga y login
+                id= (R.drawable.splashbackgroundnight);}
         }
 
         return id;

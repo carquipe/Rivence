@@ -15,7 +15,7 @@ public class nearyou_fragment extends Fragment {
 
     public static int Nearyou_container= R.id.Nearyou_Pane;
     public nearyou_fragment() {
-        // Empty constructor required for fragment subclasses
+        // Constructor vacio para los fragmentos subclases
     }
 
     @Override

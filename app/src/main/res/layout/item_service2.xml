@@ -50,7 +50,7 @@
             android:id="@+id/textView21"
             android:gravity="center|left"
             android:layout_marginLeft="10dp"
-            android:textColor="#848b8a"
+            android:textColor="#eeeeee"
             android:textSize="12sp" />
 
         <TextView
@@ -60,7 +60,7 @@
             android:id="@+id/textView22"
             android:gravity="center|left"
             android:layout_marginLeft="10dp"
-            android:textColor="#848b8a"
+            android:textColor="#eeeeee"
             android:textSize="12sp" />
     </LinearLayout>
 
