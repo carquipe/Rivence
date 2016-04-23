@@ -18,18 +18,19 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.menu_fragment, container, false);
-        final ImageButton menu4 = (ImageButton) rootView.findViewById(R.id.Menu4);
-        final ImageButton menu3 = (ImageButton) rootView.findViewById(R.id.Menu3);
+
         final ImageButton menu1 = (ImageButton) rootView.findViewById(R.id.Menu1);
         final ImageButton menu2 = (ImageButton) rootView.findViewById(R.id.Menu2);
+        final ImageButton menu3 = (ImageButton) rootView.findViewById(R.id.Menu3);
+        final ImageButton menu4 = (ImageButton) rootView.findViewById(R.id.Menu4);
 
-        menu4.setOnClickListener(this);
-        menu3.setOnClickListener(this);
         menu1.setOnClickListener(this);
         menu2.setOnClickListener(this);
+        menu3.setOnClickListener(this);
+        menu4.setOnClickListener(this);
+
         return rootView;
     }
 
@@ -43,40 +44,38 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
             case R.id.Menu1:
                 Fragment services = new services_fragment();
                 Fragment categories = new category_fragment();
-                fragmentTransaction.setCustomAnimations(R.anim.fade_in,0,0,
-                        R.anim.fade_out);
+
+                fragmentTransaction.setCustomAnimations(R.anim.fade_in,0,0, R.anim.fade_out);
                 fragmentTransaction.replace(Fragcontainer, services);
-                fragmentTransaction.setCustomAnimations(R.anim.enter_from_right,0,0,
-                        0);
+                fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, 0, 0, 0);
                 fragmentTransaction.add(Catcontainer, categories);
 
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
                 break;
+
             case R.id.Menu2:
-            Fragment paylog = new paylog_fragment();
+                Fragment paylog = new paylog_fragment();
 
-            fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0,
-                    R.anim.fade_out);
-            fragmentTransaction.replace(Fragcontainer, paylog);
-            fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, 0, 0,
-                    0);
+                fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0, R.anim.fade_out);
+                fragmentTransaction.replace(Fragcontainer, paylog);
+                fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, 0, 0, 0);
 
 
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
 
-            break;
+                break;
+
             case R.id.Menu3:
                 Fragment nearyou = new nearyou_fragment();
 
                 fragmentTransaction = main.fragmentManager.beginTransaction();
-                fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0,
-                        R.anim.fade_out);
+                fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0, R.anim.fade_out);
                 fragmentTransaction.replace(Fragcontainer, nearyou);
-                fragmentTransaction.addToBackStack(null);
 
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
                 break;
@@ -85,11 +84,10 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
                 Fragment config = new config_fragment();
 
                 fragmentTransaction = main.fragmentManager.beginTransaction();
-                fragmentTransaction.setCustomAnimations(R.anim.fade_in,0,0,
-                        R.anim.fade_out);
+                fragmentTransaction.setCustomAnimations(R.anim.fade_in,0,0, R.anim.fade_out);
                 fragmentTransaction.replace(Fragcontainer, config);
-                fragmentTransaction.addToBackStack(null);
 
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
                 break;

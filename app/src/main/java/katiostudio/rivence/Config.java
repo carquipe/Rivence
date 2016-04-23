@@ -6,10 +6,10 @@ package katiostudio.rivence;
 public class Config {
 
 
-        //URL to our login.php file
+        //URL a login.php
         public static final String LOGIN_URL = "http://www.katiopruebas.com/Rivence/App/";
 
-        //Keys for email and password as defined in our $_POST['key'] in login.php
+        //Contraseñas definidas para email y usuario en $_POST['key'] dentro de login.php
         public static final String KEY_PASS = "key";
         public static final String KEY_TAG = "tag";
 

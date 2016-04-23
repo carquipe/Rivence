@@ -18,8 +18,7 @@ public class chat_fragment extends Fragment implements View.OnClickListener{
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.chat_fragment, container, false);
         final ImageView closeBtn = (ImageView) rootView.findViewById(R.id.closebtn);
 
@@ -28,7 +27,6 @@ public class chat_fragment extends Fragment implements View.OnClickListener{
     }
     @Override
     public void onClick(View v) {
-
 
         switch (v.getId()) {
             case R.id.closebtn:

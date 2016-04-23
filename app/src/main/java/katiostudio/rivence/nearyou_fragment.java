@@ -19,26 +19,17 @@ public class nearyou_fragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.nearyou_fragment, container, false);
         ScrollView Nearyou_Pane = (ScrollView) rootView.findViewById(R.id.Nearyou_Pane);
 
 
-
         FragmentTransaction fragmentTransaction = main.fragmentManager.beginTransaction();
-
         Fragment fitems =  new item_nearyou_fragment();
-
-
         fragmentTransaction.replace(Nearyou_container, fitems);
+/*        fragmentTransaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out); */
 
-
-/*        fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,
-                android.R.animator.fade_out); */
         fragmentTransaction.commit();
-
-
 
         return rootView;
     }

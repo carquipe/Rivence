@@ -19,21 +19,16 @@ public class paylog_fragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.paylog_fragment, container, false);
         ScrollView Paylog_Pane = (ScrollView) rootView.findViewById(R.id.Paylog_Pane);
 
 
-
         FragmentTransaction fragmentTransaction = main.fragmentManager.beginTransaction();
-
         Fragment fitems =  new item_paylog_fragment();
 
 
         fragmentTransaction.replace(paylog_container, fitems);
-
-
 /*        fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,
                 android.R.animator.fade_out); */
         fragmentTransaction.commit();

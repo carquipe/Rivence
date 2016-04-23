@@ -29,8 +29,10 @@ public class SplashScreenActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
+
         final RelativeLayout background = (RelativeLayout) findViewById(R.id.background);
         background.setBackgroundResource(DinamicBackground.getBackOnTime("splash"));
+        
         CircularProgressView progressView = (CircularProgressView) findViewById(R.id.progress_view);
         progressView.startAnimation();
 

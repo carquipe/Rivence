@@ -19,23 +19,18 @@ public class services_fragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.services_fragment, container, false);
         ScrollView ServicesPane = (ScrollView) rootView.findViewById(R.id.ServicesPane);
 
 
 
         FragmentTransaction fragmentTransaction = main.fragmentManager.beginTransaction();
-
         Fragment items =  new item_service_fragment();
-
-
         fragmentTransaction.replace(Servicescontainer, items);
-
-
         /*fragmentTransaction.setCustomAnimations(android.R.animator.fade_in,
                 android.R.animator.fade_out);*/
+
         fragmentTransaction.commit();
 
 
