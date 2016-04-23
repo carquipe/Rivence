@@ -26,7 +26,13 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile project(':volley')
+
+    //Dependencia progress circle
     compile 'com.github.rahatarmanahmed:circularprogressview:2.4.0'
+
+    //Dependencias Card view & Reclycerview
+    compile 'com.android.support:cardview-v7:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
 
 
 }

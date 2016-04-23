@@ -29,6 +29,7 @@ public class main extends Activity {
     static ImageView chaticon;
 
     protected void onCreate(Bundle savedInstanceState) {
+
         /* Generar estructura interfaz básica de la aplicación procedente del Layout: main.xml */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
@@ -48,8 +49,6 @@ public class main extends Activity {
         /* Insercion de la fuente del titulo */
         String fontPath = "fonts/Ailerons-Typeface.otf";
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
-
-        // Aplicacion de la fuente al TextView  titleText
         titleText.setTypeface(tf);
 
 

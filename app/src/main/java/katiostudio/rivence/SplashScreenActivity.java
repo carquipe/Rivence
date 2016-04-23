@@ -2,10 +2,12 @@ package katiostudio.rivence;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
 
@@ -18,8 +20,8 @@ public class SplashScreenActivity extends Activity {
 
     private final int SPLASH_DISPLAY_LENGTH = 3000;
     private boolean Splashoff = false;
-    private ProgressBar spinner;
     final SplashScreenActivity sPlashScreen = this;
+    private TextView titlesplash;
 
     /**
      * Called when the activity is first created.
@@ -30,8 +32,13 @@ public class SplashScreenActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
 
-        final RelativeLayout background = (RelativeLayout) findViewById(R.id.background);
-        background.setBackgroundResource(DinamicBackground.getBackOnTime("splash"));
+        titlesplash = (TextView) findViewById(R.id.titlesplash);
+        String fontPath = "fonts/myriad_pro.otf";
+        Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
+        titlesplash.setTypeface(tf);
+
+        //final RelativeLayout background = (RelativeLayout) findViewById(R.id.background);
+        //background.setBackgroundResource(DinamicBackground.getBackOnTime("splash"));
         
         CircularProgressView progressView = (CircularProgressView) findViewById(R.id.progress_view);
         progressView.startAnimation();
