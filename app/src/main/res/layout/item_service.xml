@@ -26,18 +26,16 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="match_parent"
+                    android:id="@+id/servicePhoto"
+                    android:layout_width="500dp"
                     android:layout_height="160dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/arena"
                     android:gravity="top" />
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:id="@+id/imageView5"
-                    android:background="@drawable/hotels_ic"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/serviceCategory"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true" />
@@ -49,32 +47,29 @@
                 android:padding="8dp">
 
                 <TextView
-                    android:id="@+id/header_text"
+                    android:id="@+id/service_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hotel las Arenas *****"
                     android:textColor="#0d9385"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/publisher_name"
+                    android:id="@+id/subtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Playa de la Malvarosa"
                     android:textSize="12sp"
-                    android:layout_below="@+id/header_text"
+                    android:layout_below="@+id/service_title"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:textColor="#eeeeee" />
 
                 <TextView
-                    android:id="@+id/comment_number"
+                    android:id="@+id/distance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="30 Km"
                     android:textSize="12sp"
-                    android:layout_below="@+id/publisher_name"
+                    android:layout_below="@+id/subtitle"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:textColor="#eeeeee" />
@@ -84,7 +79,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:textSize="10sp"
-                    android:layout_below="@+id/header_text"
+                    android:layout_below="@+id/service_title"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
                     android:background="@drawable/moreinfo_ic" />
