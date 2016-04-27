@@ -18,10 +18,10 @@ import android.widget.TextView;
  * Created by Kevin on 22/01/2016.
  */
 public class main extends Activity {
+
     boolean closed = true;  //Variable que captura el estado del chat (abierto o cerrado)
     public static int Fragcontainer = R.id.content; //Contenedor principal que se rellena según el menu
     public static FragmentManager fragmentManager;
-    final main main = this;
 
     private RelativeLayout drawer ; //Variable que almacena el Layout del chat
     static DrawerLayout drawerLayout; //Layout general
@@ -69,20 +69,19 @@ public class main extends Activity {
             public void onClick(View v) {
 
                 drawerLayout.openDrawer(drawer);
-
             }
         });
         }
 
-    /* Apertura y cerrado del panel del Chat */
-    @Override
-    public void onBackPressed() {
-        if (this.drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            this.drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
+         /* Apertura y cerrado del panel del Chat */
+         @Override
+        public void onBackPressed() {
+            if (this.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                this.drawerLayout.closeDrawer(GravityCompat.START);
+         } else {
+              super.onBackPressed();
+            }
         }
-    }
     DrawerLayout.DrawerListener myDrawerListener = new DrawerLayout.DrawerListener(){
 
         @Override

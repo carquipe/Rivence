@@ -43,8 +43,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ServicioViewHolder
         servicioViewHolder.serviceTitle.setText(servicios.get(i).title);
         servicioViewHolder.subtitle.setText(servicios.get(i).subtitle);
         servicioViewHolder.distance.setText(servicios.get(i).distance);
-        servicioViewHolder.servicePhoto.setImageResource(servicios.get(i).photoId);
-        servicioViewHolder.category.setImageResource(servicios.get(i).categoryId);
+        servicioViewHolder.servicePhoto.setBackgroundResource(servicios.get(i).photoId);
+        servicioViewHolder.category.setBackgroundResource(servicios.get(i).categoryId);
     }
 
 

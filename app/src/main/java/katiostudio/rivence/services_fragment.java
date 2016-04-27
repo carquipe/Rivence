@@ -1,7 +1,6 @@
 package katiostudio.rivence;
 
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,7 +11,6 @@ import android.content.Context;
 import katiostudio.rivence.Controlador.RVAdapter;
 import katiostudio.rivence.Controlador.Servicio;
 import java.util.List;
-import android.widget.ScrollView;
 
 
 
