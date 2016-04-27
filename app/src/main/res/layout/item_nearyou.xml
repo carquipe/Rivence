@@ -34,7 +34,7 @@
                     android:layout_alignParentEnd="false" />
 
                 <TextView
-                    android:id="@+id/event_title"
+                    android:id="@+id/paylog_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#eeeeee"
@@ -54,15 +54,15 @@
                     android:layout_height="wrap_content"
                     android:textSize="10sp"
                     android:textColor="#eeeeee"
-                    android:layout_alignBottom="@+id/read_more"
-                    android:layout_alignLeft="@+id/event_title"
-                    android:layout_alignStart="@+id/event_title"
+                    android:layout_alignBottom="@+id/read_more_pay"
+                    android:layout_alignLeft="@+id/paylog_title"
+                    android:layout_alignStart="@+id/paylog_title"
                     android:paddingStart="5dp"
                     android:background="#a4464646"
                     android:paddingEnd="5dp" />
 
                 <Button
-                    android:id="@+id/read_more"
+                    android:id="@+id/read_more_pay"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:textSize="10sp"

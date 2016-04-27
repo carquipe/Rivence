@@ -5,7 +5,7 @@
 
 
     <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_view"
+        android:id="@+id/card_view_paylog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -26,64 +26,53 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/servicePhoto"
+                    android:id="@+id/eventPhoto"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:layout_gravity="center"
                     android:gravity="top"
                     android:layout_alignParentEnd="false" />
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:id="@+id/serviceCategory"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp">
-
                 <TextView
-                    android:id="@+id/service_title"
+                    android:id="@+id/paylog_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#0d9385"
+                    android:textColor="#eeeeee"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/subtitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:layout_below="@+id/service_title"
+                    android:textStyle="bold"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="7dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:textColor="#eeeeee" />
+                    android:paddingStart="5dp"
+                    android:background="#a4464646"
+                    android:paddingEnd="5dp" />
 
                 <TextView
-                    android:id="@+id/distance"
+                    android:id="@+id/event_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:layout_below="@+id/subtitle"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:textColor="#eeeeee" />
+                    android:textSize="10sp"
+                    android:textColor="#eeeeee"
+                    android:layout_alignBottom="@+id/read_more_pay"
+                    android:layout_alignLeft="@+id/paylog_title"
+                    android:layout_alignStart="@+id/paylog_title"
+                    android:paddingStart="5dp"
+                    android:background="#a4464646"
+                    android:paddingEnd="5dp" />
 
                 <Button
                     android:id="@+id/read_more_pay"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:textSize="10sp"
-                    android:layout_below="@+id/service_title"
-                    android:layout_alignParentRight="true"
+                    android:background="@drawable/back_ic_left"
+                    android:layout_alignParentBottom="false"
+                    android:layout_alignParentRight="false"
                     android:layout_alignParentEnd="true"
-                    android:background="@drawable/moreinfo_ic" />
+                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="39dp"
+                    android:layout_marginTop="125dp" />
 
             </RelativeLayout>
 

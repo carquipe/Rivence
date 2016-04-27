@@ -1,6 +1,5 @@
 package katiostudio.rivence.Controlador;
 
-import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.CardView;
 import android.widget.Button;
@@ -71,7 +70,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ServicioViewHolder
             subtitle = (TextView)itemView.findViewById(R.id.subtitle);
             distance = (TextView)itemView.findViewById(R.id.distance);
             category = (ImageView) itemView.findViewById(R.id.serviceCategory);
-            more = (Button) itemView.findViewById(R.id.read_more);
+            more = (Button) itemView.findViewById(R.id.read_more_pay);
             servicePhoto = (ImageView)itemView.findViewById(R.id.servicePhoto);
         }
 

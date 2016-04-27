@@ -1,70 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:weightSum="1"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
-    android:background="@drawable/service_item_border"
-    android:id="@+id/BlurBack">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="7dp"
-        android:layout_height="match_parent"
-        android:background="#138107"
-        android:layout_gravity="center"></LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_weight="1.00">
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_paylog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="4dp"
+        card_view:cardBackgroundColor="#bb312f2f"
+        android:layout_marginTop="6dp"
+        android:background="#c14a4a4a">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hotel las Arenas 5*"
-            android:id="@+id/textView20"
-            android:gravity="center|left"
-            android:textIsSelectable="false"
-            android:layout_marginLeft="10dp"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:textColor="#eeeeee"
-            android:layout_weight="0.5" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="99999€"
-            android:id="@+id/textView21"
-            android:gravity="center"
-            android:textColor="#b9baba"
-            android:textSize="12sp"
+            <RelativeLayout
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:background="#933131"></RelativeLayout>
 
-            android:layout_weight="0.5" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/paylog_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#eeeeee"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="Hotel las Arenas"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="top|left|center_horizontal"
-        android:gravity="center"
-        android:layout_marginRight="5dp">
+                <TextView
+                    android:id="@+id/paylog_quant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:textColor="#eeeeee"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="4560 EUR"
+                    android:layout_marginRight="57dp"
+                    android:layout_marginEnd="57dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/read_more_pay"
+                    android:layout_toStartOf="@+id/read_more_pay" />
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:id="@+id/imageView4"
-            android:background="@drawable/back_ic_left"
-            android:layout_alignParentBottom="false"
-            android:layout_centerInParent="true"
-            android:adjustViewBounds="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp" />
-    </LinearLayout>
+                <Button
+                    android:id="@+id/read_more_pay"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:textSize="10sp"
+                    android:background="@drawable/back_ic_left"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
 
-</LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

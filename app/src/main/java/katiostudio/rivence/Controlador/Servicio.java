@@ -24,6 +24,12 @@ public class Servicio {
         categoryId = categoriaId;
     }
 
+    public Servicio (String titulo){
+
+        title = titulo;
+
+    }
+
     public Servicio (){
 
     };

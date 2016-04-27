@@ -59,9 +59,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventoViewHo
         EventoViewHolder (View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.card_view_event);
-            eventTitle = (TextView)itemView.findViewById(R.id.event_title);
+            eventTitle = (TextView)itemView.findViewById(R.id.paylog_title);
             date = (TextView)itemView.findViewById(R.id.event_date);
-            more = (Button) itemView.findViewById(R.id.read_more);
+            more = (Button) itemView.findViewById(R.id.read_more_pay);
             eventPhoto = (ImageView)itemView.findViewById(R.id.eventPhoto);
         }
 
