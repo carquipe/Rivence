@@ -13,7 +13,7 @@
         android:layout_marginRight="8dp"
         card_view:cardCornerRadius="4dp"
         card_view:cardElevation="4dp"
-        card_view:cardBackgroundColor="#bb312f2f"
+        card_view:cardBackgroundColor="@color/dark_background"
         android:layout_marginTop="10dp">
 
         <LinearLayout
@@ -37,7 +37,7 @@
                     android:id="@+id/paylog_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#eeeeee"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_alignParentTop="true"
@@ -45,7 +45,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:paddingStart="5dp"
-                    android:background="#a4464646"
+                    android:background="@color/light_background"
                     android:paddingEnd="5dp" />
 
                 <TextView
@@ -53,12 +53,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="10sp"
-                    android:textColor="#eeeeee"
+                    android:textColor="@color/white"
                     android:layout_alignBottom="@+id/read_more_pay"
                     android:layout_alignLeft="@+id/paylog_title"
                     android:layout_alignStart="@+id/paylog_title"
                     android:paddingStart="5dp"
-                    android:background="#a4464646"
+                    android:background="@color/light_background"
                     android:paddingEnd="5dp" />
 
                 <Button

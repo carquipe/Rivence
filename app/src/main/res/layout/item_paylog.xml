@@ -13,9 +13,8 @@
         android:layout_marginRight="8dp"
         card_view:cardCornerRadius="4dp"
         card_view:cardElevation="4dp"
-        card_view:cardBackgroundColor="#bb312f2f"
-        android:layout_marginTop="6dp"
-        android:background="#c14a4a4a">
+        card_view:cardBackgroundColor="@color/dark_background"
+        android:layout_marginTop="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,8 +23,7 @@
 
             <RelativeLayout
                 android:layout_width="5dp"
-                android:layout_height="match_parent"
-                android:background="#933131"></RelativeLayout>
+                android:layout_height="match_parent"></RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -35,7 +33,7 @@
                     android:id="@+id/paylog_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#eeeeee"
+                    android:textColor="@color/white"
                     android:textSize="13sp"
                     android:textStyle="bold"
                     android:paddingStart="5dp"
@@ -52,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="10sp"
-                    android:textColor="#eeeeee"
+                    android:textColor="@color/white"
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="4560 EUR"

@@ -15,9 +15,9 @@
         android:singleLine="true"
 
         android:background="@drawable/login_text_border"
-        android:textColor="#FFF"
+        android:textColor="@color/white"
         android:hint="Private key"
-        android:textColorHint="#86FFFFFF"
+        android:textColorHint="@color/light_grey"
         android:drawableLeft="@drawable/ic_launcher"
 
 
@@ -43,7 +43,7 @@
         android:layout_alignEnd="@+id/loginkey"
         android:textSize="26dp"
         android:minHeight="45dp"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textAlignment="center"/>
 </RelativeLayout>
 

@@ -27,7 +27,7 @@
             android:text="RIVENCE"
             android:textStyle="bold"
             android:id="@+id/titletext"
-            android:textColor="#ffffff"
+            android:textColor="@color/white"
             android:textSize="40sp"
             android:background="@drawable/main_text_border"
             android:layout_alignParentTop="true"

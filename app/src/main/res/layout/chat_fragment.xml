@@ -47,7 +47,7 @@ android:padding="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Manuel Castillo"
-        android:textColor="#eeeeee"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -58,7 +58,7 @@ android:padding="8dp"
         android:layout_gravity="bottom"
         android:layout_marginTop="4dp"
         android:text="Personal Agent"
-        android:textColor="#eeeeee"
+        android:textColor="@color/white"
         android:textSize="12sp" />
 </LinearLayout>
 </RelativeLayout>
