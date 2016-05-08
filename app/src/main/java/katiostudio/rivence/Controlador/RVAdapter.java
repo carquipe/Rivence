@@ -44,6 +44,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ServicioViewHolder
         servicioViewHolder.distance.setText(servicios.get(i).distance);
         servicioViewHolder.servicePhoto.setBackgroundResource(servicios.get(i).photoId);
         servicioViewHolder.category.setBackgroundResource(servicios.get(i).categoryId);
+        servicioViewHolder.description.setText(servicios.get(i).description);
     }
 
 
@@ -60,6 +61,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ServicioViewHolder
         TextView distance;
         ImageView category;
         Button more;
+        TextView description;
+        Button readless;
 
 
 
@@ -72,6 +75,31 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ServicioViewHolder
             category = (ImageView) itemView.findViewById(R.id.serviceCategory);
             more = (Button) itemView.findViewById(R.id.read_more_pay);
             servicePhoto = (ImageView)itemView.findViewById(R.id.servicePhoto);
+            description = (TextView) itemView.findViewById(R.id.description);
+            readless= (Button) itemView.findViewById(R.id.read_less_pay);
+
+            more.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v){
+
+                    readless.setVisibility(View.VISIBLE);
+                    more.setVisibility(View.INVISIBLE);
+                    description.setVisibility(View.VISIBLE);
+
+
+                }
+            });
+
+
+            readless.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v){
+
+                    readless.setVisibility(View.GONE);
+                    more.setVisibility(View.VISIBLE);
+                    description.setVisibility(View.GONE);
+
+
+                }
+            });
         }
 
     }

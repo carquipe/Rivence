@@ -37,6 +37,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventoViewHo
         eventoViewHolder.eventTitle.setText(eventos.get(i).title);
         eventoViewHolder.date.setText(eventos.get(i).date);
         eventoViewHolder.eventPhoto.setBackgroundResource(eventos.get(i).photoId);
+        eventoViewHolder.description.setText(eventos.get(i).description);
 
     }
 
@@ -53,16 +54,38 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventoViewHo
         TextView eventTitle;
         TextView date;
         Button more;
+        TextView description;
+        boolean opened = false;
 
 
 
-        EventoViewHolder (View itemView) {
+        EventoViewHolder (final View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.card_view_event);
             eventTitle = (TextView)itemView.findViewById(R.id.paylog_title);
             date = (TextView)itemView.findViewById(R.id.event_date);
             more = (Button) itemView.findViewById(R.id.read_more_pay);
             eventPhoto = (ImageView)itemView.findViewById(R.id.eventPhoto);
+            description = (TextView) itemView.findViewById(R.id.descriptionE);
+
+
+
+           more.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v){
+                    if(opened==false) {
+                        more.setBackgroundResource(R.drawable.lessinfo_ic);
+                        description.setVisibility(View.VISIBLE);
+                        opened = true;
+                    } else {
+                        more.setBackgroundResource(R.drawable.moreinfo_ic);
+                        description.setVisibility(View.GONE);
+                        opened = false;
+                    }
+
+
+                }
+            });
+
         }
 
     }

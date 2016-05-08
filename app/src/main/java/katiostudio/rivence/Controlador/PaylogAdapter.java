@@ -40,6 +40,13 @@ public class PaylogAdapter extends RecyclerView.Adapter<PaylogAdapter.PagoViewHo
         pagoViewHolder.paylogTitle.setText(pagos.get(i).titulo);
         pagoViewHolder.quant.setText(pagos.get(i).cantidad);
 
+        //Color según el estado del pago
+        if(pagos.get(i).pagado == true) {
+            pagoViewHolder.status.setBackgroundResource(R.color.green);
+        }else {
+            pagoViewHolder.status.setBackgroundResource(R.color.red);
+        }
+
     }
 
 
@@ -55,6 +62,7 @@ public class PaylogAdapter extends RecyclerView.Adapter<PaylogAdapter.PagoViewHo
         TextView paylogTitle;
         TextView quant;
         Button more;
+        ImageView status;
 
 
 
@@ -64,6 +72,8 @@ public class PaylogAdapter extends RecyclerView.Adapter<PaylogAdapter.PagoViewHo
             paylogTitle = (TextView)itemView.findViewById(R.id.paylog_title);
             quant = (TextView)itemView.findViewById(R.id.paylog_quant);
             more = (Button) itemView.findViewById(R.id.read_more_pay);
+            status = (ImageView) itemView.findViewById(R.id.status);
+
         }
 
     }

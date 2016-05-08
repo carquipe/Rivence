@@ -26,8 +26,6 @@ public class paylog_fragment extends Fragment {
     protected RecyclerView.LayoutManager mLayoutManager;
     protected List<Pago> mDataset;
 
-    public static int Paylogcontainer= R.id.paylog_fragment_layout;
-
 
 
     public paylog_fragment() {

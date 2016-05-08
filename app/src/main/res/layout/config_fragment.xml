@@ -146,7 +146,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="4dp"
-        android:background="#75FFFFFF">
+        android:background="@color/dark_background">
 
     </RelativeLayout>
 

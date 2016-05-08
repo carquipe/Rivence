@@ -17,7 +17,7 @@
         android:background="@drawable/login_text_border"
         android:textColor="@color/white"
         android:hint="Private key"
-        android:textColorHint="@color/light_grey"
+        android:textColorHint="@color/white"
         android:drawableLeft="@drawable/ic_launcher"
 
 

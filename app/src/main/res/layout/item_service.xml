@@ -19,7 +19,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -39,7 +40,10 @@
                     android:id="@+id/serviceCategory"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp" />
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -80,12 +84,43 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:textSize="10sp"
+                    android:background="@drawable/moreinfo_ic"
+                    android:layout_below="@+id/service_title"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/description"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/read_less_pay"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:textSize="10sp"
+                    android:background="@drawable/lessinfo_ic"
                     android:layout_below="@+id/service_title"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:background="@drawable/moreinfo_ic" />
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginLeft="7dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="bottom|right" />
 
-            </RelativeLayout>
+            </LinearLayout>
 
         </LinearLayout>
 

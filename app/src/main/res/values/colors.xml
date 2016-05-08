@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--Colores de textos-->
     <color name = "white">#eeeeee</color>
     <color name = "double_white">#ffffff</color>
     <color name = "light_grey">#979797</color>
@@ -8,6 +10,12 @@
     <color name = "greeny_blue">#0d9385</color>
     <color name = "light_blue">#2fcdf4</color>
 
+
+    <!--Indicadores estatus paylog-->
+    <color name = "red">#8c0a0a</color>
+    <color name = "green">#0a8c33</color>
+
+    <!--Fondos de layouts transparentes-->
     <color name = "dark_background">#bb312f2f</color>
     <color name = "light_background">#a4464646</color>
 

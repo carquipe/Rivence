@@ -45,9 +45,9 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
                 Fragment services = new services_fragment();
                 Fragment categories = new category_fragment();
 
-                fragmentTransaction.setCustomAnimations(R.anim.fade_in,0,0, R.anim.fade_out);
+                //fragmentTransaction.setCustomAnimations(R.anim.fade_in,0,0, R.anim.fade_out);
                 fragmentTransaction.replace(Fragcontainer, services);
-                fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, 0, 0, 0);
+                //fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, 0, 0, 0);
                 fragmentTransaction.add(Catcontainer, categories);
 
                 fragmentTransaction.addToBackStack(null);
@@ -58,9 +58,9 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
             case R.id.Menu2:
                 Fragment paylog = new paylog_fragment();
 
-                fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0, R.anim.fade_out);
+                //fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0, R.anim.fade_out);
                 fragmentTransaction.replace(Fragcontainer, paylog);
-                fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, 0, 0, 0);
+                //fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, 0, 0, 0);
 
 
                 fragmentTransaction.addToBackStack(null);
@@ -72,7 +72,7 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
                 Fragment nearyou = new nearyou_fragment();
 
                 fragmentTransaction = main.fragmentManager.beginTransaction();
-                fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0, R.anim.fade_out);
+                //fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0, R.anim.fade_out);
                 fragmentTransaction.replace(Fragcontainer, nearyou);
 
                 fragmentTransaction.addToBackStack(null);
