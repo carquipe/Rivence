@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.view.View;
+
+import java.util.ArrayList;
 import java.util.List;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
@@ -21,7 +23,20 @@ public class PaylogAdapter extends RecyclerView.Adapter<PaylogAdapter.PagoViewHo
 
     private List<Pago> pagos;
 
-    public PaylogAdapter(List<Pago> pagosL){ pagos = pagosL; }
+    public PaylogAdapter(List<Pago> pagosL){
+        pagos = pagosL;
+    }
+
+
+    public List<Pago> getList(){
+        return pagos;
+    }
+
+    public void setList(List<Pago> pagosNuevo){
+        pagos = pagosNuevo;
+    }
+
+
 
 
     //Override métodos superclase
@@ -40,12 +55,16 @@ public class PaylogAdapter extends RecyclerView.Adapter<PaylogAdapter.PagoViewHo
         pagoViewHolder.paylogTitle.setText(pagos.get(i).titulo);
         pagoViewHolder.quant.setText(pagos.get(i).cantidad);
 
+
         //Color según el estado del pago
         if(pagos.get(i).pagado == true) {
             pagoViewHolder.status.setBackgroundResource(R.color.green);
         }else {
             pagoViewHolder.status.setBackgroundResource(R.color.red);
         }
+
+
+
 
     }
 
@@ -63,6 +82,7 @@ public class PaylogAdapter extends RecyclerView.Adapter<PaylogAdapter.PagoViewHo
         TextView quant;
         Button more;
         ImageView status;
+
 
 
 

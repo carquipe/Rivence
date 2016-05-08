@@ -7,7 +7,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.RecyclerView;
-import android.content.Context;
+import android.widget.TextView;
+
+import katiostudio.rivence.Controlador.PaylogFilterCards;
 import katiostudio.rivence.Controlador.PaylogAdapter;
 import katiostudio.rivence.Controlador.Pago;
 import java.util.List;
@@ -24,7 +26,9 @@ public class paylog_fragment extends Fragment {
     protected RecyclerView mRecyclerView;
     protected PaylogAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
-    protected List<Pago> mDataset;
+    protected List<Pago> mDataset;protected PaylogFilterCards filterCards;
+
+
 
 
 
@@ -48,7 +52,6 @@ public class paylog_fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
         //inicializacion RecyclerView
         View rootView = inflater.inflate(R.layout.paylog_fragment, container, false);
         rootView.setTag(TAG);
@@ -64,6 +67,38 @@ public class paylog_fragment extends Fragment {
         mAdapter = new PaylogAdapter(mDataset);
         // Asignacion de adaptador al del Recycler View
         mRecyclerView.setAdapter(mAdapter);
+
+        //Filtro de menús
+        TextView paid = (TextView) rootView.findViewById(R.id.paidButton);
+        TextView pending = (TextView) rootView.findViewById(R.id.pendingButton);
+        TextView all = (TextView) rootView.findViewById(R.id.allButton);
+        filterCards = new PaylogFilterCards(mAdapter.getList());
+
+
+            //ACCIONES ONCLICK BOTONES MENU
+        pending.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+
+                mAdapter.setList(filterCards.performFilteringPending());
+                mAdapter.notifyDataSetChanged();
+            }
+        });
+
+        paid.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+
+                mAdapter.setList(filterCards.performFilteringPaid());
+                mAdapter.notifyDataSetChanged();
+            }
+        });
+
+        all.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+
+                mAdapter.setList(filterCards.performFilteringAll());
+                mAdapter.notifyDataSetChanged();
+            }
+        });
 
 
 

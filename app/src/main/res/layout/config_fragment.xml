@@ -153,7 +153,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="4dp"
-        android:background="#ac444444" />
+        android:background="#75FFFFFF" />
 
     <RelativeLayout
         android:layout_width="match_parent"
