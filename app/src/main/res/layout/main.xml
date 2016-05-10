@@ -3,7 +3,6 @@
     android:layout_height="fill_parent"
 
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/mainbackgroundday"
     android:id="@+id/Background">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,6 +18,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/TOP">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/backBttn"
+            android:background="@drawable/back_ico"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            android:layout_marginLeft="15dp" />
 
         <TextView
             android:layout_width="200dp"

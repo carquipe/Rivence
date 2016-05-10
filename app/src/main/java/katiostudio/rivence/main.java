@@ -27,6 +27,8 @@ public class main extends Activity {
     static DrawerLayout drawerLayout; //Layout general
     private TextView titleText;  //Titulo "Rivence" superior
     static ImageView chaticon;
+    static ImageView backicon;
+    EventCenter eventCenter;
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -37,6 +39,7 @@ public class main extends Activity {
 
         /* Almacenar en variables los elementos del xml main */
         chaticon = (ImageView) findViewById(R.id.chaticon);
+        backicon = (ImageView) findViewById(R.id.backBttn);
         titleText = (TextView) findViewById(R.id.titletext);
         drawerLayout = (DrawerLayout)findViewById(R.id.Background);
         drawer = (RelativeLayout)findViewById(R.id.drawerPane);
@@ -63,7 +66,7 @@ public class main extends Activity {
         fragmentTransaction.commit();
 
 
-        /* Listeners */
+        /******** Listeners **********/
         drawerLayout.setDrawerListener(myDrawerListener);
         chaticon.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -71,7 +74,17 @@ public class main extends Activity {
                 drawerLayout.openDrawer(drawer);
             }
         });
+
+        backicon.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+            onBackPressed();
+
+
+            }
+        });
+
         }
+
 
          /* Apertura y cerrado del panel del Chat */
          @Override
@@ -80,6 +93,7 @@ public class main extends Activity {
                 this.drawerLayout.closeDrawer(GravityCompat.START);
          } else {
               super.onBackPressed();
+                backicon.setVisibility(View.GONE);
             }
         }
     DrawerLayout.DrawerListener myDrawerListener = new DrawerLayout.DrawerListener(){
@@ -119,6 +133,10 @@ public class main extends Activity {
 
 
         }};
+
+
+
+
 
 }
 

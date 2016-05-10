@@ -70,5 +70,6 @@ public class nearyou_fragment extends Fragment {
         return rootView;
     }
 
+
 }
 
