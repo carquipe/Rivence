@@ -18,6 +18,9 @@
     <!--Fondos de layouts transparentes-->
     <color name = "dark_background">#bb312f2f</color>
     <color name = "light_background">#a4464646</color>
+    <color name = "transparent">#00ffffff</color>
 
-
+    <!--Fondos selector Paylog-->
+    <color name = "paylog_pressed">#787877</color>
+    <color name = "paylog_notpressed">#9f9f9e</color>
 </resources>

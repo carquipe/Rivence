@@ -1,6 +1,8 @@
 package katiostudio.rivence;
 
 import android.app.Fragment;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,7 +29,7 @@ public class paylog_fragment extends Fragment {
     protected PaylogAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
     protected List<Pago> mDataset;protected PaylogFilterCards filterCards;
-
+    int isActive = 1;
 
 
 
@@ -49,6 +51,22 @@ public class paylog_fragment extends Fragment {
     }
 
 
+    public void unpressButton(TextView all, TextView paid, TextView pending){
+        switch(isActive){
+            case 1:
+                GradientDrawable allBackground = (GradientDrawable) all.getBackground();
+                allBackground.setColor(getResources().getColor(R.color.paylog_notpressed));
+                break;
+            case 2:
+                paid.setBackgroundColor(getResources().getColor(R.color.paylog_notpressed));
+                break;
+            case 3:
+                GradientDrawable pendingBackground = (GradientDrawable) pending.getBackground();
+                pendingBackground.setColor(getResources().getColor(R.color.paylog_notpressed));
+
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -69,16 +87,27 @@ public class paylog_fragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
 
         //Filtro de menús
-        TextView paid = (TextView) rootView.findViewById(R.id.paidButton);
-        TextView pending = (TextView) rootView.findViewById(R.id.pendingButton);
-        TextView all = (TextView) rootView.findViewById(R.id.allButton);
+        final TextView paid = (TextView) rootView.findViewById(R.id.paidButton);
+        final TextView pending = (TextView) rootView.findViewById(R.id.pendingButton);
+        final TextView all = (TextView) rootView.findViewById(R.id.allButton);
         filterCards = new PaylogFilterCards(mAdapter.getList());
+
+
 
 
             //ACCIONES ONCLICK BOTONES MENU
         pending.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
 
+                //Change color to pressed
+                GradientDrawable pendingBackground = (GradientDrawable) pending.getBackground();
+                pendingBackground.setColor(getResources().getColor(R.color.paylog_pressed));
+
+                //UnpressButton Routine
+                unpressButton(all,paid,pending);
+                isActive=3;
+
+                //Update CardView
                 mAdapter.setList(filterCards.performFilteringPending());
                 mAdapter.notifyDataSetChanged();
             }
@@ -87,6 +116,14 @@ public class paylog_fragment extends Fragment {
         paid.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
 
+                //Change color to pressed
+                paid.setBackgroundColor(getResources().getColor(R.color.paylog_pressed));
+
+                //UnpressButton Routine
+                unpressButton(all,paid,pending);
+                isActive=2;
+
+                //Update CardView
                 mAdapter.setList(filterCards.performFilteringPaid());
                 mAdapter.notifyDataSetChanged();
             }
@@ -95,6 +132,15 @@ public class paylog_fragment extends Fragment {
         all.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
 
+                //Change color to pressed
+                GradientDrawable allBackground = (GradientDrawable) all.getBackground();
+                allBackground.setColor(getResources().getColor(R.color.paylog_pressed));
+
+                //UnpressButton Routine
+                unpressButton(all,paid,pending);
+                isActive=1;
+
+                //Update CardView
                 mAdapter.setList(filterCards.performFilteringAll());
                 mAdapter.notifyDataSetChanged();
             }

@@ -3,8 +3,10 @@ package katiostudio.rivence;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,6 +52,7 @@ public class Login extends AppCompatActivity {
         LoginEdit = (EditText) findViewById(R.id.loginkey);
         LoginBtn = (Button) findViewById(R.id.button);
 
+
         LoginBtn.setOnClickListener(new View.OnClickListener() {
 
 
@@ -64,6 +67,15 @@ public class Login extends AppCompatActivity {
             }
 
         });
+
+  /*      LoginBtn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                GradientDrawable myGrad = (GradientDrawable)rectangle.getBackgrou
+                LoginBtn.getBackground().setColor(R.color.greeny_blue);
+                return false;
+            }
+        }); */
 
     }
 
