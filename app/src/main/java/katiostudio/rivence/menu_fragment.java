@@ -42,6 +42,7 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
         return rootView;
     }
 
+
     @Override
     public void onClick(View v) {
 

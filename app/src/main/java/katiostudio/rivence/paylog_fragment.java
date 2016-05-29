@@ -28,7 +28,8 @@ public class paylog_fragment extends Fragment {
     protected RecyclerView mRecyclerView;
     protected PaylogAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
-    protected List<Pago> mDataset;protected PaylogFilterCards filterCards;
+    protected List<Pago> mDataset;
+    protected PaylogFilterCards filterCards;
     int isActive = 1;
 
 
