@@ -23,4 +23,11 @@
     <!--Fondos selector Paylog-->
     <color name = "paylog_pressed">#787877</color>
     <color name = "paylog_notpressed">#9f9f9e</color>
+
+    <!--Colores categorias-->
+    <color name = "cat1">#787877</color>
+    <color name = "cat2">#787877</color>
+    <color name = "cat3">#787877</color>
+    <color name = "cat4">#787877</color>
+    <color name = "cat5">#787877</color>
 </resources>

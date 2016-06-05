@@ -13,11 +13,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import katiostudio.rivence.Interfaces.CategoryListener;
+
 
 /**
  * Created by Kevin on 22/01/2016.
  */
-public class main extends Activity {
+public class main extends Activity implements CategoryListener {
 
     boolean closed = true;  //Variable que captura el estado del chat (abierto o cerrado)
     public static int Fragcontainer = R.id.content; //Contenedor principal que se rellena según el menu
@@ -77,25 +79,25 @@ public class main extends Activity {
 
         backicon.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
-            onBackPressed();
+                onBackPressed();
 
 
             }
         });
 
-        }
+    }
 
 
-         /* Apertura y cerrado del panel del Chat */
-         @Override
-        public void onBackPressed() {
-            if (this.drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                this.drawerLayout.closeDrawer(GravityCompat.START);
-         } else {
-              super.onBackPressed();
-                backicon.setVisibility(View.GONE);
-            }
+    /* Apertura y cerrado del panel del Chat */
+    @Override
+    public void onBackPressed() {
+        if (this.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            this.drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+            backicon.setVisibility(View.GONE);
         }
+    }
     DrawerLayout.DrawerListener myDrawerListener = new DrawerLayout.DrawerListener(){
 
         @Override
@@ -125,7 +127,7 @@ public class main extends Activity {
                     closed = false;
 
                 }else{
-                //  Si esta abierto, se oculta el icono del chat y se actualiza la variable closed a true
+                    //  Si esta abierto, se oculta el icono del chat y se actualiza la variable closed a true
                     chaticon.setVisibility(View.VISIBLE);
                     closed = true;
                 }
@@ -134,9 +136,31 @@ public class main extends Activity {
 
         }};
 
+    public void categoryClicked(int position) {
 
+        services_fragment servicesFRA = (services_fragment)
+                fragmentManager.findFragmentByTag("servicesTAG");
 
+        if (servicesFRA != null) {
+            switch (position) {
+                case 1:
+                    ((services_fragment) servicesFRA).updateCat1();
+                    break;
+                case 2:
+                    servicesFRA.updateCat2();
+                    break;
+                case 3:
+                    servicesFRA.updateCat3();
+                    break;
+                case 4:
+                    servicesFRA.updateCat4();
+                    break;
+                case 5:
+                    servicesFRA.updateCat5();
+                    break;
+            }
+        }
 
-
+    }
 }
 

@@ -17,6 +17,8 @@ public class PaylogFilterCards {
     private final List <Pago> originalList;
     private final List<Pago> filteredList;
 
+
+    /*Inicialización de lista general y auxiliar*/
     public PaylogFilterCards(List<Pago> originalList){
         this.originalList = new LinkedList<>(originalList);
         this.filteredList = new ArrayList<>();

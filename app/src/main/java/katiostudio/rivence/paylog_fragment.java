@@ -51,7 +51,7 @@ public class paylog_fragment extends Fragment {
         mDataset = pay.pagos;
     }
 
-
+//Cambio de color del botón deseleccionado
     public void unpressButton(TextView all, TextView paid, TextView pending){
         switch(isActive){
             case 1:

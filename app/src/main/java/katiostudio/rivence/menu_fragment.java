@@ -9,11 +9,14 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import katiostudio.rivence.Interfaces.CategoryListener;
 
-public class menu_fragment extends Fragment implements View.OnClickListener  {
+
+public class menu_fragment extends Fragment implements View.OnClickListener{
     public static int Catcontainer= R.id.bottom_bar;
     public static int Fragcontainer = R.id.content;
     public EventCenter eventCenter;
+
 
 
 
@@ -55,9 +58,9 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
                 Fragment categories = new category_fragment();
 
                 //fragmentTransaction.setCustomAnimations(R.anim.fade_in,0,0, R.anim.fade_out);
-                fragmentTransaction.replace(Fragcontainer, services);
+                fragmentTransaction.replace(Fragcontainer, services, "servicesTAG");
                 //fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, 0, 0, 0);
-                fragmentTransaction.add(Catcontainer, categories);
+                fragmentTransaction.add(Catcontainer, categories, "categoriesTAG");
 
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
@@ -110,6 +113,27 @@ public class menu_fragment extends Fragment implements View.OnClickListener  {
 
                 break;
 
+        }
+    }
+    public void categoryClicked(int position){
+        services_fragment servicesFRA = (services_fragment)
+                main.fragmentManager.findFragmentByTag("servicesTAG");
+        switch(position){
+            case 1:
+                servicesFRA.updateCat1();
+                break;
+            case 2:
+                servicesFRA.updateCat2();
+                break;
+            case 3:
+                servicesFRA.updateCat3();
+                break;
+            case 4:
+                servicesFRA.updateCat4();
+                break;
+            case 5:
+                servicesFRA.updateCat5();
+                break;
         }
     }
 }

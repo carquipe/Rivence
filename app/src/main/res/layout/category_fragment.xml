@@ -17,37 +17,43 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/renting_ic"
+                android:background="@drawable/category_button"
                 android:id="@+id/cat1"
-                android:layout_margin="3dp" />
+                android:layout_margin="3dp"
+                android:src="@drawable/renting_ic" />
+
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="3dp"
                 android:id="@+id/cat2"
-                android:background="@drawable/hotels_ic"/>
+                android:background="@drawable/category_button"
+                android:src="@drawable/hotels_ic" />
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:id="@+id/cat3"
-                android:background="@drawable/leisure_ic"
-                android:layout_margin="3dp"/>
+                android:background="@drawable/category_button"
+                android:layout_margin="3dp"
+                android:src="@drawable/drinksfood_ic" />
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:id="@+id/cat4"
-                android:background="@drawable/drinksfood_ic"
-                android:layout_margin="3dp"/>
+                android:background="@drawable/category_button"
+                android:layout_margin="3dp"
+                android:src="@drawable/night_ic" />
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:id="@+id/cat5"
-                android:background="@drawable/night_ic"
-                android:layout_margin="3dp"/>
+                android:background="@drawable/category_button"
+                android:layout_margin="3dp"
+                android:src="@drawable/leisure_ic" />
         </LinearLayout>
     </HorizontalScrollView>
 </LinearLayout>

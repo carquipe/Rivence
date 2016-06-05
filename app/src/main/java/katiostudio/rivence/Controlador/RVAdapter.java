@@ -29,6 +29,15 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ServicioViewHolder
     public int getItemCount() {
         return servicios.size();
     }
+/********FILTRO**/
+    public List<Servicio> getList(){
+        return servicios;
+    }
+
+    public void setList(List<Servicio> serviciosNuevo){
+        servicios = serviciosNuevo;
+    }
+/*********/
 
     @Override
     public ServicioViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
@@ -43,7 +52,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ServicioViewHolder
         servicioViewHolder.subtitle.setText(servicios.get(i).subtitle);
         servicioViewHolder.distance.setText(servicios.get(i).distance);
         servicioViewHolder.servicePhoto.setBackgroundResource(servicios.get(i).photoId);
-        servicioViewHolder.category.setBackgroundResource(servicios.get(i).categoryId);
+        servicioViewHolder.category.setImageResource(servicios.get(i).categoryId);
         servicioViewHolder.description.setText(servicios.get(i).description);
     }
 
