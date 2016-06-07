@@ -41,7 +41,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ServicioViewHolder
 
     @Override
     public ServicioViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_service, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.service_item, viewGroup, false);
         return new ServicioViewHolder(v);
     }
 

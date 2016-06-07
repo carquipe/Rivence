@@ -27,7 +27,7 @@
                     android:layout_height="60dp"
                     android:id="@+id/Menu1"
                     android:layout_gravity="center"
-                    android:src="@drawable/menu11"
+                    android:src="@drawable/services_ic"
                     android:background="@drawable/menu_button"
                     android:scaleType="fitCenter"
                     />
@@ -73,7 +73,7 @@
                     android:layout_height="60dp"
                     android:id="@+id/Menu2"
                     android:layout_gravity="center"
-                    android:src="@drawable/menu22"
+                    android:src="@drawable/paylog_ic"
                     android:background="@drawable/menu_button"
                     android:scaleType="fitCenter"
                     />
@@ -119,7 +119,7 @@
                     android:layout_height="60dp"
                     android:id="@+id/Menu3"
                     android:layout_gravity="center"
-                    android:src="@drawable/menu33"
+                    android:src="@drawable/nearyou_ic"
                     android:background="@drawable/menu_button"
                     android:scaleType="fitCenter"
                     />
@@ -165,7 +165,7 @@
                     android:layout_height="60dp"
                     android:id="@+id/Menu4"
                     android:layout_gravity="center"
-                    android:src="@drawable/menu44"
+                    android:src="@drawable/config_ic"
                     android:background="@drawable/menu_button"
                     android:scaleType="fitCenter"
                     />

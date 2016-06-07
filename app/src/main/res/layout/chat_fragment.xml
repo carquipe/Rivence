@@ -23,13 +23,13 @@ android:padding="8dp"
     android:layout_height="50dp"
 
     android:layout_marginTop="15dp"
-    android:background="@drawable/chatavatar" />
+    android:background="@drawable/agent_avatar" />
 
     <ImageView
     android:layout_width="60dp"
     android:layout_height="60dp"
     android:id="@+id/closebtn"
-        android:background="@drawable/back_ic1"
+        android:background="@drawable/back_ic"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />

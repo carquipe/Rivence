@@ -32,7 +32,7 @@
             android:layout_centerHorizontal="true"
             android:visibility="gone"
             android:layout_marginLeft="15dp"
-            android:src="@drawable/back_ic1" />
+            android:src="@drawable/back_ic" />
 
         <TextView
             android:layout_width="200dp"

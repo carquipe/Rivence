@@ -9,7 +9,6 @@ import android.widget.TextView;
 import android.widget.ImageView;
 import android.view.View;
 
-import java.util.ArrayList;
 import java.util.List;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
@@ -45,7 +44,7 @@ public class PaylogAdapter extends RecyclerView.Adapter<PaylogAdapter.PagoViewHo
 
     @Override
     public PagoViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_paylog, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.paylog_item, viewGroup, false);
         return new PagoViewHolder(v);
     }
 
