@@ -12,12 +12,10 @@ import android.widget.ImageView;
 import katiostudio.rivence.Interfaces.CategoryListener;
 
 
-public class menu_fragment extends Fragment implements View.OnClickListener{
-    public static int Catcontainer= R.id.bottom_bar;
+public class menu_fragment extends Fragment implements View.OnClickListener {
+    public static int Catcontainer = R.id.bottom_bar;
     public static int Fragcontainer = R.id.content;
     public EventCenter eventCenter;
-
-
 
 
     public menu_fragment() {
@@ -115,10 +113,11 @@ public class menu_fragment extends Fragment implements View.OnClickListener{
 
         }
     }
-    public void categoryClicked(int position){
+
+    public void categoryClicked(int position) {
         services_fragment servicesFRA = (services_fragment)
                 main.fragmentManager.findFragmentByTag("servicesTAG");
-        switch(position){
+        switch (position) {
             case 1:
                 servicesFRA.updateCat1();
                 break;

@@ -9,26 +9,26 @@ import android.view.ViewGroup;
 import android.support.v7.widget.RecyclerView;
 import android.content.Context;
 
-import katiostudio.rivence.Controlador.PaylogFilterCards;
-import katiostudio.rivence.Controlador.RVAdapter;
+import katiostudio.rivence.Controlador.ServiceAdapter;
 import katiostudio.rivence.Controlador.ServiceFilterCards;
 import katiostudio.rivence.Controlador.Servicio;
-import java.util.List;
 
+import java.util.List;
 
 
 public class services_fragment extends Fragment {
 
     private static final String TAG = "RecyclerViewFragment";
 
+
     protected RecyclerView mRecyclerView;
-     protected RVAdapter mAdapter;
+    protected ServiceAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
     protected List<Servicio> mDataset;
     protected ServiceFilterCards filterCards;
     protected int isActive = 0;
 
-    public static int Servicescontainer= R.id.services_fragment_layout;
+    public static int Servicescontainer = R.id.services_fragment_layout;
 
     public services_fragment() {
         // Empty constructor required for fragment subclasses
@@ -64,11 +64,10 @@ public class services_fragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         //Creamos el adaptador
-        mAdapter = new RVAdapter(mDataset);
+        mAdapter = new ServiceAdapter(mDataset);
 
         // Asignacion de adaptador al del Recycler View
         mRecyclerView.setAdapter(mAdapter);
-
 
 
         return rootView;
@@ -76,28 +75,33 @@ public class services_fragment extends Fragment {
 
 
     //UPDATE FILTROS CATEGORIAS
-    public void updateCat1(){
+
+
+    public void updateCat1() {
         mAdapter.setList(filterCards.performFilteringRenting());
         mAdapter.notifyDataSetChanged();
     }
-    public void updateCat2(){
+
+    public void updateCat2() {
         mAdapter.setList(filterCards.performFilteringHotels());
         mAdapter.notifyDataSetChanged();
     }
-    public void updateCat3(){
+
+    public void updateCat3() {
         mAdapter.setList(filterCards.performFilteringFood());
         mAdapter.notifyDataSetChanged();
     }
-    public void updateCat4(){
+
+    public void updateCat4() {
         mAdapter.setList(filterCards.performFilteringNight());
         mAdapter.notifyDataSetChanged();
     }
-    public void updateCat5(){
+
+    public void updateCat5() {
         mAdapter.setList(filterCards.performFilteringLeisure());
         mAdapter.notifyDataSetChanged();
     }
 
 
-
-    }
+}
 

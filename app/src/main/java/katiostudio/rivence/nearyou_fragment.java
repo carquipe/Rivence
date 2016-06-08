@@ -9,8 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.RecyclerView;
 import android.content.Context;
+
 import katiostudio.rivence.Controlador.EventAdapter;
 import katiostudio.rivence.Controlador.Evento;
+
 import java.util.List;
 
 /**
@@ -25,8 +27,7 @@ public class nearyou_fragment extends Fragment {
     protected RecyclerView.LayoutManager mLayoutManager;
     protected List<Evento> mDataset;
 
-    public static int Nearyoucontainer= R.id.nearyou_fragment_layout;
-
+    public static int Nearyoucontainer = R.id.nearyou_fragment_layout;
 
 
     public nearyou_fragment() {
@@ -64,7 +65,6 @@ public class nearyou_fragment extends Fragment {
         mAdapter = new EventAdapter(mDataset);
         // Asignacion de adaptador al del Recycler View
         mRecyclerView.setAdapter(mAdapter);
-
 
 
         return rootView;

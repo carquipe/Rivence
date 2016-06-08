@@ -41,35 +41,35 @@ public class category_fragment extends Fragment {
 
         //ACCIONES ONCLICK BOTONES MENU
         cat1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
+            public void onClick(View v) {
                 //Update CardView
                 activityListener.categoryClicked(1);
                 // services_fragment.updateCat1();
             }
         });
         cat2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
+            public void onClick(View v) {
                 //Update CardView
                 activityListener.categoryClicked(2);
                 //services_fragment.updateCat2();
             }
         });
         cat3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
+            public void onClick(View v) {
                 //Update CardView
                 activityListener.categoryClicked(3);
                 //services_fragment.updateCat3();
             }
         });
         cat4.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
+            public void onClick(View v) {
                 //Update CardView
                 activityListener.categoryClicked(4);
                 //services_fragment.updateCat4();
             }
         });
         cat5.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
+            public void onClick(View v) {
                 //Update CardView
                 activityListener.categoryClicked(5);
                 //services_fragment.updateCat5();

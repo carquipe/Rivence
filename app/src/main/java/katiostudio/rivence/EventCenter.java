@@ -14,7 +14,7 @@ public class EventCenter {
 
     FragmentTransaction fragmentTransaction = main.fragmentManager.beginTransaction();
 
-    public EventCenter () {
+    public EventCenter() {
         //Empty Constructor
     }
 
@@ -27,8 +27,6 @@ public class EventCenter {
     public void submenuDeleted() {
         main.backicon.setVisibility(View.INVISIBLE);
     }
-
-
 
 
 }

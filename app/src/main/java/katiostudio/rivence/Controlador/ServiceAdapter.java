@@ -6,20 +6,23 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.view.View;
+
 import java.util.List;
+
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
+
 import katiostudio.rivence.R;
 
 /**
  * Created by cquinz on 24/4/16.
  */
 
-public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ServicioViewHolder>{
+public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServicioViewHolder> {
 
     private List<Servicio> servicios;
 
-    public RVAdapter(List<Servicio> serviciosL){
+    public ServiceAdapter(List<Servicio> serviciosL) {
         servicios = serviciosL;
     }
 
@@ -29,15 +32,19 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ServicioViewHolder
     public int getItemCount() {
         return servicios.size();
     }
-/********FILTRO**/
-    public List<Servicio> getList(){
+
+    /********
+     * FILTRO
+     **/
+    public List<Servicio> getList() {
         return servicios;
     }
 
-    public void setList(List<Servicio> serviciosNuevo){
+    public void setList(List<Servicio> serviciosNuevo) {
         servicios = serviciosNuevo;
     }
-/*********/
+
+    /*********/
 
     @Override
     public ServicioViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
@@ -58,7 +65,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ServicioViewHolder
 
 
     /********
-    * Clase View Holder
+     * Clase View Holder
      **********/
 
 
@@ -74,21 +81,20 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ServicioViewHolder
         Button readless;
 
 
-
-        ServicioViewHolder (View itemView) {
+        ServicioViewHolder(View itemView) {
             super(itemView);
-            cv = (CardView)itemView.findViewById(R.id.card_view);
-            serviceTitle = (TextView)itemView.findViewById(R.id.service_title);
-            subtitle = (TextView)itemView.findViewById(R.id.subtitle);
-            distance = (TextView)itemView.findViewById(R.id.distance);
+            cv = (CardView) itemView.findViewById(R.id.card_view);
+            serviceTitle = (TextView) itemView.findViewById(R.id.service_title);
+            subtitle = (TextView) itemView.findViewById(R.id.subtitle);
+            distance = (TextView) itemView.findViewById(R.id.distance);
             category = (ImageView) itemView.findViewById(R.id.serviceCategory);
             more = (Button) itemView.findViewById(R.id.read_more_pay);
-            servicePhoto = (ImageView)itemView.findViewById(R.id.servicePhoto);
+            servicePhoto = (ImageView) itemView.findViewById(R.id.servicePhoto);
             description = (TextView) itemView.findViewById(R.id.description);
-            readless= (Button) itemView.findViewById(R.id.read_less_pay);
+            readless = (Button) itemView.findViewById(R.id.read_less_pay);
 
             more.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v){
+                public void onClick(View v) {
 
                     readless.setVisibility(View.VISIBLE);
                     more.setVisibility(View.INVISIBLE);
@@ -100,7 +106,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ServicioViewHolder
 
 
             readless.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v){
+                public void onClick(View v) {
 
                     readless.setVisibility(View.GONE);
                     more.setVisibility(View.VISIBLE);

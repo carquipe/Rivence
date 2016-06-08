@@ -20,7 +20,7 @@ public class DinamicBackground {
     private static String compareStringNight = "20:00";    //Hora de cambio backgorund dia a noche
     static SimpleDateFormat inputParser = new SimpleDateFormat(inputFormat, Locale.US); //Formato de fecha recibida
 
-    public static int getBackOnTime( String activity) {
+    public static int getBackOnTime(String activity) {
 
 
         //Obtener hora y minutos actuales
@@ -34,23 +34,23 @@ public class DinamicBackground {
         dateCompareTwo = parseDate(compareStringNight);
 
 
-
         if (dateCompareOne.before(date) && dateCompareTwo.after(date)) {   //Es de dia
             // Seleccion de background utilizado segun la actividad usandose
             if (activity == "main") { // En el menu y sus hijos
                 id = (R.drawable.mainbackgroundday);
 
-            }else{                    // En la pantalla de carga y login
+            } else {                    // En la pantalla de carga y login
                 id = (R.drawable.splashbackgroundday);
             }
 
         } else {                                                          //Es de noche
             // Seleccion de background utilizado segun la actividad usandose
-            if (activity == "main"){ // En el menu y sus hijos
+            if (activity == "main") { // En el menu y sus hijos
                 id = (R.drawable.mainbackgroundnight);
 
-            }else{                   // En la pantalla de carga y login
-                id= (R.drawable.splashbackgroundnight);}
+            } else {                   // En la pantalla de carga y login
+                id = (R.drawable.splashbackgroundnight);
+            }
         }
 
         return id;

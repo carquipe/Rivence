@@ -37,7 +37,7 @@ public class SplashScreenActivity extends Activity {
 
         //final RelativeLayout background = (RelativeLayout) findViewById(R.id.background);
         //background.setBackgroundResource(DinamicBackground.getBackOnTime("splash"));
-        
+
         CircularProgressView progressView = (CircularProgressView) findViewById(R.id.progress_view);
         progressView.startAnimation();
 
@@ -54,7 +54,7 @@ public class SplashScreenActivity extends Activity {
                 sPlashScreen.finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
-        }
+    }
 
 
 }

@@ -25,7 +25,7 @@ public class main extends Activity implements CategoryListener {
     public static int Fragcontainer = R.id.content; //Contenedor principal que se rellena según el menu
     public static FragmentManager fragmentManager;
 
-    private RelativeLayout drawer ; //Variable que almacena el Layout del chat
+    private RelativeLayout drawer; //Variable que almacena el Layout del chat
     static DrawerLayout drawerLayout; //Layout general
     private TextView titleText;  //Titulo "Rivence" superior
     static ImageView chaticon;
@@ -43,8 +43,8 @@ public class main extends Activity implements CategoryListener {
         chaticon = (ImageView) findViewById(R.id.chaticon);
         backicon = (ImageView) findViewById(R.id.backBttn);
         titleText = (TextView) findViewById(R.id.titletext);
-        drawerLayout = (DrawerLayout)findViewById(R.id.Background);
-        drawer = (RelativeLayout)findViewById(R.id.drawerPane);
+        drawerLayout = (DrawerLayout) findViewById(R.id.Background);
+        drawer = (RelativeLayout) findViewById(R.id.drawerPane);
 
 
         /* Seleccion de imagen de fondo segun la hora ( Llamada metodo getBackOnTime ) */
@@ -63,7 +63,7 @@ public class main extends Activity implements CategoryListener {
         Fragment menuFrag = new menu_fragment();
         Fragment chatFrag = new chat_fragment();
 
-        fragmentTransaction.add(R.id.content,menuFrag);
+        fragmentTransaction.add(R.id.content, menuFrag);
         fragmentTransaction.add(R.id.drawerPane, chatFrag);
         fragmentTransaction.commit();
 
@@ -78,7 +78,7 @@ public class main extends Activity implements CategoryListener {
         });
 
         backicon.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
+            public void onClick(View v) {
                 onBackPressed();
 
 
@@ -98,7 +98,8 @@ public class main extends Activity implements CategoryListener {
             backicon.setVisibility(View.GONE);
         }
     }
-    DrawerLayout.DrawerListener myDrawerListener = new DrawerLayout.DrawerListener(){
+
+    DrawerLayout.DrawerListener myDrawerListener = new DrawerLayout.DrawerListener() {
 
         @Override
         public void onDrawerClosed(View drawerView) {
@@ -126,7 +127,7 @@ public class main extends Activity implements CategoryListener {
                     chaticon.setVisibility(View.INVISIBLE);
                     closed = false;
 
-                }else{
+                } else {
                     //  Si esta abierto, se oculta el icono del chat y se actualiza la variable closed a true
                     chaticon.setVisibility(View.VISIBLE);
                     closed = true;
@@ -134,7 +135,8 @@ public class main extends Activity implements CategoryListener {
             }
 
 
-        }};
+        }
+    };
 
     public void categoryClicked(int position) {
 

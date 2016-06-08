@@ -11,7 +11,7 @@ import android.widget.ImageView;
 /**
  * Created by Kevin on 13/02/2016.
  */
-public class chat_fragment extends Fragment implements View.OnClickListener{
+public class chat_fragment extends Fragment implements View.OnClickListener {
 
     public chat_fragment() {
         // Empty constructor required for fragment subclasses
@@ -25,6 +25,7 @@ public class chat_fragment extends Fragment implements View.OnClickListener{
         closeBtn.setOnClickListener(this);
         return rootView;
     }
+
     @Override
     public void onClick(View v) {
 

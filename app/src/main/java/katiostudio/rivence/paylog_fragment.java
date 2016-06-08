@@ -14,6 +14,7 @@ import android.widget.TextView;
 import katiostudio.rivence.Controlador.PaylogFilterCards;
 import katiostudio.rivence.Controlador.PaylogAdapter;
 import katiostudio.rivence.Controlador.Pago;
+
 import java.util.List;
 
 /**
@@ -33,12 +34,9 @@ public class paylog_fragment extends Fragment {
     int isActive = 1;
 
 
-
-
     public paylog_fragment() {
         // Empty constructor required for fragment subclasses
     }
-
 
 
     @Override
@@ -51,9 +49,9 @@ public class paylog_fragment extends Fragment {
         mDataset = pay.pagos;
     }
 
-//Cambio de color del botón deseleccionado
-    public void unpressButton(TextView all, TextView paid, TextView pending){
-        switch(isActive){
+    //Cambio de color del botón deseleccionado
+    public void unpressButton(TextView all, TextView paid, TextView pending) {
+        switch (isActive) {
             case 1:
                 GradientDrawable allBackground = (GradientDrawable) all.getBackground();
                 allBackground.setColor(getResources().getColor(R.color.paylog_notpressed));
@@ -94,19 +92,17 @@ public class paylog_fragment extends Fragment {
         filterCards = new PaylogFilterCards(mAdapter.getList());
 
 
-
-
-            //ACCIONES ONCLICK BOTONES MENU
+        //ACCIONES ONCLICK BOTONES MENU
         pending.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
+            public void onClick(View v) {
 
                 //Change color to pressed
                 GradientDrawable pendingBackground = (GradientDrawable) pending.getBackground();
                 pendingBackground.setColor(getResources().getColor(R.color.paylog_pressed));
 
                 //UnpressButton Routine
-                unpressButton(all,paid,pending);
-                isActive=3;
+                unpressButton(all, paid, pending);
+                isActive = 3;
 
                 //Update CardView
                 mAdapter.setList(filterCards.performFilteringPending());
@@ -115,14 +111,14 @@ public class paylog_fragment extends Fragment {
         });
 
         paid.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
+            public void onClick(View v) {
 
                 //Change color to pressed
                 paid.setBackgroundColor(getResources().getColor(R.color.paylog_pressed));
 
                 //UnpressButton Routine
-                unpressButton(all,paid,pending);
-                isActive=2;
+                unpressButton(all, paid, pending);
+                isActive = 2;
 
                 //Update CardView
                 mAdapter.setList(filterCards.performFilteringPaid());
@@ -131,15 +127,15 @@ public class paylog_fragment extends Fragment {
         });
 
         all.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
+            public void onClick(View v) {
 
                 //Change color to pressed
                 GradientDrawable allBackground = (GradientDrawable) all.getBackground();
                 allBackground.setColor(getResources().getColor(R.color.paylog_pressed));
 
                 //UnpressButton Routine
-                unpressButton(all,paid,pending);
-                isActive=1;
+                unpressButton(all, paid, pending);
+                isActive = 1;
 
                 //Update CardView
                 mAdapter.setList(filterCards.performFilteringAll());
@@ -148,11 +144,8 @@ public class paylog_fragment extends Fragment {
         });
 
 
-
         return rootView;
     }
-
-
 
 
 }

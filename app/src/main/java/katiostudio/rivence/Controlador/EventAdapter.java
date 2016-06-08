@@ -6,9 +6,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.view.View;
+
 import java.util.List;
+
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
+
 import katiostudio.rivence.R;
 
 /**
@@ -18,12 +21,16 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventoViewHo
 
     private List<Evento> eventos;
 
-    public EventAdapter(List<Evento> eventosL){ eventos = eventosL; }
+    public EventAdapter(List<Evento> eventosL) {
+        eventos = eventosL;
+    }
 
 
     //Override métodos superclase
     @Override
-    public int getItemCount() { return eventos.size(); }
+    public int getItemCount() {
+        return eventos.size();
+    }
 
     @Override
     public EventoViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
@@ -42,7 +49,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventoViewHo
     }
 
 
-
     /********
      * Clase View Holder
      **********/
@@ -58,21 +64,19 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventoViewHo
         boolean opened = false;
 
 
-
-        EventoViewHolder (final View itemView) {
+        EventoViewHolder(final View itemView) {
             super(itemView);
-            cv = (CardView)itemView.findViewById(R.id.card_view_event);
-            eventTitle = (TextView)itemView.findViewById(R.id.paylog_title);
-            date = (TextView)itemView.findViewById(R.id.event_date);
+            cv = (CardView) itemView.findViewById(R.id.card_view_event);
+            eventTitle = (TextView) itemView.findViewById(R.id.paylog_title);
+            date = (TextView) itemView.findViewById(R.id.event_date);
             more = (Button) itemView.findViewById(R.id.read_more_pay);
-            eventPhoto = (ImageView)itemView.findViewById(R.id.eventPhoto);
+            eventPhoto = (ImageView) itemView.findViewById(R.id.eventPhoto);
             description = (TextView) itemView.findViewById(R.id.descriptionE);
 
 
-
-           more.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v){
-                    if(opened==false) {
+            more.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    if (opened == false) {
                         more.setBackgroundResource(R.drawable.lessinfo_ic);
                         description.setVisibility(View.VISIBLE);
                         opened = true;

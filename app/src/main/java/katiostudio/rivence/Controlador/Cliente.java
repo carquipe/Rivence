@@ -1,12 +1,15 @@
 package katiostudio.rivence.Controlador;
 
 import java.util.List;
+
 /**
  * Created by cquinz on 27/4/16.
  */
 public class Cliente {
 
-    List <Servicio> servContratados;
+    /*  Declaración de variables Globales   */
+
+    List<Servicio> servContratados;
     String ciudad, fechaFin, clave;
     private static Cliente cliente;
     private static Agente agente;
@@ -14,42 +17,88 @@ public class Cliente {
 
     /* Patrón Singleton para crear solamente 1 cliente */
 
+    //Constructores
 
-    //Constructor privado para evitar la llamada de otra clase
-    private Cliente (){
+    /**
+     * Constructor privado para evitar llamadas de clases externas
+     * Sin atributos de entrada
+     *
+     * @deprecated
+     */
+    private Cliente() {
         //Empty Constructor
     }
-    private Cliente (String city, String endDate, String key) {
+
+    /**
+     * Constructor privado para evitar llamadas de clases externas
+     * Con atributos de entrada
+     *
+     * @param city    Ciudad en la que se realiza el servicio.
+     * @param endDate Fecha de finalizacion del servicio
+     * @param key     Clave de acceso a la aplicacion
+     */
+    private Cliente(String city, String endDate, String key) {
         ciudad = city;
         fechaFin = endDate;
         clave = key;
         agente = agente.getInstance();
 
     }
-    //Método instancia estática
-    public static Cliente getInstance(){
-        if(cliente == null) cliente = new Cliente("Valencia","30/09/2016","123456-123456-123456");
+
+
+    /**
+     * Metodo de instancia estatica (Singleton)
+     *
+     * @return Si no existe un cliente crea uno nuevo, sino devuelve el actual.
+     */
+    public static Cliente getInstance() {
+        if (cliente == null)
+            cliente = new Cliente("Valencia", "30/09/2016", "123456-123456-123456"); //Si no existe un cliente crea uno genérico
         return cliente;
     }
 
 
-    /*Getters*/
-    public String getClave(){
+    /* Getters */
+
+    /**
+     * Obtener contrasenya del usuario
+     *
+     * @return Contrasenya de la aplicacion
+     */
+    public String getClave() {
         return clave;
     }
 
-    public String getCiudad(){
+
+    /**
+     * Gett Ciudad del usuario
+     *
+     * @return Ciudad del usuario
+     */
+    public String getCiudad() {
         return ciudad;
     }
 
-    public String getFechaFin(){
+    /**
+     * Gett Fecha final del servicio
+     *
+     * @return Fecha en la que finaliza el servicio
+     */
+    public String getFechaFin() {
         return fechaFin;
     }
 
-    public Agente getAgente() { return agente; }
+    /**
+     * Gett Agente asociado al usuario
+     *
+     * @return Objeto agente asociado al usuario
+     */
+    public Agente getAgente() {
+        return agente;
+    }
 
-    /*Creación temporal*/
-    public void newClient (){
-        new Cliente("Valencia","30/09/2016","123456-123456-123456");
+    /* Creacion temporal, eliminar al implementar la DB */
+    public void newClient() {
+        new Cliente("Valencia", "30/09/2016", "123456-123456-123456");
     }
 }

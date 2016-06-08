@@ -27,8 +27,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-
-
 public class Login extends AppCompatActivity {
 
 
@@ -60,10 +58,10 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
 
                 /*Sin Checkeo de password*/
-                Intent intent = new Intent(Login.this,main.class);
+                Intent intent = new Intent(Login.this, main.class);
                 startActivity(intent);
                /*Con Checkeo de password*/
-               //ProcessLogin();
+                //ProcessLogin();
             }
 
         });
@@ -89,17 +87,15 @@ public class Login extends AppCompatActivity {
         loggedIn = sharedPreferences.getBoolean(Config.LOGGEDIN_SHARED_PREF, false);
 
         //If we will get true
-       // *if(loggedIn){
-            //We will start the Profile Activity
-          //  Intent intent = new Intent(Login.this, main.class);
-          //  startActivity(intent);
+        // *if(loggedIn){
+        //We will start the Profile Activity
+        //  Intent intent = new Intent(Login.this, main.class);
+        //  startActivity(intent);
         //}
     }
 
 
-    private void ProcessLogin(){
-
-
+    private void ProcessLogin() {
 
 
         key = LoginEdit.getText().toString().trim();
@@ -109,7 +105,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         //If we are getting success from server
-                        if(response.equalsIgnoreCase(Config.LOGIN_SUCCESS)){
+                        if (response.equalsIgnoreCase(Config.LOGIN_SUCCESS)) {
                             //Creating a shared preference
                             SharedPreferences sharedPreferences = Login.this.getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
 
@@ -124,9 +120,9 @@ public class Login extends AppCompatActivity {
                             editor.commit();
 
                             //Starting profile activity
-                            Intent intent = new Intent(Login.this,main.class);
+                            Intent intent = new Intent(Login.this, main.class);
                             startActivity(intent);
-                        }else{
+                        } else {
                             //If the server response is not success
                             //Displaying an error message on toast
                             Toast.makeText(Login.this, response, Toast.LENGTH_LONG).show();
@@ -138,10 +134,10 @@ public class Login extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         //You can handle error here if you want
                     }
-                }){
+                }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params = new HashMap<>();
+                Map<String, String> params = new HashMap<>();
                 //Adding parameters to request
                 params.put(Config.KEY_TAG, "login");
                 params.put(Config.KEY_PASS, key);
@@ -149,6 +145,7 @@ public class Login extends AppCompatActivity {
                 //returning parameter
                 return params;
             }
+
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers = new HashMap<String, String>();
@@ -159,14 +156,12 @@ public class Login extends AppCompatActivity {
         };
 
 
-
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
 
 
-
-    private void openProfile( JSONObject response){
+    private void openProfile(JSONObject response) {
 
         String success;
 
