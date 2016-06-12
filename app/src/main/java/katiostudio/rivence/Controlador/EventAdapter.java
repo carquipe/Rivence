@@ -19,25 +19,49 @@ import katiostudio.rivence.R;
  */
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventoViewHolder> {
 
+    /* Definición de variables globales */
     private List<Evento> eventos;
 
+    /* Constructores */
+    /**
+     * Constructor que crea el Adaptador de Eventos
+     *
+     * @param eventosL Lista que contiene todos los eventos que se van a mostrar.
+     */
     public EventAdapter(List<Evento> eventosL) {
         eventos = eventosL;
     }
 
 
     //Override métodos superclase
+    /**
+     * Getter Tamaño de lista
+     *
+     * @return Numero de eventos que tiene la Lista.
+     */
     @Override
     public int getItemCount() {
         return eventos.size();
     }
 
+    /**
+     * Creador del layout de un item Evento
+     *
+     * @param viewGroup Grupo de vistas de items del cardview.
+     * @param i numero de posición del evento en la Lista eventosL
+     */
     @Override
     public EventoViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.nearyou_item, viewGroup, false);
         return new EventoViewHolder(v);
     }
 
+    /**
+     * Rellenado del layout con la informacion de un evento concreto
+     *
+     * @param eventoViewHolder Layout del item.
+     * @param i  posicion del objeto evento concreto en la lista
+     */
     @Override
     public void onBindViewHolder(EventoViewHolder eventoViewHolder, int i) {
 
@@ -55,15 +79,24 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventoViewHo
 
 
     public static class EventoViewHolder extends RecyclerView.ViewHolder {
+
+        /*  Definición de variables globales  */
         CardView cv;
         ImageView eventPhoto;
         TextView eventTitle;
         TextView date;
         Button more;
         TextView description;
-        boolean opened = false;
+        boolean opened = false;  //Controla si la descripcion esta desplegada o no
 
+        /*  Constructores  */
 
+        /**
+         * Construir un objeto EventoViewHolder que contiene las referencias a cada elemento
+         * de la interfaz que se desea posteriormente modificar
+         *
+         * @param itemView Vista de la interfaz de un item.
+         */
         EventoViewHolder(final View itemView) {
             super(itemView);
             cv = (CardView) itemView.findViewById(R.id.card_view_event);
@@ -73,14 +106,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventoViewHo
             eventPhoto = (ImageView) itemView.findViewById(R.id.eventPhoto);
             description = (TextView) itemView.findViewById(R.id.descriptionE);
 
-
+            //Control de icono cuando se pulsa en mas informacion
             more.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    if (opened == false) {
+                    if (opened == false) {  //Si no esta desplegado, se cambia a icono - y se muestra la descripcion
                         more.setBackgroundResource(R.drawable.lessinfo_ic);
                         description.setVisibility(View.VISIBLE);
                         opened = true;
-                    } else {
+                    } else {  //Si esta desplegado, se cambia a icono + y se osuclta la descripcion
                         more.setBackgroundResource(R.drawable.moreinfo_ic);
                         description.setVisibility(View.GONE);
                         opened = false;

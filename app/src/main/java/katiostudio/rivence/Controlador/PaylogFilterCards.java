@@ -13,19 +13,32 @@ import java.util.List;
  */
 public class PaylogFilterCards {
 
-
+    /* Inicializacion de variables globales */
     private final List<Pago> originalList;
     private final List<Pago> filteredList;
 
 
-    /*Inicialización de lista general y auxiliar*/
+    /* Constructores */
+
+    /**
+     * Constructor de un filtrado
+     *
+     * @param originalList Lista que contiene la totalidad de los pagos.
+     */
     public PaylogFilterCards(List<Pago> originalList) {
-        this.originalList = new LinkedList<>(originalList);
-        this.filteredList = new ArrayList<>();
+        this.originalList = new LinkedList<>(originalList); //Lista general
+        this.filteredList = new ArrayList<>(); //Lista auxiliar
     }
 
 
-    /*  FORMATEO DE LISTA DE CADA TIPO   */
+    /* Metodos de filtrado segun estatus */
+
+    /**
+     * Filtrar la lista original de Pagos en otra lista que contenga solamente una lista con
+     * los pagos pagados
+     *
+     * @return Lista con solamente los pagos pagados.
+     */
     public List<Pago> performFilteringPaid() {
         filteredList.clear();
         for (Pago pago : originalList) {
@@ -34,6 +47,12 @@ public class PaylogFilterCards {
         return filteredList;
     }
 
+    /**
+     * Filtrar la lista original de Pagos en otra lista que contenga solamente una lista con
+     * los pagos pendientes
+     *
+     * @return Lista con solamente los pagos pendientes.
+     */
     public List<Pago> performFilteringPending() {
         filteredList.clear();
         for (Pago pago : originalList) {
@@ -42,10 +61,15 @@ public class PaylogFilterCards {
         return filteredList;
     }
 
+    /**
+     * Devuelve la lista original que contiene todos los elementos
+     *
+     * @return La lista con todos los elementos.
+     */
     public List<Pago> performFilteringAll() {
-        filteredList.clear();
-        filteredList.addAll(originalList);
-        return filteredList;
+        //filteredList.clear();
+        //filteredList.addAll(originalList);
+        return originalList;
     }
 
 }

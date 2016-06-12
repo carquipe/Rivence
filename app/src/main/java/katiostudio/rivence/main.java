@@ -145,6 +145,9 @@ public class main extends Activity implements CategoryListener {
 
         if (servicesFRA != null) {
             switch (position) {
+                case 0:
+                    servicesFRA.updateCat0();
+                    break;
                 case 1:
                     ((services_fragment) servicesFRA).updateCat1();
                     break;

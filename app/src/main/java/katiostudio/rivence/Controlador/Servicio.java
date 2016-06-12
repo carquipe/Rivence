@@ -11,10 +11,21 @@ import java.util.ArrayList;
 import katiostudio.rivence.R;
 
 public class Servicio {
+
+    /* Inicialización de variables globales */
     int photoId, categoryId;
     String title, subtitle, distance, description;
     public List<Servicio> servicios;
 
+    /**
+     * Constructor de un objeto Servicio
+     *
+     * @param fotoId Identificador de la imagen que se muestra relacionada al servicio.
+     * @param titulo Titulo del Servicio
+     * @param subtitulo Localizacion del Servicio
+     * @param distancia Distancia a la que se encuentra, respecto al cliente
+     * @param categoriaId Identificador de la categoria a la que pertenece
+     */
     Servicio(int fotoId, String titulo, String subtitulo, String distancia, String descripcion, int categoriaId) {
         title = titulo;
         distance = distancia;
@@ -24,17 +35,16 @@ public class Servicio {
         categoryId = categoriaId;
     }
 
-    public Servicio(String titulo) {
-
-        title = titulo;
-
-    }
-
+    /**
+     * Constructor vacio
+     */
     public Servicio() {
-
+        //Constructor vacio
     }
 
-
+    /**
+     * Inicia varios objetos con toda la información recogida.
+     */
     public void initializeData() {
         servicios = new ArrayList<>();
         servicios.add(new Servicio(R.drawable.arena_service, "Hotel las Arenas *****", "Playa Malvarosa", "30Km", "Exclusivo hotel situado en la zona de la costa. Contiene SPA, jardines y ble ble ble", R.drawable.hotels_ic));

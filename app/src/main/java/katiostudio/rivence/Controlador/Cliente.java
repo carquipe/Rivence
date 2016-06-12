@@ -97,8 +97,4 @@ public class Cliente {
         return agente;
     }
 
-    /* Creacion temporal, eliminar al implementar la DB */
-    public void newClient() {
-        new Cliente("Valencia", "30/09/2016", "123456-123456-123456");
-    }
 }

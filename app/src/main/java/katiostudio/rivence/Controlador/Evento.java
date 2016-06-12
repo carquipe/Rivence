@@ -9,10 +9,22 @@ import katiostudio.rivence.R;
  * Created by cquinz on 27/4/16.
  */
 public class Evento {
+
+    /* Definición de variables globales */
     int photoId;
     String title, date, description;
     public List<Evento> eventos;
 
+    /* Constructores */
+
+    /**
+     * Constructor de un evento
+     *
+     * @param titulo Titulo del evento.
+     * @param fecha Fecha en la que se realiza el evento.
+     * @param fotoId Identificador de la foto relacionada con el evento.
+     * @param descripcion Texto adicional que se muestra cuando se pulsa el boton de mas informacion.
+     */
     public Evento(String titulo, String fecha, int fotoId, String descripcion) {
 
         title = titulo;
@@ -22,10 +34,18 @@ public class Evento {
 
     }
 
+    /**
+     * Constructor vacio.
+     */
     public Evento() {
-
+        //Constructor vacio
     }
 
+    /* Inicialización de objetos */
+
+    /**
+     * Inicia varios objetos con toda la información recogida.
+     */
     public void initializeData() {
         eventos = new ArrayList<>();
         eventos.add(new Evento("Mascletá en pza. Ayuntamiento Valencia", "Mañana a las 14:00", R.drawable.mascleta_event, "Protagonizada por la gran priotecnia Caballer bububububu"));

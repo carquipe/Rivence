@@ -55,7 +55,7 @@ public class menu_fragment extends Fragment implements View.OnClickListener {
                 Fragment services = new services_fragment();
                 Fragment categories = new category_fragment();
 
-                //fragmentTransaction.setCustomAnimations(R.anim.fade_in,0,0, R.anim.fade_out);
+                fragmentTransaction.setCustomAnimations(R.anim.fade_in,0,0,0);
                 fragmentTransaction.replace(Fragcontainer, services, "servicesTAG");
                 //fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, 0, 0, 0);
                 fragmentTransaction.add(Catcontainer, categories, "categoriesTAG");
@@ -70,7 +70,7 @@ public class menu_fragment extends Fragment implements View.OnClickListener {
             case R.id.Menu2:
                 Fragment paylog = new paylog_fragment();
 
-                //fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0, R.anim.fade_out);
+                fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0, 0);
                 fragmentTransaction.replace(Fragcontainer, paylog);
                 //fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, 0, 0, 0);
 
@@ -86,7 +86,7 @@ public class menu_fragment extends Fragment implements View.OnClickListener {
                 Fragment nearyou = new nearyou_fragment();
 
                 fragmentTransaction = main.fragmentManager.beginTransaction();
-                //fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0, R.anim.fade_out);
+                fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0, 0);
                 fragmentTransaction.replace(Fragcontainer, nearyou);
 
                 fragmentTransaction.addToBackStack(null);
@@ -100,7 +100,7 @@ public class menu_fragment extends Fragment implements View.OnClickListener {
                 Fragment config = new config_fragment();
 
                 fragmentTransaction = main.fragmentManager.beginTransaction();
-                fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0, R.anim.fade_out);
+                fragmentTransaction.setCustomAnimations(R.anim.fade_in, 0, 0, 0);
                 fragmentTransaction.replace(Fragcontainer, config);
 
                 fragmentTransaction.addToBackStack(null);
@@ -114,10 +114,13 @@ public class menu_fragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    public void categoryClicked(int position) {
+  /*  public void categoryClicked(int position) {
         services_fragment servicesFRA = (services_fragment)
                 main.fragmentManager.findFragmentByTag("servicesTAG");
         switch (position) {
+            case 0:
+                servicesFRA.updateCat0();
+                break;
             case 1:
                 servicesFRA.updateCat1();
                 break;
@@ -134,7 +137,7 @@ public class menu_fragment extends Fragment implements View.OnClickListener {
                 servicesFRA.updateCat5();
                 break;
         }
-    }
+    } */
 }
 
 

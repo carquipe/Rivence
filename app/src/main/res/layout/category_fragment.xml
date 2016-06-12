@@ -18,6 +18,14 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/category_button"
+                android:id="@+id/cat0"
+                android:layout_margin="3dp"
+                android:src="@drawable/allservices_ic" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/category_button"
                 android:id="@+id/cat1"
                 android:layout_margin="3dp"
                 android:src="@drawable/renting_ic" />

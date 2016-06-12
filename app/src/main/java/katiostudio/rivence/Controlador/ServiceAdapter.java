@@ -20,38 +20,68 @@ import katiostudio.rivence.R;
 
 public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServicioViewHolder> {
 
+    /* Inicializacion de variables globales */
     private List<Servicio> servicios;
 
+    /* Constructores */
+    /**
+     * Constructor de un Adaptador de Servicios
+     *
+     * @param serviciosL Lista que contiene todos los objetos Servicio que se desean mostrar
+     */
     public ServiceAdapter(List<Servicio> serviciosL) {
         servicios = serviciosL;
     }
 
-    // Override de métodos superclase
+    /* Override de métodos superclase */
 
+    /**
+     * Obtiene el tamaño de la lista servicios.
+     *
+     * @return numero de objetos Servicio que contiene la lista servicio
+     */
     @Override
     public int getItemCount() {
         return servicios.size();
     }
 
-    /********
-     * FILTRO
-     **/
+    /**
+     * Getter de la variable servicios.
+     *
+     * @return La lista que contiene todos los objeto servicio
+     */
     public List<Servicio> getList() {
         return servicios;
     }
 
+    /**
+     * Setter de la lista servicios.
+     *
+     * @param serviciosNuevo  La lista que contiene todos los objeto servicio nuevos
+     */
     public void setList(List<Servicio> serviciosNuevo) {
         servicios = serviciosNuevo;
     }
 
-    /*********/
 
+    /**
+     * Creador del layout de un item Servicio
+     *
+     * @param viewGroup Grupo de vistas de items del cardview.
+     * @param i numero de posición del evento en la Lista servicios
+     */
     @Override
     public ServicioViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.service_item, viewGroup, false);
         return new ServicioViewHolder(v);
     }
 
+    /**
+     * Rellenado del layout con la informacion de un Servicio concreto
+     *
+     * @param servicioViewHolder Layout del item.
+     * @param i  posicion del objeto Pago concreto en la lista
+     */
     @Override
     public void onBindViewHolder(ServicioViewHolder servicioViewHolder, int i) {
 
@@ -70,6 +100,8 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.Servicio
 
 
     public static class ServicioViewHolder extends RecyclerView.ViewHolder {
+
+        /* Definicon de variables gloables */
         CardView cv;
         ImageView servicePhoto;
         TextView serviceTitle;
@@ -80,7 +112,14 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.Servicio
         TextView description;
         Button readless;
 
+        /* Constructores */
 
+        /**
+         * Construir un objeto ServicioViewHolder que contiene las referencias a cada elemento
+         * de la interfaz que se desea posteriormente modificar
+         *
+         * @param itemView Vista de la interfaz de un item.
+         */
         ServicioViewHolder(View itemView) {
             super(itemView);
             cv = (CardView) itemView.findViewById(R.id.card_view);
@@ -93,24 +132,26 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.Servicio
             description = (TextView) itemView.findViewById(R.id.description);
             readless = (Button) itemView.findViewById(R.id.read_less_pay);
 
+            /* Apartado de control de clickado descripcion */
+            //Cuanto esta cerrado
             more.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
-                    readless.setVisibility(View.VISIBLE);
-                    more.setVisibility(View.INVISIBLE);
-                    description.setVisibility(View.VISIBLE);
+                    readless.setVisibility(View.VISIBLE); //Hacemos visible el botón de -
+                    more.setVisibility(View.INVISIBLE); //Hacemos invisible el boton de +
+                    description.setVisibility(View.VISIBLE); //Mostramos descripcion
 
 
                 }
             });
 
-
+            //Cuando esta desplegado
             readless.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
-                    readless.setVisibility(View.GONE);
-                    more.setVisibility(View.VISIBLE);
-                    description.setVisibility(View.GONE);
+                    readless.setVisibility(View.GONE); //Hacemos invisible el boton -
+                    more.setVisibility(View.VISIBLE); //Hacemos visible el boton de +
+                    description.setVisibility(View.GONE); //Ocultamos descripcion
 
 
                 }

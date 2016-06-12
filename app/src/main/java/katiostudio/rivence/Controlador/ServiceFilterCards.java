@@ -11,17 +11,31 @@ import katiostudio.rivence.R;
  */
 public class ServiceFilterCards {
 
-    private final List<Servicio> originalList;
-    private final List<Servicio> filteredList;
+    /* Definicion de variables globales */
+    private final List<Servicio> originalList; //Lista general
+    private final List<Servicio> filteredList; //Lista auxiliar
 
-    /*Inicialización de lista general y auxiliar*/
+    /* Constructores */
+
+    /**
+     * Constructor de un filtrado
+     *
+     * @param originalList Lista que contiene la totalidad de los servicios.
+     */
     public ServiceFilterCards(List<Servicio> originalList) {
         this.originalList = new LinkedList<>(originalList);
         this.filteredList = new ArrayList<>();
     }
 
 
-    /*Inicialización de lista general y auxiliar*/
+    /*Metodos de filtrado segun categoria*/
+
+    /**
+     * Filtrar la lista original de Servicios en otra lista que contenga solamente una lista con
+     * servicios de Hosteleria
+     *
+     * @return Lista con solamente los servicios que pertenecen a Hosteleria.
+     */
     public List<Servicio> performFilteringHotels() {
         filteredList.clear();
         for (Servicio servicio : originalList) {
@@ -30,6 +44,12 @@ public class ServiceFilterCards {
         return filteredList;
     }
 
+    /**
+     * Filtrar la lista original de Servicios en otra lista que contenga solamente una lista con
+     * servicios de Alquiler
+     *
+     * @return Lista con solamente los servicios que pertenecen a Alquiler.
+     */
     public List<Servicio> performFilteringRenting() {
         filteredList.clear();
         for (Servicio servicio : originalList) {
@@ -38,6 +58,12 @@ public class ServiceFilterCards {
         return filteredList;
     }
 
+    /**
+     * Filtrar la lista original de Servicios en otra lista que contenga solamente una lista con
+     * servicios de Comida
+     *
+     * @return Lista con solamente los servicios que pertenecen a Comida.
+     */
     public List<Servicio> performFilteringFood() {
         filteredList.clear();
         for (Servicio servicio : originalList) {
@@ -46,6 +72,12 @@ public class ServiceFilterCards {
         return filteredList;
     }
 
+    /**
+     * Filtrar la lista original de Servicios en otra lista que contenga solamente una lista con
+     * servicios de Ocio nocturno
+     *
+     * @return Lista con solamente los servicios que pertenecen a Ocio nocturno.
+     */
     public List<Servicio> performFilteringNight() {
         filteredList.clear();
         for (Servicio servicio : originalList) {
@@ -54,6 +86,12 @@ public class ServiceFilterCards {
         return filteredList;
     }
 
+    /**
+     * Filtrar la lista original de Servicios en otra lista que contenga solamente una lista con
+     * servicios de Ocio
+     *
+     * @return Lista con solamente los servicios que pertenecen a Ocio.
+     */
     public List<Servicio> performFilteringLeisure() {
         filteredList.clear();
         for (Servicio servicio : originalList) {
@@ -62,10 +100,13 @@ public class ServiceFilterCards {
         return filteredList;
     }
 
+    /**
+     * Devuelve la lista original que contiene todos los elementos
+     *
+     * @return La lista con todos los elementos.
+     */
     public List<Servicio> performFilteringAll() {
-        filteredList.clear();
-        filteredList.addAll(originalList);
-        return filteredList;
+        return originalList;
     }
 
 

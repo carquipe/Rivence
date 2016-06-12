@@ -76,6 +76,10 @@ public class services_fragment extends Fragment {
 
     //UPDATE FILTROS CATEGORIAS
 
+    public void updateCat0() {
+        mAdapter.setList(filterCards.performFilteringAll());
+        mAdapter.notifyDataSetChanged();
+    }
 
     public void updateCat1() {
         mAdapter.setList(filterCards.performFilteringRenting());
