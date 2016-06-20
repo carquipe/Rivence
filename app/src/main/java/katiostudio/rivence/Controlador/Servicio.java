@@ -26,7 +26,7 @@ public class Servicio {
      * @param distancia Distancia a la que se encuentra, respecto al cliente
      * @param categoriaId Identificador de la categoria a la que pertenece
      */
-    Servicio(int fotoId, String titulo, String subtitulo, String distancia, String descripcion, int categoriaId) {
+    public Servicio(int fotoId, String titulo, String subtitulo, String distancia, String descripcion, int categoriaId) {
         title = titulo;
         distance = distancia;
         subtitle = subtitulo;
@@ -34,6 +34,18 @@ public class Servicio {
         photoId = fotoId;
         categoryId = categoriaId;
     }
+
+//VOLLEY
+
+    public Servicio(String titulo, String subtitulo, String distancia, String descripcion, int categoriaId) {
+        title = titulo;
+        distance = distancia;
+        subtitle = subtitulo;
+        description = descripcion;
+        categoryId = categoriaId;
+    }
+
+
 
     /**
      * Constructor vacio
@@ -53,4 +65,6 @@ public class Servicio {
         servicios.add(new Servicio(R.drawable.coche_service, "Alquiler coches SIXT", "A domicilio", "0Km", "Coches de alta gama, servidos en tiempo récord", R.drawable.renting_ic));
 
     }
+
+
 }

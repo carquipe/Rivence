@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import katiostudio.rivence.Interfaces.CategoryListener;
+import katiostudio.rivence.Interfaces.MySocialMediaRequests;
 
 
 /**
@@ -24,15 +25,23 @@ public class main extends Activity implements CategoryListener {
     boolean closed = true;  //Variable que captura el estado del chat (abierto o cerrado)
     public static int Fragcontainer = R.id.content; //Contenedor principal que se rellena según el menu
     public static FragmentManager fragmentManager;
+    MySocialMediaRequests mySocialMediaRequests;
 
     private RelativeLayout drawer; //Variable que almacena el Layout del chat
     static DrawerLayout drawerLayout; //Layout general
     private TextView titleText;  //Titulo "Rivence" superior
     static ImageView chaticon;
     static ImageView backicon;
+
     EventCenter eventCenter;
 
     protected void onCreate(Bundle savedInstanceState) {
+
+        /* Generar objetos de APP */
+        //Inicialización de variables
+        mySocialMediaRequests = MySocialMediaRequests.getInstance(getApplicationContext());
+        mySocialMediaRequests.initializePagos();
+
 
         /* Generar estructura interfaz básica de la aplicación procedente del Layout: main.xml */
         super.onCreate(savedInstanceState);

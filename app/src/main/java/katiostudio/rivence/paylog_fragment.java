@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
@@ -11,9 +12,11 @@ import android.view.ViewGroup;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
+import katiostudio.rivence.Controlador.Cliente;
 import katiostudio.rivence.Controlador.PaylogFilterCards;
 import katiostudio.rivence.Controlador.PaylogAdapter;
 import katiostudio.rivence.Controlador.Pago;
+import katiostudio.rivence.Interfaces.MySocialMediaRequests;
 
 import java.util.List;
 
@@ -31,7 +34,8 @@ public class paylog_fragment extends Fragment {
     protected RecyclerView.LayoutManager mLayoutManager;
     protected List<Pago> mDataset;
     protected PaylogFilterCards filterCards;
-    int isActive = 1;
+    protected Cliente cliente;
+    static int isActive = 1;
 
 
     public paylog_fragment() {
@@ -44,13 +48,16 @@ public class paylog_fragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         //Iniciacion de los datos en Objeto Servicio con la Lista
-        Pago pay = new Pago();
-        pay.initializeData();
-        mDataset = pay.pagos;
+       cliente = Cliente.getInstance();
+
+
+        //Rellenado de la lista utilizada para visualizar
+        mDataset = cliente.getPagos();
     }
 
     //Cambio de color del botón deseleccionado
     public void unpressButton(TextView all, TextView paid, TextView pending) {
+
         switch (isActive) {
             case 1:
                 GradientDrawable allBackground = (GradientDrawable) all.getBackground();
@@ -82,6 +89,7 @@ public class paylog_fragment extends Fragment {
 
         //Creamos el adaptador
         mAdapter = new PaylogAdapter(mDataset);
+
         // Asignacion de adaptador al del Recycler View
         mRecyclerView.setAdapter(mAdapter);
 
@@ -92,61 +100,76 @@ public class paylog_fragment extends Fragment {
         filterCards = new PaylogFilterCards(mAdapter.getList());
 
 
+        //Filtrado inicial
+        unpressButton(all, paid, pending);
+
+        //Cambia el color de pulsado
+        GradientDrawable allBackground = (GradientDrawable) all.getBackground();
+        allBackground.setColor(getResources().getColor(R.color.paylog_pressed));
+        isActive=1;
+
+
+
+
+
         //ACCIONES ONCLICK BOTONES MENU
         pending.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                //Change color to pressed
-                GradientDrawable pendingBackground = (GradientDrawable) pending.getBackground();
-                pendingBackground.setColor(getResources().getColor(R.color.paylog_pressed));
+                if (isActive != 3) {
+                    //Cambia el color al de pulsado
+                    GradientDrawable pendingBackground = (GradientDrawable) pending.getBackground();
+                    pendingBackground.setColor(getResources().getColor(R.color.paylog_pressed));
 
-                //UnpressButton Routine
-                unpressButton(all, paid, pending);
-                isActive = 3;
+                    //Rutina de despulsado
+                    unpressButton(all, paid, pending);
+                    isActive = 3;
 
-                //Update CardView
-                mAdapter.setList(filterCards.performFilteringPending());
-                mAdapter.notifyDataSetChanged();
+                    //Refresco de la lista
+                    mAdapter.setList(filterCards.performFilteringPending());
+                    mAdapter.notifyDataSetChanged();
+                }
             }
         });
 
         paid.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if (isActive != 2) {
 
-                //Change color to pressed
-                paid.setBackgroundColor(getResources().getColor(R.color.paylog_pressed));
+                    //Cambia el color de pulsado
+                    paid.setBackgroundColor(getResources().getColor(R.color.paylog_pressed));
 
-                //UnpressButton Routine
-                unpressButton(all, paid, pending);
-                isActive = 2;
+                    //Rutina de despulsado
+                    unpressButton(all, paid, pending);
+                    isActive = 2;
 
-                //Update CardView
-                mAdapter.setList(filterCards.performFilteringPaid());
-                mAdapter.notifyDataSetChanged();
+                    //Refresco de la lista
+                    mAdapter.setList(filterCards.performFilteringPaid());
+                    mAdapter.notifyDataSetChanged();
+                }
             }
         });
 
         all.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if (isActive != 1) {
+                    //Cambia el color de pulsado
+                    GradientDrawable allBackground = (GradientDrawable) all.getBackground();
+                    allBackground.setColor(getResources().getColor(R.color.paylog_pressed));
 
-                //Change color to pressed
-                GradientDrawable allBackground = (GradientDrawable) all.getBackground();
-                allBackground.setColor(getResources().getColor(R.color.paylog_pressed));
+                    //Rutina de despulsado
+                    unpressButton(all, paid, pending);
+                    isActive = 1;
 
-                //UnpressButton Routine
-                unpressButton(all, paid, pending);
-                isActive = 1;
-
-                //Update CardView
-                mAdapter.setList(filterCards.performFilteringAll());
-                mAdapter.notifyDataSetChanged();
+                    //Refresco de la lista
+                    mAdapter.setList(filterCards.performFilteringAll());
+                    mAdapter.notifyDataSetChanged();
+                }
             }
         });
 
-
         return rootView;
     }
-
 
 }
 

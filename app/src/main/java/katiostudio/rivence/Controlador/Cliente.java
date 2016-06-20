@@ -1,6 +1,11 @@
 package katiostudio.rivence.Controlador;
 
+import com.android.volley.toolbox.JsonArrayRequest;
+
+import java.util.ArrayList;
 import java.util.List;
+
+import katiostudio.rivence.R;
 
 /**
  * Created by cquinz on 27/4/16.
@@ -9,10 +14,12 @@ public class Cliente {
 
     /*  Declaración de variables Globales   */
 
-    List<Servicio> servContratados;
-    String ciudad, fechaFin, clave;
+    public static List<Pago> pagos;
+    public static List<Servicio> servicios;
+    private static String ciudad, fechaFin, clave;
     private static Cliente cliente;
     private static Agente agente;
+    private static String divisa = "EUR";
 
 
     /* Patrón Singleton para crear solamente 1 cliente */
@@ -42,6 +49,7 @@ public class Cliente {
         fechaFin = endDate;
         clave = key;
         agente = agente.getInstance();
+        pagos = new ArrayList<>();
 
     }
 
@@ -61,6 +69,15 @@ public class Cliente {
     /* Getters */
 
     /**
+     * Gett Divisa preferente
+     *
+     * @return Divisa de los precios
+     */
+    public static String getDivisa() {
+        return divisa;
+    }
+
+    /**
      * Obtener contrasenya del usuario
      *
      * @return Contrasenya de la aplicacion
@@ -69,6 +86,15 @@ public class Cliente {
         return clave;
     }
 
+
+    /**
+     * Gett Pagos del cliente
+     *
+     * @return Lista con los pagos
+     */
+    public List<Pago> getPagos() {
+        return pagos;
+    }
 
     /**
      * Gett Ciudad del usuario
@@ -96,5 +122,48 @@ public class Cliente {
     public Agente getAgente() {
         return agente;
     }
+
+
+    /* Setters */
+
+    /**
+     * Modificar moneda preferente
+     *
+     * @param nuevaDivisa Nueva divisa asociada
+     */
+    public static void setDivisa(String nuevaDivisa) { divisa = nuevaDivisa; }
+
+    /**
+     * Modificar la lista de los servicios
+     *
+     * @param serviciosL Nueva Lista de servicios
+     */
+    public static void setServicios(List<Servicio> serviciosL) {
+        servicios = serviciosL;
+    }
+
+    /**
+     * Modificar la lista de los pagos
+     *
+     * @param pagosL Nueva Lista de pagos
+     */
+    public static void setPagos(List<Pago> pagosL) {
+        pagos = pagosL;
+    }
+
+
+    /**
+     * Inicia varios pagos con toda la información recogida.
+     *
+     */
+  //  public void initializeData() {
+  //      pagos.add(new Pago("Hotel Las Arenas *****", 450, false));
+  //      pagos.add(new Pago("Alquiler Barco", 100, true));
+  //      pagos.add(new Pago("Restaurante Duna", 200, true));
+  //      pagos.add(new Pago("Alquiler Ferrari F4320 2", 450, false));
+  //      pagos.add(new Pago("Alquiler Yate 3 dias", 450, false));
+
+  //  }
+
 
 }

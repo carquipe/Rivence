@@ -42,7 +42,7 @@ public class PaylogFilterCards {
     public List<Pago> performFilteringPaid() {
         filteredList.clear();
         for (Pago pago : originalList) {
-            if (pago.pagado == true) filteredList.add(pago);
+            if (pago.getPagado() == true) filteredList.add(pago);
         }
         return filteredList;
     }
@@ -56,7 +56,7 @@ public class PaylogFilterCards {
     public List<Pago> performFilteringPending() {
         filteredList.clear();
         for (Pago pago : originalList) {
-            if (pago.pagado == false) filteredList.add(pago);
+            if (pago.getPagado() == false) filteredList.add(pago);
         }
         return filteredList;
     }
@@ -67,8 +67,6 @@ public class PaylogFilterCards {
      * @return La lista con todos los elementos.
      */
     public List<Pago> performFilteringAll() {
-        //filteredList.clear();
-        //filteredList.addAll(originalList);
         return originalList;
     }
 

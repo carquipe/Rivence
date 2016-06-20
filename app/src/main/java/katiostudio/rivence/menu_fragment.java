@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import katiostudio.rivence.Interfaces.CategoryListener;
+import katiostudio.rivence.Interfaces.MySocialMediaRequests;
 
 
 public class menu_fragment extends Fragment implements View.OnClickListener {
@@ -18,12 +19,17 @@ public class menu_fragment extends Fragment implements View.OnClickListener {
     public EventCenter eventCenter;
 
 
+
     public menu_fragment() {
         // Empty constructor required for fragment subclasses
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
+
+
         View rootView = inflater.inflate(R.layout.menu_fragment, container, false);
 
         eventCenter = new EventCenter();
@@ -114,30 +120,6 @@ public class menu_fragment extends Fragment implements View.OnClickListener {
         }
     }
 
-  /*  public void categoryClicked(int position) {
-        services_fragment servicesFRA = (services_fragment)
-                main.fragmentManager.findFragmentByTag("servicesTAG");
-        switch (position) {
-            case 0:
-                servicesFRA.updateCat0();
-                break;
-            case 1:
-                servicesFRA.updateCat1();
-                break;
-            case 2:
-                servicesFRA.updateCat2();
-                break;
-            case 3:
-                servicesFRA.updateCat3();
-                break;
-            case 4:
-                servicesFRA.updateCat4();
-                break;
-            case 5:
-                servicesFRA.updateCat5();
-                break;
-        }
-    } */
 }
 
 

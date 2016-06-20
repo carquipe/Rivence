@@ -26,7 +26,6 @@ public class services_fragment extends Fragment {
     protected RecyclerView.LayoutManager mLayoutManager;
     protected List<Servicio> mDataset;
     protected ServiceFilterCards filterCards;
-    protected int isActive = 0;
 
     public static int Servicescontainer = R.id.services_fragment_layout;
 
@@ -41,6 +40,9 @@ public class services_fragment extends Fragment {
         //Iniciacion de los datos en Objeto Servicio con la Lista
         Servicio serv = new Servicio();
         serv.initializeData();
+
+
+
         mDataset = serv.servicios;
 
         //filtro

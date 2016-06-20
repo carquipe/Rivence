@@ -90,12 +90,12 @@ public class PaylogAdapter extends RecyclerView.Adapter<PaylogAdapter.PagoViewHo
     @Override
     public void onBindViewHolder(PagoViewHolder pagoViewHolder, int i) {
 
-        pagoViewHolder.paylogTitle.setText(pagos.get(i).titulo);
-        pagoViewHolder.quant.setText(pagos.get(i).cantidad);
+        pagoViewHolder.paylogTitle.setText(pagos.get(i).getTitulo());
+        pagoViewHolder.quant.setText(pagos.get(i).setDivisa(Cliente.getInstance().getDivisa()));
 
 
         //Color según el estado del pago
-        if (pagos.get(i).pagado == true) { // Si está pagado
+        if (pagos.get(i).getPagado() == true) { // Si está pagado
             pagoViewHolder.status.setBackgroundResource(R.color.green);
         } else { //Si no esta pagado
             pagoViewHolder.status.setBackgroundResource(R.color.red);
