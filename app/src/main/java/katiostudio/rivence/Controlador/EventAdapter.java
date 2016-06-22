@@ -65,10 +65,10 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventoViewHo
     @Override
     public void onBindViewHolder(EventoViewHolder eventoViewHolder, int i) {
 
-        eventoViewHolder.eventTitle.setText(eventos.get(i).title);
-        eventoViewHolder.date.setText(eventos.get(i).date);
+        eventoViewHolder.eventTitle.setText(eventos.get(i).getTitle());
+        eventoViewHolder.date.setText(eventos.get(i).getDate());
         eventoViewHolder.eventPhoto.setBackgroundResource(eventos.get(i).photoId);
-        eventoViewHolder.description.setText(eventos.get(i).description);
+        eventoViewHolder.description.setText(eventos.get(i).getDescription());
 
     }
 

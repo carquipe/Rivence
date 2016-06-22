@@ -1,10 +1,16 @@
 package katiostudio.rivence.Controlador;
 
+import android.content.Context;
+import android.content.res.Configuration;
+import android.widget.Toast;
+
 import com.android.volley.toolbox.JsonArrayRequest;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
+import katiostudio.rivence.Persistencia.MySocialMediaRequests;
 import katiostudio.rivence.R;
 
 /**
@@ -14,12 +20,16 @@ public class Cliente {
 
     /*  Declaración de variables Globales   */
 
-    public static List<Pago> pagos;
-    public static List<Servicio> servicios;
     private static String ciudad, fechaFin, clave;
     private static Cliente cliente;
     private static Agente agente;
     private static String divisa = "EUR";
+    private static String nombre;
+
+
+    private static List<Pago> pagos;
+    private static List<Servicio> servicios;
+    private static List<Evento> eventos;
 
 
     /* Patrón Singleton para crear solamente 1 cliente */
@@ -44,11 +54,12 @@ public class Cliente {
      * @param endDate Fecha de finalizacion del servicio
      * @param key     Clave de acceso a la aplicacion
      */
-    private Cliente(String city, String endDate, String key) {
+    private Cliente(String city, String endDate, String key, String name) {
         ciudad = city;
         fechaFin = endDate;
         clave = key;
         agente = agente.getInstance();
+        nombre = name;
         pagos = new ArrayList<>();
 
     }
@@ -60,10 +71,25 @@ public class Cliente {
      * @return Si no existe un cliente crea uno nuevo, sino devuelve el actual.
      */
     public static Cliente getInstance() {
-        if (cliente == null)
-            cliente = new Cliente("Valencia", "30/09/2016", "123456-123456-123456"); //Si no existe un cliente crea uno genérico
+        //if (cliente == null)
+          //  cliente = new Cliente("Valencia", "30/09/2016", "123456-123456-123456","holibb"); //Si no existe un cliente crea uno genérico
         return cliente;
     }
+
+    public void deleteCliente(){
+        cliente = null;
+    }
+    /**
+     * Metodo de instancia estatica (Singleton)
+     *
+     * @return Si no existe un cliente crea uno nuevo, sino devuelve el actual.
+     */
+    public static Cliente getInstance(String nombre_user, String ciudad_user, String fecha_fin, String key_user) {
+            cliente = new Cliente(ciudad_user, fecha_fin, key_user, nombre_user); //Si no existe un cliente crea de BD
+        return cliente;
+    }
+
+
 
 
     /* Getters */
@@ -97,6 +123,15 @@ public class Cliente {
     }
 
     /**
+     * Gett Eventos disponibles
+     *
+     * @return Lista con los eventos
+     */
+    public List<Evento> getEventos() {
+        return eventos;
+    }
+
+    /**
      * Gett Ciudad del usuario
      *
      * @return Ciudad del usuario
@@ -124,6 +159,7 @@ public class Cliente {
     }
 
 
+
     /* Setters */
 
     /**
@@ -132,6 +168,13 @@ public class Cliente {
      * @param nuevaDivisa Nueva divisa asociada
      */
     public static void setDivisa(String nuevaDivisa) { divisa = nuevaDivisa; }
+
+    /**
+     * Modificar agente
+     *
+     * @param agente1 Nuevo agente asociado
+     */
+    public static void setAgente(Agente agente1) { agente = agente1; }
 
     /**
      * Modificar la lista de los servicios
@@ -151,19 +194,52 @@ public class Cliente {
         pagos = pagosL;
     }
 
-
     /**
-     * Inicia varios pagos con toda la información recogida.
+     * Modificar la lista de los eventos
      *
+     * @param eventosL Nueva Lista de eventos
      */
-  //  public void initializeData() {
-  //      pagos.add(new Pago("Hotel Las Arenas *****", 450, false));
-  //      pagos.add(new Pago("Alquiler Barco", 100, true));
-  //      pagos.add(new Pago("Restaurante Duna", 200, true));
-  //      pagos.add(new Pago("Alquiler Ferrari F4320 2", 450, false));
-  //      pagos.add(new Pago("Alquiler Yate 3 dias", 450, false));
+    public static void setEventos(List<Evento> eventosL) {
+        eventos = eventosL;
+    }
 
-  //  }
+    public static void setLanguage(String languageL, Context appContext) {
+
+        switch(languageL){
+
+            case "es":
+
+                Locale locale = new Locale("es");
+                Locale.setDefault(locale);
+                Configuration config = new Configuration();
+                config.locale = locale;
+                appContext.getResources().updateConfiguration(config, appContext.getResources().getDisplayMetrics());
+
+                break;
+
+            case "en":
+                Locale locale2 = new Locale("en");
+                Locale.setDefault(locale2);
+                Configuration config2 = new Configuration();
+                config2.locale = locale2;
+                appContext.getResources().updateConfiguration(config2, appContext.getResources().getDisplayMetrics());
+
+                break;
+
+            case "fr":
+                Locale locale3 = new Locale("fr");
+                Locale.setDefault(locale3);
+                Configuration config3 = new Configuration();
+                config3.locale = locale3;
+                appContext.getResources().updateConfiguration(config3, appContext.getResources().getDisplayMetrics());
+
+                break;
+
+        }
+    }
+
+
+
 
 
 }

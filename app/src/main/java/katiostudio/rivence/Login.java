@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -21,10 +22,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import katiostudio.rivence.Controlador.Agente;
+import katiostudio.rivence.Controlador.Cliente;
 
 
 public class Login extends AppCompatActivity {
@@ -33,6 +38,7 @@ public class Login extends AppCompatActivity {
     /**
      * JSON Response node names.
      */
+    private static final String TAG = "PostAdapter";
     private String key;
     private boolean loggedIn = false;
     private static String loginURL = "http://www.katiopruebas.com/Rivence/App";
@@ -105,7 +111,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         //If we are getting success from server
-                        if (response.equalsIgnoreCase(Config.LOGIN_SUCCESS)) {
+                        if (!response.equals("")) {
                             //Creating a shared preference
                             SharedPreferences sharedPreferences = Login.this.getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
 
@@ -119,13 +125,30 @@ public class Login extends AppCompatActivity {
                             //Saving values to editor
                             editor.commit();
 
+                            //Creación Objetos Cliente y Agente
+
+                            JSONObject jsonObj = null;
+                            try {
+                                jsonObj = new JSONObject(response);
+                                Cliente.getInstance(jsonObj.getString("nombre_user"),jsonObj.getString("ciudad_user"),jsonObj.getString("fecha_fin_servicio_user"),jsonObj.getString("key_user"));
+                                if(jsonObj.getString("nombre_agente")!= null){
+                                Agente.getInstance(jsonObj.getString("nombre_agente"));}
+                                else { Agente.getInstance();}
+
+                                Toast.makeText(Login.this, "Bienvenido "+ jsonObj.getString("nombre_user"), Toast.LENGTH_LONG).show();
+                            } catch (JSONException e) {
+                                Log.e(TAG, "Error de parsing: " + e.getMessage());
+                                e.printStackTrace();
+                            }
+
                             //Starting profile activity
                             Intent intent = new Intent(Login.this, main.class);
                             startActivity(intent);
+
                         } else {
                             //If the server response is not success
                             //Displaying an error message on toast
-                            Toast.makeText(Login.this, response, Toast.LENGTH_LONG).show();
+                            Toast.makeText(Login.this, getString(R.string.incorrect_key), Toast.LENGTH_LONG).show();
                         }
                     }
                 },
@@ -133,6 +156,12 @@ public class Login extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        Log.d("abd", "Error: " + error
+                                + ">>" + error.networkResponse.statusCode
+                                + ">>" + error.networkResponse.data
+                                + ">>" + error.getCause()
+                                + ">>" + error.getMessage());
+                        Toast.makeText(Login.this, getString(R.string.incorrect_key), Toast.LENGTH_LONG).show();
                         //You can handle error here if you want
                     }
                 }) {
@@ -170,6 +199,8 @@ public class Login extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+
 }
 
 

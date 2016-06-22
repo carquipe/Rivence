@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rivence</string>
+    <string name="title_activity_splash_screen">Rivence/Cargando</string>
+
+
+    <string name="action_settings">Configuración</string>
+    <string name="title_activity_login">Acceso</string>
+    <string name="title_activity_services">Servicios</string>
+
+    <string name="login_hint">Clave privada</string>
+    <string name="login_button">Entrar</string>
+
+    <string name="menu_services">SERVICIOS</string>
+    <string name="menu_paylog">PAGOS</string>
+    <string name="menu_nearyou">CERCA DE TI</string>
+    <string name="menu_config">CONFIGURACIÓN</string>
+
+
+    <string name="paylog_all">Todos</string>
+    <string name="paylog_paid">Pagados</string>
+    <string name="paylog_pending">Sin pagar</string>
+
+    <string name="config_city">Ciudad Asignada</string>
+    <string name="config_datexpiration">Fecha Límite</string>
+    <string name="config_agent">Agente Asignado</string>
+    <string name="config_language">Idioma</string>
+    <string name="config_currency">Moneda</string>
+    <string name="config_notifications">Notificaciones</string>
+    <string name="config_sound">Sonido</string>
+    <string name="config_devices">Dispositivos</string>
+
+    <string name="chat_charge">Agente Personal</string>
+
+    <string name="incorrect_key">Clave incorrecta.</string>
+
+    <string-array name="divisa_array">
+        <item>EUR</item>
+        <item>USD</item>
+    </string-array>
+
+    <string-array name="lenguaje_array">
+        <item>ES</item>
+        <item>FR</item>
+        <item>EN</item>
+    </string-array>
+
+
+</resources>

@@ -44,7 +44,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SERVICES"
+                android:text="@string/menu_services"
                 android:textAlignment="center"
                 android:layout_centerHorizontal="true"
 
@@ -90,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PAY LOG"
+                android:text="@string/menu_paylog"
                 android:textAlignment="center"
                 android:layout_centerHorizontal="true"
 
@@ -136,7 +136,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NEAR YOU"
+                android:text="@string/menu_nearyou"
                 android:textAlignment="center"
                 android:layout_centerHorizontal="true"
 
@@ -182,7 +182,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CONFIG"
+                android:text="@string/menu_config"
                 android:textAlignment="center"
                 android:layout_centerHorizontal="true"
 

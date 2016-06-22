@@ -53,7 +53,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Associated City"
+            android:text="@string/config_city"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:id="@+id/textView3"
@@ -85,7 +85,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Expiration Date"
+            android:text="@string/config_datexpiration"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:id="@+id/textView5"
@@ -118,7 +118,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Asociated Agent"
+            android:text="@string/config_agent"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:id="@+id/textView15"
@@ -164,7 +164,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Language"
+            android:text="@string/config_language"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:id="@+id/textView7"
@@ -195,7 +195,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Money Currency"
+            android:text="@string/config_currency"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:id="@+id/textView9"
@@ -231,7 +231,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Notifications"
+            android:text="@string/config_notifications"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:id="@+id/textView11"
@@ -266,7 +266,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sound"
+            android:text="@string/config_sound"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:id="@+id/textView13"
@@ -318,7 +318,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Devices"
+            android:text="@string/config_devices"
             android:textStyle="bold"
             android:textColor="@color/light_blue"
             android:id="@+id/textView17"

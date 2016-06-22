@@ -39,10 +39,16 @@ public class Agente {
      * @return Si no existe un agente crea uno nuevo, sino devuelve el actual.
      */
     public static Agente getInstance() {
-        if (agente == null) agente = new Agente("Manuel Castillo");
+        if (agente == null) agente = new Agente("NA");
+        //Cliente.getInstance().setAgente(agente);
         return agente;
     }
 
+    public static Agente getInstance(String name){
+        if (agente == null) agente = new Agente(name);
+        //Cliente.getInstance().setAgente(agente);
+        return agente;
+    }
     /* Getters */
 
     /**

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
@@ -13,8 +14,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.Locale;
+
+import katiostudio.rivence.Controlador.Cliente;
 import katiostudio.rivence.Interfaces.CategoryListener;
-import katiostudio.rivence.Interfaces.MySocialMediaRequests;
+import katiostudio.rivence.Persistencia.MySocialMediaRequests;
 
 
 /**
@@ -23,7 +27,7 @@ import katiostudio.rivence.Interfaces.MySocialMediaRequests;
 public class main extends Activity implements CategoryListener {
 
     boolean closed = true;  //Variable que captura el estado del chat (abierto o cerrado)
-    public static int Fragcontainer = R.id.content; //Contenedor principal que se rellena según el menu
+    //DELETE public static int Fragcontainer = R.id.content; //Contenedor principal que se rellena según el menu
     public static FragmentManager fragmentManager;
     MySocialMediaRequests mySocialMediaRequests;
 
@@ -32,6 +36,7 @@ public class main extends Activity implements CategoryListener {
     private TextView titleText;  //Titulo "Rivence" superior
     static ImageView chaticon;
     static ImageView backicon;
+
 
     EventCenter eventCenter;
 
@@ -175,6 +180,18 @@ public class main extends Activity implements CategoryListener {
             }
         }
 
+    }
+
+    public static Context getContext(){
+
+        return getContext();
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Cliente.getInstance().deleteCliente();
     }
 }
 

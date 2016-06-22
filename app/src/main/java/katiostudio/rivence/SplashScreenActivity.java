@@ -52,6 +52,7 @@ public class SplashScreenActivity extends Activity {
                 Intent mainIntent = new Intent(sPlashScreen, Login.class);
                 sPlashScreen.startActivity(mainIntent);
                 sPlashScreen.finish();
+
             }
         }, SPLASH_DISPLAY_LENGTH);
     }

@@ -2,9 +2,7 @@ package katiostudio.rivence;
 
 import android.app.Fragment;
 import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
@@ -16,7 +14,6 @@ import katiostudio.rivence.Controlador.Cliente;
 import katiostudio.rivence.Controlador.PaylogFilterCards;
 import katiostudio.rivence.Controlador.PaylogAdapter;
 import katiostudio.rivence.Controlador.Pago;
-import katiostudio.rivence.Interfaces.MySocialMediaRequests;
 
 import java.util.List;
 

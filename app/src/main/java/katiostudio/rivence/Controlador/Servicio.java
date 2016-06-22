@@ -14,7 +14,11 @@ public class Servicio {
 
     /* Inicialización de variables globales */
     int photoId, categoryId;
-    String title, subtitle, distance, description;
+    String title;
+    String subtitle;
+    String distance;
+    String description;
+    String imagen;
     public List<Servicio> servicios;
 
     /**
@@ -47,6 +51,8 @@ public class Servicio {
 
 
 
+
+
     /**
      * Constructor vacio
      */
@@ -65,6 +71,11 @@ public class Servicio {
         servicios.add(new Servicio(R.drawable.coche_service, "Alquiler coches SIXT", "A domicilio", "0Km", "Coches de alta gama, servidos en tiempo récord", R.drawable.renting_ic));
 
     }
+
+    public String getImagen() {
+        return imagen;
+    }
+
 
 
 }

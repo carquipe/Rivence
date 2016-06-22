@@ -1,9 +1,12 @@
-package katiostudio.rivence.Interfaces;
+package katiostudio.rivence.Persistencia;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.util.LruCache;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 
 
@@ -13,6 +16,7 @@ public final class MySocialMediaSingleton {
     /* Atributos */
     private static MySocialMediaSingleton singleton;
     private RequestQueue requestQueue;
+    private ImageLoader imageLoader;
     private static Context context;
 
     /* Constructor */
@@ -26,6 +30,24 @@ public final class MySocialMediaSingleton {
     private MySocialMediaSingleton(Context context) {
         MySocialMediaSingleton.context = context;
         requestQueue = getRequestQueue();
+
+        imageLoader = new ImageLoader(requestQueue,
+
+                new ImageLoader.ImageCache() {
+                    private final LruCache<String, Bitmap>
+                    cache = new LruCache<String,Bitmap>(20);
+
+                    @Override
+                    public Bitmap getBitmap(String url) {
+                        return cache.get(url);
+                    }
+
+                    @Override
+                    public void putBitmap(String url, Bitmap bitmap) {
+                        cache.put(url, bitmap);
+                    }
+
+                });
     }
 
     /* Get instance patrón Singleton */
@@ -65,6 +87,15 @@ public final class MySocialMediaSingleton {
      */
     public  void addToRequestQueue(Request req) {
         getRequestQueue().add(req);
+    }
+
+    /**
+     * Recibir el ImageLoader usado para las peticiones
+     *
+     * @return Objeto que se encarga de recibir las imagenes
+     */
+    public ImageLoader getImageLoader() {
+        return imageLoader;
     }
 
 }

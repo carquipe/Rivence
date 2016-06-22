@@ -57,7 +57,7 @@ android:padding="8dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginTop="4dp"
-        android:text="Personal Agent"
+        android:text="@string/chat_charge"
         android:textColor="@color/white"
         android:textSize="12sp" />
 </LinearLayout>

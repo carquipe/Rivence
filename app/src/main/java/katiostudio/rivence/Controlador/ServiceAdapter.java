@@ -12,7 +12,13 @@ import java.util.List;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 
+import com.android.volley.toolbox.ImageLoader;
+
+import katiostudio.rivence.Config;
+import katiostudio.rivence.Persistencia.MySocialMediaRequests;
+import katiostudio.rivence.Persistencia.MySocialMediaSingleton;
 import katiostudio.rivence.R;
+import katiostudio.rivence.main;
 
 /**
  * Created by cquinz on 24/4/16.
@@ -89,6 +95,15 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.Servicio
         servicioViewHolder.subtitle.setText(servicios.get(i).subtitle);
         servicioViewHolder.distance.setText(servicios.get(i).distance);
         servicioViewHolder.servicePhoto.setBackgroundResource(servicios.get(i).photoId);
+
+/*
+        // Obtener el image loader
+        ImageLoader imageLoader= MySocialMediaSingleton.getInstance(main.getContext()).getImageLoader();
+        // Petición
+        imageLoader.get(Config.LOGIN_URL + servicios.get(i).getImagen(), ImageLoader.getImageListener(servicioViewHolder.servicePhoto,
+                R.drawable.loading, R.drawable.error));
+*/
+
         servicioViewHolder.category.setImageResource(servicios.get(i).categoryId);
         servicioViewHolder.description.setText(servicios.get(i).description);
     }

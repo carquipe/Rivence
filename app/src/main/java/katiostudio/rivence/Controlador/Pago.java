@@ -124,6 +124,12 @@ public class Pago {
         this.titulo = titulo;
     }
 
+    /**
+     * Set de la variable Divisa en función de lo insertado en la configuración
+     *
+     * @param divisa Moneda seleccionada
+     * @return String con cantidad convertida más la divisa utilizada
+     */
     public String setDivisa(String divisa){
         String cantidad1;
         String pagoauxStr;

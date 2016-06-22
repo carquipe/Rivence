@@ -1,16 +1,19 @@
 package katiostudio.rivence;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
-import katiostudio.rivence.Interfaces.CategoryListener;
-import katiostudio.rivence.Interfaces.MySocialMediaRequests;
+import java.util.Locale;
+
+import katiostudio.rivence.Controlador.Cliente;
 
 
 public class menu_fragment extends Fragment implements View.OnClickListener {
@@ -45,8 +48,8 @@ public class menu_fragment extends Fragment implements View.OnClickListener {
         menu3.setOnClickListener(this);
         menu4.setOnClickListener(this);
 
-
         return rootView;
+
     }
 
 
@@ -54,6 +57,8 @@ public class menu_fragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
 
         FragmentTransaction fragmentTransaction = main.fragmentManager.beginTransaction();
+
+
 
         switch (v.getId()) {
 
@@ -119,6 +124,7 @@ public class menu_fragment extends Fragment implements View.OnClickListener {
 
         }
     }
+
 
 }
 
