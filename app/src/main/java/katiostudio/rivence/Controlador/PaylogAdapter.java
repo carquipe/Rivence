@@ -21,7 +21,7 @@ import katiostudio.rivence.R;
  */
 public class PaylogAdapter extends RecyclerView.Adapter<PaylogAdapter.PagoViewHolder> {
 
-    /* Definicion de variables globales */
+    /*  Definicion de variables globales  */
     private List<Pago> pagos;
 
 

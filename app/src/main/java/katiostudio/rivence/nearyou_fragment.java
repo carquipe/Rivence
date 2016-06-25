@@ -61,7 +61,7 @@ public class nearyou_fragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         //Creamos el adaptador
-        mAdapter = new EventAdapter(mDataset);
+        mAdapter = new EventAdapter(mDataset,getActivity());
         // Asignacion de adaptador al del Recycler View
         mRecyclerView.setAdapter(mAdapter);
 

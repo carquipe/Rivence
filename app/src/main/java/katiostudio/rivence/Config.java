@@ -9,6 +9,7 @@ public class Config {
     //URL a login.php
     public static final String LOGIN_URL = "http://www.metalgreentools.com/rivence/app/index.php";
     public static final String IMAGE_URL = "http://www.metalgreentools.com/rivence/app/imagenes/";
+
     //Contraseñas definidas para email y usuario en $_POST['key'] dentro de login.php
     public static final String KEY_PASS = "key";
     public static final String KEY_TAG = "tag";

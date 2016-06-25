@@ -4,18 +4,16 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import katiostudio.rivence.R;
-
 /**
  * Created by cquinz on 2/6/16.
  */
 public class ServiceFilterCards {
 
-    /* Definicion de variables globales */
+    /*  Definicion de variables globales  */
     private final List<Servicio> originalList; //Lista general
     private final List<Servicio> filteredList; //Lista auxiliar
 
-    /* Constructores */
+    /*  Constructores  */
 
     /**
      * Constructor de un filtrado
@@ -28,7 +26,7 @@ public class ServiceFilterCards {
     }
 
 
-    /*Metodos de filtrado segun categoria*/
+    /*  Metodos de filtrado segun categoria  */
 
     /**
      * Filtrar la lista original de Servicios en otra lista que contenga solamente una lista con

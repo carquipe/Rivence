@@ -2,10 +2,8 @@ package katiostudio.rivence.Persistencia;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import katiostudio.rivence.Config;
-import katiostudio.rivence.Controlador.Agente;
 import katiostudio.rivence.Controlador.Evento;
 import katiostudio.rivence.Controlador.Cliente;
 import katiostudio.rivence.Controlador.Pago;
@@ -15,7 +13,6 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 
@@ -34,12 +31,15 @@ import java.util.Map;
  */
 public class MySocialMediaRequests {
 
+    /*  Varibles globales  */
+
     private static MySocialMediaRequests requests;
-      Context context;
+    Context context;
     JsonObjectRequest jsArrayRequest;
     private static final String TAG = "PostAdapter";
+
     /**
-     * Constructor privado de clase que contiene los requests para evitar llamadas de clases externas
+     * Constructor privado de la clase que contiene los requests para evitar llamadas de clases externas
      * Con atributos de entrada
      *
      * @param context  Contexto de la aplicación
@@ -63,7 +63,10 @@ public class MySocialMediaRequests {
         return requests;
     }
 
-
+    /**
+     * Metodo que se encarga de obtener todas los servicios en una ciudad determinada
+     *
+     */
     public void initializeServicios() {
 
         StringRequest jsArrayRequest = new StringRequest(
@@ -120,6 +123,10 @@ public class MySocialMediaRequests {
 
     }
 
+    /**
+     * Metodo que se encarga de obtener todos los pagos relacionados con el cliente
+     *
+     */
     public void initializePagos() {
 
         StringRequest jsArrayRequest = new StringRequest(
@@ -175,6 +182,10 @@ public class MySocialMediaRequests {
 
     }
 
+    /**
+     * Metodo que se encarga de obtener todos los eventos en una ciudad determinada
+     *
+     */
     public void initializeEventos() {
 
         StringRequest jsArrayRequest = new StringRequest(
@@ -230,13 +241,17 @@ public class MySocialMediaRequests {
 
     }
 
-
+    /**
+     * Metodo que se encarga de tratar la respuesta de la consulta a base de datos
+     *
+     * @param entrada Array JSON con todos los pagos
+     *
+     * @return Objeto lista con todos los pagos almacenados en BD para el cliente
+     */
     public List<Pago> parseJsonPagos(String entrada) throws JSONException {
-        // Variables locales
+        /*  Variables locales  */
         List<Pago> pagosL = new ArrayList();
         JSONArray jsonArray = null;
-
-
 
         // Obtener el array del objeto
         jsonArray = new JSONArray(entrada);
@@ -265,6 +280,13 @@ public class MySocialMediaRequests {
         return pagosL;
     }
 
+    /**
+     * Metodo que se encarga de tratar la respuesta de la consulta a base de datos
+     *
+     * @param entrada Array JSON con todos los servicios
+     *
+     * @return Objeto lista con todos los servicios almacenados en BD para la ciudad actual
+     */
     public List<Servicio> parseJsonServicios(String entrada) throws JSONException {
 
         // Variables locales
@@ -284,7 +306,8 @@ public class MySocialMediaRequests {
                 String distancia = objeto.getString("distancia");
                 String descripcion = objeto.getString("descripcion");
                 String categoriaId = objeto.getString("idCategoria");
-                Servicio servicio = new Servicio(titulo,subtitulo,distancia,descripcion,categoriaId);
+                String fotoURL = objeto.getString("foto_url");
+                Servicio servicio = new Servicio(titulo,subtitulo,distancia,descripcion,categoriaId,fotoURL);
 
 
                 serviciosL.add(servicio);
@@ -298,6 +321,13 @@ public class MySocialMediaRequests {
         return serviciosL;
     }
 
+    /**
+     * Metodo que se encarga de tratar la respuesta de la consulta a base de datos
+     *
+     * @param entrada Array JSON con todos los Eventos
+     *
+     * @return Objeto lista con todos los eventos almacenados en BD para la ciudad actual
+     */
     public List<Evento> parseJsonEventos(String entrada) throws JSONException {
 
         // Variables locales
@@ -331,6 +361,11 @@ public class MySocialMediaRequests {
     }
 
 
+    /**
+     * Obtener el contexto de la aplicacion
+     *
+     * @return Contexto de la aplicacion
+     */
     public Context getContext() {
         return context;
     }

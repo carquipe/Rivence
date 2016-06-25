@@ -22,8 +22,7 @@ android:padding="8dp"
     android:layout_width="50dp"
     android:layout_height="50dp"
 
-    android:layout_marginTop="15dp"
-    android:background="@drawable/agent_avatar" />
+    android:layout_marginTop="15dp" />
 
     <ImageView
     android:layout_width="60dp"

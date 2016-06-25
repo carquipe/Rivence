@@ -1,9 +1,5 @@
 package katiostudio.rivence.Controlador;
 
-
-import android.view.LayoutInflater;
-import android.widget.Filter;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

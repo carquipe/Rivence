@@ -13,13 +13,13 @@ import com.android.volley.toolbox.Volley;
 
 public final class MySocialMediaSingleton {
 
-    /* Atributos */
+    /*  Atributos  */
     private static MySocialMediaSingleton singleton;
     private RequestQueue requestQueue;
     private ImageLoader imageLoader;
     private static Context context;
 
-    /* Constructor */
+    /*  Constructor  */
 
     /**
      * Constructor privado de clase Volley para evitar llamadas de clases externas

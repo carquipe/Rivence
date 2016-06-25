@@ -1,5 +1,6 @@
 package katiostudio.rivence.Controlador;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.CardView;
 import android.widget.Button;
@@ -12,6 +13,10 @@ import java.util.List;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 
+import com.android.volley.toolbox.ImageLoader;
+
+import katiostudio.rivence.Config;
+import katiostudio.rivence.Persistencia.MySocialMediaSingleton;
 import katiostudio.rivence.R;
 
 /**
@@ -19,21 +24,27 @@ import katiostudio.rivence.R;
  */
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventoViewHolder> {
 
-    /* Definición de variables globales */
-    private List<Evento> eventos;
+    /*  Definición de variables globales  */
 
-    /* Constructores */
+    private List<Evento> eventos;
+    Context context;
+
+    /*  Constructores  */
+
     /**
      * Constructor que crea el Adaptador de Eventos
      *
      * @param eventosL Lista que contiene todos los eventos que se van a mostrar.
+     * @param context1 Contexto para poder trabajar con la carga de imagenes en ImageLoader
      */
-    public EventAdapter(List<Evento> eventosL) {
+    public EventAdapter(List<Evento> eventosL, Context context1) {
         eventos = eventosL;
+        context = context1;
     }
 
 
-    //Override métodos superclase
+    /*  Override métodos superclase  */
+
     /**
      * Getter Tamaño de lista
      *
@@ -67,20 +78,30 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventoViewHo
 
         eventoViewHolder.eventTitle.setText(eventos.get(i).getTitle());
         eventoViewHolder.date.setText(eventos.get(i).getDate());
-        eventoViewHolder.eventPhoto.setBackgroundResource(R.drawable.error);
+
+        // Obtener el image loader
+        ImageLoader imageLoader= MySocialMediaSingleton.getInstance(context.getApplicationContext()).getImageLoader();
+        // Petición
+        imageLoader.get(Config.IMAGE_URL + eventos.get(i).getPhotoURL(), ImageLoader.getImageListener(eventoViewHolder.eventPhoto,
+                R.drawable.loading, R.drawable.error));
+
+        //eventoViewHolder.eventPhoto.setBackgroundResource(R.drawable.error);
         eventoViewHolder.description.setText(eventos.get(i).getDescription());
 
     }
 
 
-    /********
+    /***********
+     *
      * Clase View Holder
+     *
      **********/
 
 
     public static class EventoViewHolder extends RecyclerView.ViewHolder {
 
         /*  Definición de variables globales  */
+
         CardView cv;
         ImageView eventPhoto;
         TextView eventTitle;

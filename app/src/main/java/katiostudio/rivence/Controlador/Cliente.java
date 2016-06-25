@@ -2,16 +2,10 @@ package katiostudio.rivence.Controlador;
 
 import android.content.Context;
 import android.content.res.Configuration;
-import android.widget.Toast;
-
-import com.android.volley.toolbox.JsonArrayRequest;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
-import katiostudio.rivence.Persistencia.MySocialMediaRequests;
-import katiostudio.rivence.R;
 
 /**
  * Created by cquinz on 27/4/16.
@@ -27,27 +21,12 @@ public class Cliente {
     private static String nombre;
     private static String id;
 
-
     private static List<Pago> pagos;
-
-
     private static List<Servicio> servicios;
     private static List<Evento> eventos;
 
 
-    /* Patrón Singleton para crear solamente 1 cliente */
-
-    //Constructores
-
-    /**
-     * Constructor privado para evitar llamadas de clases externas
-     * Sin atributos de entrada
-     *
-     * @deprecated
-     */
-    private Cliente() {
-        //Empty Constructor
-    }
+    /*  Constructores  */
 
     /**
      * Constructor privado para evitar llamadas de clases externas
@@ -56,6 +35,8 @@ public class Cliente {
      * @param city    Ciudad en la que se realiza el servicio.
      * @param endDate Fecha de finalizacion del servicio
      * @param key     Clave de acceso a la aplicacion
+     * @param idPerson Numero de identificacion del usuario en base de datos
+     * @param name     Nombre del cliente
      */
     private Cliente(String idPerson, String city, String endDate, String key, String name) {
         id = idPerson;
@@ -66,31 +47,32 @@ public class Cliente {
         nombre = name;
         pagos = new ArrayList<>();
         servicios = new ArrayList<>();
-
     }
-
 
     /**
      * Metodo de instancia estatica (Singleton)
      *
-     * @return Si no existe un cliente crea uno nuevo, sino devuelve el actual.
+     * @return El unico cliente existente.
      */
     public static Cliente getInstance() {
         return cliente;
     }
 
-
     /**
      * Metodo de instancia estatica (Singleton)
      *
-     * @return Si no existe un cliente crea uno nuevo, sino devuelve el actual.
+     * @param idPerson Numero de persona del usuario en BD
+     * @param nombre_user Nombre del usuario
+     * @param ciudad_user Ciudad donde esta contratado el servicio
+     * @param fecha_fin Fecha de finalizacion del servicio
+     * @param key_user Clave del usuario
+     *
+     * @return El cliente único existente.
      */
     public static Cliente getInstance(String idPerson, String nombre_user, String ciudad_user, String fecha_fin, String key_user) {
-            cliente = new Cliente(idPerson, ciudad_user, fecha_fin, key_user, nombre_user); //Si no existe un cliente crea de BD
+            cliente = new Cliente(idPerson, ciudad_user, fecha_fin, key_user, nombre_user);
         return cliente;
     }
-
-
 
 
     /* Getters */
@@ -112,7 +94,6 @@ public class Cliente {
     public String getClave() {
         return clave;
     }
-
 
     /**
      * Gett Pagos del cliente
@@ -151,25 +132,26 @@ public class Cliente {
     }
 
     /**
-     * Gett Agente asociado al usuario
+     * Gett Identificador Persona del usuario en BD
      *
-     * @return Objeto agente asociado al usuario
+     * @return Numero identificador de persona
      */
-    public Agente getAgente() {
-        return agente;
-    }
-
     public static String getId() {
         return id;
     }
 
+    /**
+     * Gett La totalidad de los servicios
+     *
+     * @return Lista con todos los servicios
+     */
     public static List<Servicio> getServicios() {
         return servicios;
     }
 
 
 
-    /* Setters */
+    /*  Setters  */
 
     /**
      * Modificar moneda preferente
@@ -177,13 +159,6 @@ public class Cliente {
      * @param nuevaDivisa Nueva divisa asociada
      */
     public static void setDivisa(String nuevaDivisa) { divisa = nuevaDivisa; }
-
-    /**
-     * Modificar agente
-     *
-     * @param agente1 Nuevo agente asociado
-     */
-    public static void setAgente(Agente agente1) { agente = agente1; }
 
     /**
      * Modificar la lista de los servicios
@@ -212,18 +187,22 @@ public class Cliente {
         eventos = eventosL;
     }
 
+    /**
+     * Tratamiento del lenguaje del cliente
+     *
+     * @param languageL Nuevo lenguaje
+     * @param appContext Contexto sobre el que se aplica
+     *
+     */
     public static void setLanguage(String languageL, Context appContext) {
 
         switch(languageL){
-
             case "es":
-
                 Locale locale = new Locale("es");
                 Locale.setDefault(locale);
                 Configuration config = new Configuration();
                 config.locale = locale;
                 appContext.getResources().updateConfiguration(config, appContext.getResources().getDisplayMetrics());
-
                 break;
 
             case "en":
@@ -232,7 +211,6 @@ public class Cliente {
                 Configuration config2 = new Configuration();
                 config2.locale = locale2;
                 appContext.getResources().updateConfiguration(config2, appContext.getResources().getDisplayMetrics());
-
                 break;
 
             case "fr":
@@ -241,7 +219,6 @@ public class Cliente {
                 Configuration config3 = new Configuration();
                 config3.locale = locale3;
                 appContext.getResources().updateConfiguration(config3, appContext.getResources().getDisplayMetrics());
-
                 break;
 
         }

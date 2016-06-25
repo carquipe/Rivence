@@ -11,8 +11,6 @@ import katiostudio.rivence.R;
  */
 public class Pago {
 
-
-
     /* Definicion de variables globales */
     private String cantidad;
     private Cliente cliente;
@@ -21,27 +19,7 @@ public class Pago {
     long pagoaux;
 
 
-    /* Constructores */
-
-    /**
-     * Constructor de un Pago en funcion de un servicio existente
-     *
-     * @param servicio1 Objeto servicio sobre el cual se realiza el pago.
-     * @param cantidad1 Cantidad de pago.
-     * @param pagado1 Control del estado del pago.
-     */
-    /*public Pago(Servicio servicio1, int cantidad1, boolean pagado1) {
-        setCliente(cliente.getInstance());
-        setTitulo(servicio1.title);
-        if(cliente.getDivisa().equals("EUR")) setCantidad(cantidad1 + " EUR");
-        else if (cliente.getDivisa().equals("USD")){
-            pagoaux = (long)Math.floor(cantidad1*1.12 + 0.5d);
-            cantidad = pagoaux + " USD";
-        }
-        else cantidad = cliente.getDivisa() + " USD";
-        pagado = pagado1;
-
-    }*/
+    /*  Constructores  */
 
     /**
      * Constructor de un Pago totalmente personalizado
@@ -57,28 +35,6 @@ public class Pago {
         pagado = pagado1;
     }
 
-
-    /**
-     * Constructor vacio de un Pago
-     */
-    public Pago() {
-        //Constructor Vacio
-    }
-
-    /* Getters y setters */
-    public String getCantidad() {
-        return cantidad;
-    }
-
-    /**
-     * Modificar la cantidad asociada al pago
-     *
-     * @param cantidad precio del servicio contratado
-     */
-    public void setCantidad(String cantidad) {
-        this.cantidad = cantidad;
-    }
-
     /**
      * Gett el estado del pago
      *
@@ -86,15 +42,6 @@ public class Pago {
      */
     public Boolean getPagado(){
         return pagado;
-    }
-
-    /**
-     * Modificar el estado del pago
-     *
-     * @param pagado1 nuevo estado de pago
-     */
-    public void setPagado(Boolean pagado1) {
-        pagado = pagado1;
     }
 
     /**

@@ -1,5 +1,6 @@
 package katiostudio.rivence.Controlador;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.CardView;
 import android.widget.Button;
@@ -15,10 +16,8 @@ import android.view.LayoutInflater;
 import com.android.volley.toolbox.ImageLoader;
 
 import katiostudio.rivence.Config;
-import katiostudio.rivence.Persistencia.MySocialMediaRequests;
 import katiostudio.rivence.Persistencia.MySocialMediaSingleton;
 import katiostudio.rivence.R;
-import katiostudio.rivence.main;
 
 /**
  * Created by cquinz on 24/4/16.
@@ -26,20 +25,23 @@ import katiostudio.rivence.main;
 
 public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServicioViewHolder> {
 
-    /* Inicializacion de variables globales */
+    /*  Inicializacion de variables globales  */
     private List<Servicio> servicios;
+    Context context;
 
-    /* Constructores */
+    /*  Constructores  */
+
     /**
      * Constructor de un Adaptador de Servicios
      *
      * @param serviciosL Lista que contiene todos los objetos Servicio que se desean mostrar
      */
-    public ServiceAdapter(List<Servicio> serviciosL) {
+    public ServiceAdapter(List<Servicio> serviciosL, Context context1) {
         servicios = serviciosL;
+        context = context1;
     }
 
-    /* Override de métodos superclase */
+    /*  Override de métodos superclase  */
 
     /**
      * Obtiene el tamaño de la lista servicios.
@@ -94,16 +96,14 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.Servicio
         servicioViewHolder.serviceTitle.setText(servicios.get(i).title);
         servicioViewHolder.subtitle.setText(servicios.get(i).subtitle);
         servicioViewHolder.distance.setText(servicios.get(i).distance);
-        servicioViewHolder.servicePhoto.setBackgroundResource(R.drawable.error);
 
-/*
         // Obtener el image loader
-        ImageLoader imageLoader= MySocialMediaSingleton.getInstance(main.getContext()).getImageLoader();
-        // Petición
-        imageLoader.get(Config.IMAGE_URL + servicios.get(i).getImagen(), ImageLoader.getImageListener(servicioViewHolder.servicePhoto,
+        ImageLoader imageLoader= MySocialMediaSingleton.getInstance(context.getApplicationContext()).getImageLoader();
+        // Petición de la imagen
+        imageLoader.get(Config.IMAGE_URL + servicios.get(i).getPhotoURL(), ImageLoader.getImageListener(servicioViewHolder.servicePhoto,
                 R.drawable.loading, R.drawable.error));
-*/
 
+        //Set de icono categoria en funcion de datos de la BD
         switch(servicios.get(i).categoryId){
             case "1":
                 servicioViewHolder.category.setImageResource(R.drawable.renting_ic);
@@ -122,7 +122,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.Servicio
                 break;
 
         }
-        //servicioViewHolder.category.setImageResource(servicios.get(i).categoryId);
+
         servicioViewHolder.description.setText(servicios.get(i).description);
     }
 

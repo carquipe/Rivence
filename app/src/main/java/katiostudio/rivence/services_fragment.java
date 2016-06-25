@@ -67,7 +67,7 @@ public class services_fragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         //Creamos el adaptador
-        mAdapter = new ServiceAdapter(mDataset);
+        mAdapter = new ServiceAdapter(mDataset,getActivity());
 
         // Asignacion de adaptador al del Recycler View
         mRecyclerView.setAdapter(mAdapter);
