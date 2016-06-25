@@ -30,7 +30,7 @@
     <string name="config_sound">Sonido</string>
     <string name="config_devices">Dispositivos</string>
 
-    <string name="chat_charge">Agente Personal</string>
+    <string name="chat_charge">Personal Assistant</string>
 
     <string name="incorrect_key">Clave incorrecta.</string>
 

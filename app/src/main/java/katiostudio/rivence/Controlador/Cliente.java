@@ -25,9 +25,12 @@ public class Cliente {
     private static Agente agente;
     private static String divisa = "EUR";
     private static String nombre;
+    private static String id;
 
 
     private static List<Pago> pagos;
+
+
     private static List<Servicio> servicios;
     private static List<Evento> eventos;
 
@@ -54,13 +57,15 @@ public class Cliente {
      * @param endDate Fecha de finalizacion del servicio
      * @param key     Clave de acceso a la aplicacion
      */
-    private Cliente(String city, String endDate, String key, String name) {
+    private Cliente(String idPerson, String city, String endDate, String key, String name) {
+        id = idPerson;
         ciudad = city;
         fechaFin = endDate;
         clave = key;
         agente = agente.getInstance();
         nombre = name;
         pagos = new ArrayList<>();
+        servicios = new ArrayList<>();
 
     }
 
@@ -71,21 +76,17 @@ public class Cliente {
      * @return Si no existe un cliente crea uno nuevo, sino devuelve el actual.
      */
     public static Cliente getInstance() {
-        //if (cliente == null)
-          //  cliente = new Cliente("Valencia", "30/09/2016", "123456-123456-123456","holibb"); //Si no existe un cliente crea uno genérico
         return cliente;
     }
 
-    public void deleteCliente(){
-        cliente = null;
-    }
+
     /**
      * Metodo de instancia estatica (Singleton)
      *
      * @return Si no existe un cliente crea uno nuevo, sino devuelve el actual.
      */
-    public static Cliente getInstance(String nombre_user, String ciudad_user, String fecha_fin, String key_user) {
-            cliente = new Cliente(ciudad_user, fecha_fin, key_user, nombre_user); //Si no existe un cliente crea de BD
+    public static Cliente getInstance(String idPerson, String nombre_user, String ciudad_user, String fecha_fin, String key_user) {
+            cliente = new Cliente(idPerson, ciudad_user, fecha_fin, key_user, nombre_user); //Si no existe un cliente crea de BD
         return cliente;
     }
 
@@ -156,6 +157,14 @@ public class Cliente {
      */
     public Agente getAgente() {
         return agente;
+    }
+
+    public static String getId() {
+        return id;
+    }
+
+    public static List<Servicio> getServicios() {
+        return servicios;
     }
 
 

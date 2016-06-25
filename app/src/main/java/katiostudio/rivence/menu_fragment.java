@@ -30,9 +30,6 @@ public class menu_fragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
-
-
         View rootView = inflater.inflate(R.layout.menu_fragment, container, false);
 
         eventCenter = new EventCenter();

@@ -39,7 +39,7 @@ public class ServiceFilterCards {
     public List<Servicio> performFilteringHotels() {
         filteredList.clear();
         for (Servicio servicio : originalList) {
-            if (servicio.categoryId == R.drawable.hotels_ic) filteredList.add(servicio);
+            if (servicio.categoryId.equals("1")) filteredList.add(servicio);
         }
         return filteredList;
     }
@@ -53,7 +53,7 @@ public class ServiceFilterCards {
     public List<Servicio> performFilteringRenting() {
         filteredList.clear();
         for (Servicio servicio : originalList) {
-            if (servicio.categoryId == R.drawable.renting_ic) filteredList.add(servicio);
+            if (servicio.categoryId.equals("2")) filteredList.add(servicio);
         }
         return filteredList;
     }
@@ -67,7 +67,7 @@ public class ServiceFilterCards {
     public List<Servicio> performFilteringFood() {
         filteredList.clear();
         for (Servicio servicio : originalList) {
-            if (servicio.categoryId == R.drawable.drinksfood_ic) filteredList.add(servicio);
+            if (servicio.categoryId.equals("3")) filteredList.add(servicio);
         }
         return filteredList;
     }
@@ -81,7 +81,7 @@ public class ServiceFilterCards {
     public List<Servicio> performFilteringNight() {
         filteredList.clear();
         for (Servicio servicio : originalList) {
-            if (servicio.categoryId == R.drawable.night_ic) filteredList.add(servicio);
+            if (servicio.categoryId.equals("4")) filteredList.add(servicio);
         }
         return filteredList;
     }
@@ -95,7 +95,7 @@ public class ServiceFilterCards {
     public List<Servicio> performFilteringLeisure() {
         filteredList.clear();
         for (Servicio servicio : originalList) {
-            if (servicio.categoryId == R.drawable.leisure_ic) filteredList.add(servicio);
+            if (servicio.categoryId.equals("5")) filteredList.add(servicio);
         }
         return filteredList;
     }

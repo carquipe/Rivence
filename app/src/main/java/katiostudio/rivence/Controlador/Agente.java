@@ -5,8 +5,10 @@ package katiostudio.rivence.Controlador;
  */
 public class Agente {
 
-    /*  Declaración de variables Globales   */
 
+
+    /*  Declaración de variables Globales   */
+    String fotoURL;
     String nombre;
     private static Agente agente;
 
@@ -28,8 +30,9 @@ public class Agente {
      *
      * @param name Nombre del agente.
      */
-    private Agente(String name) {
+    private Agente(String name, String fotoURL1) {
         nombre = name;
+        fotoURL = fotoURL1;
     }
 
 
@@ -39,18 +42,19 @@ public class Agente {
      * @return Si no existe un agente crea uno nuevo, sino devuelve el actual.
      */
     public static Agente getInstance() {
-        if (agente == null) agente = new Agente("NA");
-        //Cliente.getInstance().setAgente(agente);
         return agente;
     }
 
-    public static Agente getInstance(String name){
-        if (agente == null) agente = new Agente(name);
-        //Cliente.getInstance().setAgente(agente);
+    public static Agente getInstance(String name, String fotoURL){
+        if (agente == null) agente = new Agente(name,fotoURL);
+
         return agente;
     }
     /* Getters */
 
+    public String getFotoURL() {
+        return fotoURL;
+    }
     /**
      * Obtener el nombre del agente
      *

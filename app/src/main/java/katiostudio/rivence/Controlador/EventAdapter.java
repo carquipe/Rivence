@@ -67,7 +67,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventoViewHo
 
         eventoViewHolder.eventTitle.setText(eventos.get(i).getTitle());
         eventoViewHolder.date.setText(eventos.get(i).getDate());
-        eventoViewHolder.eventPhoto.setBackgroundResource(eventos.get(i).photoId);
+        eventoViewHolder.eventPhoto.setBackgroundResource(R.drawable.error);
         eventoViewHolder.description.setText(eventos.get(i).getDescription());
 
     }

@@ -94,17 +94,35 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.Servicio
         servicioViewHolder.serviceTitle.setText(servicios.get(i).title);
         servicioViewHolder.subtitle.setText(servicios.get(i).subtitle);
         servicioViewHolder.distance.setText(servicios.get(i).distance);
-        servicioViewHolder.servicePhoto.setBackgroundResource(servicios.get(i).photoId);
+        servicioViewHolder.servicePhoto.setBackgroundResource(R.drawable.error);
 
 /*
         // Obtener el image loader
         ImageLoader imageLoader= MySocialMediaSingleton.getInstance(main.getContext()).getImageLoader();
         // Petición
-        imageLoader.get(Config.LOGIN_URL + servicios.get(i).getImagen(), ImageLoader.getImageListener(servicioViewHolder.servicePhoto,
+        imageLoader.get(Config.IMAGE_URL + servicios.get(i).getImagen(), ImageLoader.getImageListener(servicioViewHolder.servicePhoto,
                 R.drawable.loading, R.drawable.error));
 */
 
-        servicioViewHolder.category.setImageResource(servicios.get(i).categoryId);
+        switch(servicios.get(i).categoryId){
+            case "1":
+                servicioViewHolder.category.setImageResource(R.drawable.renting_ic);
+                break;
+            case "2":
+                servicioViewHolder.category.setImageResource(R.drawable.hotels_ic);
+                break;
+            case "3":
+                servicioViewHolder.category.setImageResource(R.drawable.drinksfood_ic);
+                break;
+            case "4":
+                servicioViewHolder.category.setImageResource(R.drawable.night_ic);
+                break;
+            case "5":
+                servicioViewHolder.category.setImageResource(R.drawable.leisure_ic);
+                break;
+
+        }
+        //servicioViewHolder.category.setImageResource(servicios.get(i).categoryId);
         servicioViewHolder.description.setText(servicios.get(i).description);
     }
 

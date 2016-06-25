@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.support.v7.widget.RecyclerView;
 import android.content.Context;
 
+import katiostudio.rivence.Controlador.Cliente;
 import katiostudio.rivence.Controlador.ServiceAdapter;
 import katiostudio.rivence.Controlador.ServiceFilterCards;
 import katiostudio.rivence.Controlador.Servicio;
@@ -38,12 +39,12 @@ public class services_fragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         //Iniciacion de los datos en Objeto Servicio con la Lista
-        Servicio serv = new Servicio();
-        serv.initializeData();
+       // Servicio serv = new Servicio();
+        //serv.initializeData();
 
 
 
-        mDataset = serv.servicios;
+        mDataset = Cliente.getInstance().getServicios();
 
         //filtro
         filterCards = new ServiceFilterCards(mDataset);

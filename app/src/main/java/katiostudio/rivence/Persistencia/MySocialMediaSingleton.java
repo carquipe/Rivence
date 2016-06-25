@@ -48,6 +48,7 @@ public final class MySocialMediaSingleton {
                     }
 
                 });
+
     }
 
     /* Get instance patrón Singleton */

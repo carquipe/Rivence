@@ -46,6 +46,8 @@ public class main extends Activity implements CategoryListener {
         //Inicialización de variables
         mySocialMediaRequests = MySocialMediaRequests.getInstance(getApplicationContext());
         mySocialMediaRequests.initializePagos();
+        mySocialMediaRequests.initializeServicios();
+        mySocialMediaRequests.initializeEventos();
 
 
         /* Generar estructura interfaz básica de la aplicación procedente del Layout: main.xml */
@@ -163,7 +165,7 @@ public class main extends Activity implements CategoryListener {
                     servicesFRA.updateCat0();
                     break;
                 case 1:
-                    ((services_fragment) servicesFRA).updateCat1();
+                    servicesFRA.updateCat1();
                     break;
                 case 2:
                     servicesFRA.updateCat2();
@@ -186,12 +188,6 @@ public class main extends Activity implements CategoryListener {
 
         return getContext();
 
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Cliente.getInstance().deleteCliente();
     }
 }
 

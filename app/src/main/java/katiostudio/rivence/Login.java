@@ -15,9 +15,11 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -130,9 +132,9 @@ public class Login extends AppCompatActivity {
                             JSONObject jsonObj = null;
                             try {
                                 jsonObj = new JSONObject(response);
-                                Cliente.getInstance(jsonObj.getString("nombre_user"),jsonObj.getString("ciudad_user"),jsonObj.getString("fecha_fin_servicio_user"),jsonObj.getString("key_user"));
+                                Cliente.getInstance(jsonObj.getString("id_persona"),jsonObj.getString("nombre_user"),jsonObj.getString("ciudad_user"),jsonObj.getString("fecha_fin_servicio_user"),jsonObj.getString("key_user"));
                                 if(jsonObj.getString("nombre_agente")!= null){
-                                Agente.getInstance(jsonObj.getString("nombre_agente"));}
+                                Agente.getInstance(jsonObj.getString("nombre_agente"),jsonObj.getString("avatar_agente"));}
                                 else { Agente.getInstance();}
 
                                 Toast.makeText(Login.this, "Bienvenido "+ jsonObj.getString("nombre_user"), Toast.LENGTH_LONG).show();
@@ -156,11 +158,7 @@ public class Login extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.d("abd", "Error: " + error
-                                + ">>" + error.networkResponse.statusCode
-                                + ">>" + error.networkResponse.data
-                                + ">>" + error.getCause()
-                                + ">>" + error.getMessage());
+
                         Toast.makeText(Login.this, getString(R.string.incorrect_key), Toast.LENGTH_LONG).show();
                         //You can handle error here if you want
                     }

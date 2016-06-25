@@ -260,42 +260,6 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="31dp"
-        android:background="@color/dark_background">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/config_sound"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:id="@+id/textView13"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="52dp"
-            android:layout_marginStart="52dp"
-            />
-
-        <ToggleButton
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/toggle_selector"
-            android:id="@+id/switch2"
-            android:layout_marginRight="76dp"
-            android:layout_marginEnd="76dp"
-            android:text=""
-            android:textOff=""
-            android:textOn=""
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/textView13" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
         android:layout_height="4dp"
         android:background="@color/dark_background" />
 

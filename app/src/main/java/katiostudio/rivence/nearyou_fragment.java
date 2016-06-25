@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.support.v7.widget.RecyclerView;
 import android.content.Context;
 
+import katiostudio.rivence.Controlador.Cliente;
 import katiostudio.rivence.Controlador.EventAdapter;
 import katiostudio.rivence.Controlador.Evento;
 
@@ -40,9 +41,7 @@ public class nearyou_fragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         //Iniciacion de los datos en Objeto Servicio con la Lista
-        Evento even = new Evento();
-        even.initializeData();
-        mDataset = even.eventos;
+        mDataset = Cliente.getInstance().getEventos();
     }
 
 

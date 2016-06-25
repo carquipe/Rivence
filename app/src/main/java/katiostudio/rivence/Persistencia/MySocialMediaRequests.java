@@ -2,8 +2,10 @@ package katiostudio.rivence.Persistencia;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import katiostudio.rivence.Config;
+import katiostudio.rivence.Controlador.Agente;
 import katiostudio.rivence.Controlador.Evento;
 import katiostudio.rivence.Controlador.Cliente;
 import katiostudio.rivence.Controlador.Pago;
@@ -15,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 
 
 import org.json.JSONArray;
@@ -63,15 +66,18 @@ public class MySocialMediaRequests {
 
     public void initializeServicios() {
 
-        JsonArrayRequest jsArrayRequest = new JsonArrayRequest(
+        StringRequest jsArrayRequest = new StringRequest(
                 Request.Method.POST,
                 Config.LOGIN_URL,
-                null,
-                new Response.Listener<JSONArray>() {
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(JSONArray response) {
+                    public void onResponse(String response) {
                         Log.d(TAG, "Respuesta Volley:" + response.toString());
-                        Cliente.getInstance().setServicios(parseJsonServicios(response));
+                        try {
+                            Cliente.getInstance().setServicios(parseJsonServicios(response));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
 
 
@@ -91,6 +97,7 @@ public class MySocialMediaRequests {
                 Map<String, String> params = new HashMap<>();
                 //Adding parameters to request
                 params.put(Config.KEY_TAG, "servicios");
+                params.put("ciudad",Cliente.getInstance().getCiudad().toLowerCase());
 
 
                 //returning parameter
@@ -115,15 +122,18 @@ public class MySocialMediaRequests {
 
     public void initializePagos() {
 
-        JsonArrayRequest jsArrayRequest = new JsonArrayRequest(
+        StringRequest jsArrayRequest = new StringRequest(
                 Request.Method.POST,
                 Config.LOGIN_URL,
-                null,
-                new Response.Listener<JSONArray>() {
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(JSONArray response) {
+                    public void onResponse(String response) {
                         Log.d(TAG, "Respuesta Volley:" + response.toString());
-                        Cliente.getInstance().setPagos(parseJsonPagos(response));
+                        try {
+                            Cliente.getInstance().setPagos(parseJsonPagos(response));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
 
 
@@ -142,6 +152,7 @@ public class MySocialMediaRequests {
                 Map<String, String> params = new HashMap<>();
                 //Adding parameters to request
                 params.put(Config.KEY_TAG, "pagos");
+                params.put("cliente",Cliente.getInstance().getId());
 
 
                 //returning parameter
@@ -166,15 +177,18 @@ public class MySocialMediaRequests {
 
     public void initializeEventos() {
 
-        JsonArrayRequest jsArrayRequest = new JsonArrayRequest(
+        StringRequest jsArrayRequest = new StringRequest(
                 Request.Method.POST,
                 Config.LOGIN_URL,
-                null,
-                new Response.Listener<JSONArray>() {
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(JSONArray response) {
+                    public void onResponse(String response) {
                         Log.d(TAG, "Respuesta Volley:" + response.toString());
-                        Cliente.getInstance().setEventos(parseJsonEventos(response));
+                        try {
+                            Cliente.getInstance().setEventos(parseJsonEventos(response));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
 
 
@@ -194,6 +208,7 @@ public class MySocialMediaRequests {
                 Map<String, String> params = new HashMap<>();
                 //Adding parameters to request
                 params.put(Config.KEY_TAG, "eventos");
+                params.put("ciudad",Cliente.getInstance().getCiudad().toLowerCase());
 
 
                 //returning parameter
@@ -216,13 +231,15 @@ public class MySocialMediaRequests {
     }
 
 
-    public List<Pago> parseJsonPagos(JSONArray entrada) {
+    public List<Pago> parseJsonPagos(String entrada) throws JSONException {
         // Variables locales
         List<Pago> pagosL = new ArrayList();
         JSONArray jsonArray = null;
 
+
+
         // Obtener el array del objeto
-        jsonArray = entrada;
+        jsonArray = new JSONArray(entrada);
 
         for (int x = 0; x < jsonArray.length(); x++) {
 
@@ -248,25 +265,26 @@ public class MySocialMediaRequests {
         return pagosL;
     }
 
-    public List<Servicio> parseJsonServicios(JSONArray entrada) {
+    public List<Servicio> parseJsonServicios(String entrada) throws JSONException {
 
         // Variables locales
         List<Servicio> serviciosL = new ArrayList();
         JSONArray jsonArray = null;
 
-        jsonArray = entrada;
+        jsonArray = new JSONArray(entrada);
+
 
         for (int x = 0; x < jsonArray.length(); x++) {
 
             try {
 
                 JSONObject objeto = jsonArray.getJSONObject(x);
-                Servicio servicio = new Servicio(
-                        objeto.getString("titulo"),
-                        objeto.getString("subtitulo"),
-                        objeto.getString("distancia"),
-                        objeto.getString("descripcion"),
-                        objeto.getInt("categoriaId"));
+                String titulo = objeto.getString("titulo");
+                String subtitulo = objeto.getString("subtitulo");
+                String distancia = objeto.getString("distancia");
+                String descripcion = objeto.getString("descripcion");
+                String categoriaId = objeto.getString("idCategoria");
+                Servicio servicio = new Servicio(titulo,subtitulo,distancia,descripcion,categoriaId);
 
 
                 serviciosL.add(servicio);
@@ -280,13 +298,13 @@ public class MySocialMediaRequests {
         return serviciosL;
     }
 
-    public List<Evento> parseJsonEventos(JSONArray entrada){
+    public List<Evento> parseJsonEventos(String entrada) throws JSONException {
 
         // Variables locales
         List<Evento> eventosL = new ArrayList();
         JSONArray jsonArray = null;
 
-        jsonArray = entrada;
+        jsonArray = new JSONArray(entrada);
 
         for (int x = 0; x < jsonArray.length(); x++) {
 
@@ -296,7 +314,7 @@ public class MySocialMediaRequests {
                 Evento evento = new Evento(
                         objeto.getString("titulo"),
                         objeto.getString("fecha"),
-                        objeto.getInt("photoId"),
+                        objeto.getString("foto_url"),
                         objeto.getString("descripcion"));
 
 
