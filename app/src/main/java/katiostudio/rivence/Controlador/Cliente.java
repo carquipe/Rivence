@@ -54,9 +54,7 @@ public class Cliente {
      *
      * @return El unico cliente existente.
      */
-    public static Cliente getInstance() {
-        return cliente;
-    }
+    public static Cliente getInstance() {return cliente;}
 
     /**
      * Metodo de instancia estatica (Singleton)
